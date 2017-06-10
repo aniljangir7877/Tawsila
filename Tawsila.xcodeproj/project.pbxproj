@@ -12,14 +12,15 @@
 		0439CA7D1EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0439CA791EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		0439CA7E1EEC50B1008E4F78 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439CA7A1EEC50B1008E4F78 /* Utility.swift */; };
 		0439CA801EEC511D008E4F78 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0439CA7F1EEC511D008E4F78 /* CoreLocation.framework */; };
+		045CF6FA1EEC7A010052DBC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045CF6F91EEC7A010052DBC6 /* AppDelegate.swift */; };
+		045CF6FC1EEC7A800052DBC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045CF6FB1EEC7A800052DBC6 /* Assets.xcassets */; };
+		045CF6FF1EEC7A9F0052DBC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045CF6FD1EEC7A9F0052DBC6 /* LaunchScreen.storyboard */; };
+		045CF7001EEC7A9F0052DBC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045CF6FE1EEC7A9F0052DBC6 /* Main.storyboard */; };
+		045CF7021EEC7AB80052DBC6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 045CF7011EEC7AB80052DBC6 /* Info.plist */; };
 		25748615852ECA04BAFA9FED /* Pods_TawsilaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58DF0FD146BA2327FE74A07 /* Pods_TawsilaTests.framework */; };
 		52C7F42A8FC7221F0AC4CA93 /* Pods_TawsilaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902A6B97238E8A10D5B05059 /* Pods_TawsilaUITests.framework */; };
-		5BB10C9D1EEBEA8500F93FBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB10C9C1EEBEA8500F93FBE /* AppDelegate.swift */; };
 		5BB10C9F1EEBEA8500F93FBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB10C9E1EEBEA8500F93FBE /* ViewController.swift */; };
-		5BB10CA21EEBEA8600F93FBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB10CA01EEBEA8600F93FBE /* Main.storyboard */; };
 		5BB10CA51EEBEA8600F93FBE /* Tawsila.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BB10CA31EEBEA8600F93FBE /* Tawsila.xcdatamodeld */; };
-		5BB10CA71EEBEA8600F93FBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BB10CA61EEBEA8600F93FBE /* Assets.xcassets */; };
-		5BB10CAA1EEBEA8600F93FBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB10CA81EEBEA8600F93FBE /* LaunchScreen.storyboard */; };
 		5BB10CB51EEBEA8600F93FBE /* TawsilaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB10CB41EEBEA8600F93FBE /* TawsilaTests.swift */; };
 		5BB10CC01EEBEA8600F93FBE /* TawsilaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB10CBF1EEBEA8600F93FBE /* TawsilaUITests.swift */; };
 		5BB10CD21EEBEB4E00F93FBE /* SignInOrCreateNewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB10CD01EEBEB4E00F93FBE /* SignInOrCreateNewAccount.swift */; };
@@ -64,15 +65,15 @@
 		0439CA791EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		0439CA7A1EEC50B1008E4F78 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		0439CA7F1EEC511D008E4F78 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		045CF6F91EEC7A010052DBC6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		045CF6FB1EEC7A800052DBC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		045CF6FD1EEC7A9F0052DBC6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		045CF6FE1EEC7A9F0052DBC6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		045CF7011EEC7AB80052DBC6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B6B5F2306DAE308EB562E74 /* Pods-Tawsila.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tawsila.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tawsila/Pods-Tawsila.release.xcconfig"; sourceTree = "<group>"; };
 		5BB10C991EEBEA8500F93FBE /* Tawsila.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tawsila.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BB10C9C1EEBEA8500F93FBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		5BB10C9E1EEBEA8500F93FBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
-		5BB10CA11EEBEA8600F93FBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5BB10CA41EEBEA8600F93FBE /* Tawsila.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tawsila.xcdatamodel; sourceTree = "<group>"; };
-		5BB10CA61EEBEA8600F93FBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
-		5BB10CA91EEBEA8600F93FBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5BB10CAB1EEBEA8600F93FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		5BB10CB01EEBEA8600F93FBE /* TawsilaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TawsilaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB10CB41EEBEA8600F93FBE /* TawsilaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TawsilaTests.swift; sourceTree = "<group>"; };
 		5BB10CB61EEBEA8600F93FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -207,12 +208,12 @@
 		5BB10CCD1EEBEAE900F93FBE /* Appdelegate */ = {
 			isa = PBXGroup;
 			children = (
-				5BB10C9C1EEBEA8500F93FBE /* AppDelegate.swift */,
+				045CF6F91EEC7A010052DBC6 /* AppDelegate.swift */,
 				5BB10C9E1EEBEA8500F93FBE /* ViewController.swift */,
-				5BB10CA01EEBEA8600F93FBE /* Main.storyboard */,
-				5BB10CA61EEBEA8600F93FBE /* Assets.xcassets */,
-				5BB10CA81EEBEA8600F93FBE /* LaunchScreen.storyboard */,
-				5BB10CAB1EEBEA8600F93FBE /* Info.plist */,
+				045CF6FD1EEC7A9F0052DBC6 /* LaunchScreen.storyboard */,
+				045CF6FE1EEC7A9F0052DBC6 /* Main.storyboard */,
+				045CF7011EEC7AB80052DBC6 /* Info.plist */,
+				045CF6FB1EEC7A800052DBC6 /* Assets.xcassets */,
 				5BB10CA31EEBEA8600F93FBE /* Tawsila.xcdatamodeld */,
 			);
 			path = Appdelegate;
@@ -401,19 +402,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BB10CAA1EEBEA8600F93FBE /* LaunchScreen.storyboard in Resources */,
 				5BE0D9DD1EEC1AC800392929 /* app_screen_background@3x.png in Resources */,
 				5BE0D9DB1EEC1AC800392929 /* app_screen_background.png in Resources */,
 				5BB10CD31EEBEB4E00F93FBE /* SignInOrCreateNewAccount.xib in Resources */,
-				5BB10CA71EEBEA8600F93FBE /* Assets.xcassets in Resources */,
+				045CF6FC1EEC7A800052DBC6 /* Assets.xcassets in Resources */,
 				5BE0D9DC1EEC1AC800392929 /* app_screen_background@2x.png in Resources */,
 				5BE0D9DF1EEC1AC800392929 /* homescreenbg@2x.png in Resources */,
 				5BE0D9E11EEC1AC800392929 /* image_text_homescreen.png in Resources */,
+				045CF7001EEC7A9F0052DBC6 /* Main.storyboard in Resources */,
+				045CF7021EEC7AB80052DBC6 /* Info.plist in Resources */,
+				045CF6FF1EEC7A9F0052DBC6 /* LaunchScreen.storyboard in Resources */,
 				5BE0D9E21EEC1AC800392929 /* image_text_homescreen@2x.png in Resources */,
 				5BE0D9E01EEC1AC800392929 /* homescreenbg@3x.png in Resources */,
 				5BE0D9DE1EEC1AC800392929 /* homescreenbg.png in Resources */,
 				5BB10CE51EEBFA1700F93FBE /* SignInViewController.xib in Resources */,
-				5BB10CA21EEBEA8600F93FBE /* Main.storyboard in Resources */,
 				5BE0D9E31EEC1AC800392929 /* image_text_homescreen@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,8 +582,8 @@
 				0439CA7C1EEC50B1008E4F78 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				5BB10C9F1EEBEA8500F93FBE /* ViewController.swift in Sources */,
 				0439CA7E1EEC50B1008E4F78 /* Utility.swift in Sources */,
+				045CF6FA1EEC7A010052DBC6 /* AppDelegate.swift in Sources */,
 				5BB10CD21EEBEB4E00F93FBE /* SignInOrCreateNewAccount.swift in Sources */,
-				5BB10C9D1EEBEA8500F93FBE /* AppDelegate.swift in Sources */,
 				5BB10CE41EEBFA1700F93FBE /* SignInViewController.swift in Sources */,
 				0439CA7D1EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				5BB10CA51EEBEA8600F93FBE /* Tawsila.xcdatamodeld in Sources */,
@@ -619,27 +621,6 @@
 			targetProxy = 5BB10CBC1EEBEA8600F93FBE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		5BB10CA01EEBEA8600F93FBE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5BB10CA11EEBEA8600F93FBE /* Base */,
-			);
-			name = Main.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		5BB10CA81EEBEA8600F93FBE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5BB10CA91EEBEA8600F93FBE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5BB10CC21EEBEA8600F93FBE /* Debug */ = {
