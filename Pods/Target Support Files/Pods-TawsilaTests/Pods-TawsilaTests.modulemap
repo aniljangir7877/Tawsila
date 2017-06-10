@@ -1,0 +1,6 @@
+framework module Pods_TawsilaTests {
+  umbrella header "Pods-TawsilaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

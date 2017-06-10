@@ -1,0 +1,878 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0439CA7B1EEC50B1008E4F78 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439CA741EEC50B1008E4F78 /* Constant.swift */; };
+		0439CA7C1EEC50B1008E4F78 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0439CA771EEC50B1008E4F78 /* TPKeyboardAvoidingScrollView.m */; };
+		0439CA7D1EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0439CA791EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		0439CA7E1EEC50B1008E4F78 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439CA7A1EEC50B1008E4F78 /* Utility.swift */; };
+		0439CA801EEC511D008E4F78 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0439CA7F1EEC511D008E4F78 /* CoreLocation.framework */; };
+		25748615852ECA04BAFA9FED /* Pods_TawsilaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58DF0FD146BA2327FE74A07 /* Pods_TawsilaTests.framework */; };
+		52C7F42A8FC7221F0AC4CA93 /* Pods_TawsilaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902A6B97238E8A10D5B05059 /* Pods_TawsilaUITests.framework */; };
+		5BB10C9D1EEBEA8500F93FBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB10C9C1EEBEA8500F93FBE /* AppDelegate.swift */; };
+		5BB10C9F1EEBEA8500F93FBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB10C9E1EEBEA8500F93FBE /* ViewController.swift */; };
+		5BB10CA21EEBEA8600F93FBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB10CA01EEBEA8600F93FBE /* Main.storyboard */; };
+		5BB10CA51EEBEA8600F93FBE /* Tawsila.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BB10CA31EEBEA8600F93FBE /* Tawsila.xcdatamodeld */; };
+		5BB10CA71EEBEA8600F93FBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BB10CA61EEBEA8600F93FBE /* Assets.xcassets */; };
+		5BB10CAA1EEBEA8600F93FBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB10CA81EEBEA8600F93FBE /* LaunchScreen.storyboard */; };
+		5BB10CB51EEBEA8600F93FBE /* TawsilaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB10CB41EEBEA8600F93FBE /* TawsilaTests.swift */; };
+		5BB10CC01EEBEA8600F93FBE /* TawsilaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB10CBF1EEBEA8600F93FBE /* TawsilaUITests.swift */; };
+		5BB10CD21EEBEB4E00F93FBE /* SignInOrCreateNewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB10CD01EEBEB4E00F93FBE /* SignInOrCreateNewAccount.swift */; };
+		5BB10CD31EEBEB4E00F93FBE /* SignInOrCreateNewAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB10CD11EEBEB4E00F93FBE /* SignInOrCreateNewAccount.xib */; };
+		5BB10CE41EEBFA1700F93FBE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB10CE21EEBFA1700F93FBE /* SignInViewController.swift */; };
+		5BB10CE51EEBFA1700F93FBE /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB10CE31EEBFA1700F93FBE /* SignInViewController.xib */; };
+		5BE0D9DB1EEC1AC800392929 /* app_screen_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9D21EEC1AC800392929 /* app_screen_background.png */; };
+		5BE0D9DC1EEC1AC800392929 /* app_screen_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9D31EEC1AC800392929 /* app_screen_background@2x.png */; };
+		5BE0D9DD1EEC1AC800392929 /* app_screen_background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9D41EEC1AC800392929 /* app_screen_background@3x.png */; };
+		5BE0D9DE1EEC1AC800392929 /* homescreenbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9D51EEC1AC800392929 /* homescreenbg.png */; };
+		5BE0D9DF1EEC1AC800392929 /* homescreenbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9D61EEC1AC800392929 /* homescreenbg@2x.png */; };
+		5BE0D9E01EEC1AC800392929 /* homescreenbg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9D71EEC1AC800392929 /* homescreenbg@3x.png */; };
+		5BE0D9E11EEC1AC800392929 /* image_text_homescreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9D81EEC1AC800392929 /* image_text_homescreen.png */; };
+		5BE0D9E21EEC1AC800392929 /* image_text_homescreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9D91EEC1AC800392929 /* image_text_homescreen@2x.png */; };
+		5BE0D9E31EEC1AC800392929 /* image_text_homescreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9DA1EEC1AC800392929 /* image_text_homescreen@3x.png */; };
+		985F9BACAFDA64484ADF106D /* Pods_Tawsila.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4CA21A746696DD59B2B54F /* Pods_Tawsila.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5BB10CB11EEBEA8600F93FBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BB10C911EEBEA8400F93FBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BB10C981EEBEA8400F93FBE;
+			remoteInfo = Tawsila;
+		};
+		5BB10CBC1EEBEA8600F93FBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BB10C911EEBEA8400F93FBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BB10C981EEBEA8400F93FBE;
+			remoteInfo = Tawsila;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0439CA701EEC4FE4008E4F78 /* Tawsila-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tawsila-Bridging-Header.h"; sourceTree = "<group>"; };
+		0439CA741EEC50B1008E4F78 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		0439CA761EEC50B1008E4F78 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		0439CA771EEC50B1008E4F78 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		0439CA781EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		0439CA791EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		0439CA7A1EEC50B1008E4F78 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		0439CA7F1EEC511D008E4F78 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0B6B5F2306DAE308EB562E74 /* Pods-Tawsila.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tawsila.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tawsila/Pods-Tawsila.release.xcconfig"; sourceTree = "<group>"; };
+		5BB10C991EEBEA8500F93FBE /* Tawsila.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tawsila.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BB10C9C1EEBEA8500F93FBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
+		5BB10C9E1EEBEA8500F93FBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
+		5BB10CA11EEBEA8600F93FBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5BB10CA41EEBEA8600F93FBE /* Tawsila.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tawsila.xcdatamodel; sourceTree = "<group>"; };
+		5BB10CA61EEBEA8600F93FBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
+		5BB10CA91EEBEA8600F93FBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5BB10CAB1EEBEA8600F93FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		5BB10CB01EEBEA8600F93FBE /* TawsilaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TawsilaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BB10CB41EEBEA8600F93FBE /* TawsilaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TawsilaTests.swift; sourceTree = "<group>"; };
+		5BB10CB61EEBEA8600F93FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BB10CBB1EEBEA8600F93FBE /* TawsilaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TawsilaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BB10CBF1EEBEA8600F93FBE /* TawsilaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TawsilaUITests.swift; sourceTree = "<group>"; };
+		5BB10CC11EEBEA8600F93FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BB10CD01EEBEB4E00F93FBE /* SignInOrCreateNewAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInOrCreateNewAccount.swift; sourceTree = "<group>"; };
+		5BB10CD11EEBEB4E00F93FBE /* SignInOrCreateNewAccount.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInOrCreateNewAccount.xib; sourceTree = "<group>"; };
+		5BB10CE21EEBFA1700F93FBE /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		5BB10CE31EEBFA1700F93FBE /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
+		5BE0D9D21EEC1AC800392929 /* app_screen_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_screen_background.png; sourceTree = "<group>"; };
+		5BE0D9D31EEC1AC800392929 /* app_screen_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_screen_background@2x.png"; sourceTree = "<group>"; };
+		5BE0D9D41EEC1AC800392929 /* app_screen_background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_screen_background@3x.png"; sourceTree = "<group>"; };
+		5BE0D9D51EEC1AC800392929 /* homescreenbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homescreenbg.png; sourceTree = "<group>"; };
+		5BE0D9D61EEC1AC800392929 /* homescreenbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homescreenbg@2x.png"; sourceTree = "<group>"; };
+		5BE0D9D71EEC1AC800392929 /* homescreenbg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homescreenbg@3x.png"; sourceTree = "<group>"; };
+		5BE0D9D81EEC1AC800392929 /* image_text_homescreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_text_homescreen.png; sourceTree = "<group>"; };
+		5BE0D9D91EEC1AC800392929 /* image_text_homescreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_text_homescreen@2x.png"; sourceTree = "<group>"; };
+		5BE0D9DA1EEC1AC800392929 /* image_text_homescreen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_text_homescreen@3x.png"; sourceTree = "<group>"; };
+		5DE208DDC741A694D73C97FB /* Pods-TawsilaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TawsilaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TawsilaUITests/Pods-TawsilaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		902A6B97238E8A10D5B05059 /* Pods_TawsilaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TawsilaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C408D14D3B050F1B0661DF2 /* Pods-Tawsila.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tawsila.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tawsila/Pods-Tawsila.debug.xcconfig"; sourceTree = "<group>"; };
+		C58DF0FD146BA2327FE74A07 /* Pods_TawsilaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TawsilaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC4CA21A746696DD59B2B54F /* Pods_Tawsila.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tawsila.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3AFF65445C9E0F59B56601F /* Pods-TawsilaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TawsilaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TawsilaTests/Pods-TawsilaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FAD268A1D310DE5635B311E4 /* Pods-TawsilaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TawsilaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TawsilaTests/Pods-TawsilaTests.release.xcconfig"; sourceTree = "<group>"; };
+		FEBC3A5B36A411019C593179 /* Pods-TawsilaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TawsilaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TawsilaUITests/Pods-TawsilaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BB10C961EEBEA8400F93FBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0439CA801EEC511D008E4F78 /* CoreLocation.framework in Frameworks */,
+				985F9BACAFDA64484ADF106D /* Pods_Tawsila.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BB10CAD1EEBEA8600F93FBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25748615852ECA04BAFA9FED /* Pods_TawsilaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BB10CB81EEBEA8600F93FBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52C7F42A8FC7221F0AC4CA93 /* Pods_TawsilaUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0439CA731EEC50B1008E4F78 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				0439CA741EEC50B1008E4F78 /* Constant.swift */,
+				0439CA751EEC50B1008E4F78 /* TPKeyBoard */,
+				0439CA7A1EEC50B1008E4F78 /* Utility.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		0439CA751EEC50B1008E4F78 /* TPKeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				0439CA761EEC50B1008E4F78 /* TPKeyboardAvoidingScrollView.h */,
+				0439CA771EEC50B1008E4F78 /* TPKeyboardAvoidingScrollView.m */,
+				0439CA781EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				0439CA791EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyBoard;
+			sourceTree = "<group>";
+		};
+		5BB10C901EEBEA8400F93FBE = {
+			isa = PBXGroup;
+			children = (
+				5BB10C9B1EEBEA8500F93FBE /* Tawsila */,
+				5BB10CB31EEBEA8600F93FBE /* TawsilaTests */,
+				5BB10CBE1EEBEA8600F93FBE /* TawsilaUITests */,
+				5BB10C9A1EEBEA8500F93FBE /* Products */,
+				7FE1364C6C2C4AB6F313F193 /* Pods */,
+				B6E6273C0AB35D65D7360AF9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5BB10C9A1EEBEA8500F93FBE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BB10C991EEBEA8500F93FBE /* Tawsila.app */,
+				5BB10CB01EEBEA8600F93FBE /* TawsilaTests.xctest */,
+				5BB10CBB1EEBEA8600F93FBE /* TawsilaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BB10C9B1EEBEA8500F93FBE /* Tawsila */ = {
+			isa = PBXGroup;
+			children = (
+				0439CA701EEC4FE4008E4F78 /* Tawsila-Bridging-Header.h */,
+				0439CA731EEC50B1008E4F78 /* Other */,
+				5BB10CD41EEBF69A00F93FBE /* Images */,
+				5BB10CCD1EEBEAE900F93FBE /* Appdelegate */,
+				5BB10CCE1EEBEAE900F93FBE /* Controller */,
+			);
+			path = Tawsila;
+			sourceTree = "<group>";
+		};
+		5BB10CB31EEBEA8600F93FBE /* TawsilaTests */ = {
+			isa = PBXGroup;
+			children = (
+				5BB10CB41EEBEA8600F93FBE /* TawsilaTests.swift */,
+				5BB10CB61EEBEA8600F93FBE /* Info.plist */,
+			);
+			path = TawsilaTests;
+			sourceTree = "<group>";
+		};
+		5BB10CBE1EEBEA8600F93FBE /* TawsilaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5BB10CBF1EEBEA8600F93FBE /* TawsilaUITests.swift */,
+				5BB10CC11EEBEA8600F93FBE /* Info.plist */,
+			);
+			path = TawsilaUITests;
+			sourceTree = "<group>";
+		};
+		5BB10CCD1EEBEAE900F93FBE /* Appdelegate */ = {
+			isa = PBXGroup;
+			children = (
+				5BB10C9C1EEBEA8500F93FBE /* AppDelegate.swift */,
+				5BB10C9E1EEBEA8500F93FBE /* ViewController.swift */,
+				5BB10CA01EEBEA8600F93FBE /* Main.storyboard */,
+				5BB10CA61EEBEA8600F93FBE /* Assets.xcassets */,
+				5BB10CA81EEBEA8600F93FBE /* LaunchScreen.storyboard */,
+				5BB10CAB1EEBEA8600F93FBE /* Info.plist */,
+				5BB10CA31EEBEA8600F93FBE /* Tawsila.xcdatamodeld */,
+			);
+			path = Appdelegate;
+			sourceTree = "<group>";
+		};
+		5BB10CCE1EEBEAE900F93FBE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5BB10CE11EEBFA0500F93FBE /* SignInViewController */,
+				5BB10CCF1EEBEB3B00F93FBE /* SignInOrCreateNewAccount */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5BB10CCF1EEBEB3B00F93FBE /* SignInOrCreateNewAccount */ = {
+			isa = PBXGroup;
+			children = (
+				5BB10CD01EEBEB4E00F93FBE /* SignInOrCreateNewAccount.swift */,
+				5BB10CD11EEBEB4E00F93FBE /* SignInOrCreateNewAccount.xib */,
+			);
+			path = SignInOrCreateNewAccount;
+			sourceTree = "<group>";
+		};
+		5BB10CD41EEBF69A00F93FBE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5BE0D9D21EEC1AC800392929 /* app_screen_background.png */,
+				5BE0D9D31EEC1AC800392929 /* app_screen_background@2x.png */,
+				5BE0D9D41EEC1AC800392929 /* app_screen_background@3x.png */,
+				5BE0D9D51EEC1AC800392929 /* homescreenbg.png */,
+				5BE0D9D61EEC1AC800392929 /* homescreenbg@2x.png */,
+				5BE0D9D71EEC1AC800392929 /* homescreenbg@3x.png */,
+				5BE0D9D81EEC1AC800392929 /* image_text_homescreen.png */,
+				5BE0D9D91EEC1AC800392929 /* image_text_homescreen@2x.png */,
+				5BE0D9DA1EEC1AC800392929 /* image_text_homescreen@3x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		5BB10CE11EEBFA0500F93FBE /* SignInViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5BB10CE21EEBFA1700F93FBE /* SignInViewController.swift */,
+				5BB10CE31EEBFA1700F93FBE /* SignInViewController.xib */,
+			);
+			path = SignInViewController;
+			sourceTree = "<group>";
+		};
+		7FE1364C6C2C4AB6F313F193 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C408D14D3B050F1B0661DF2 /* Pods-Tawsila.debug.xcconfig */,
+				0B6B5F2306DAE308EB562E74 /* Pods-Tawsila.release.xcconfig */,
+				F3AFF65445C9E0F59B56601F /* Pods-TawsilaTests.debug.xcconfig */,
+				FAD268A1D310DE5635B311E4 /* Pods-TawsilaTests.release.xcconfig */,
+				FEBC3A5B36A411019C593179 /* Pods-TawsilaUITests.debug.xcconfig */,
+				5DE208DDC741A694D73C97FB /* Pods-TawsilaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B6E6273C0AB35D65D7360AF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0439CA7F1EEC511D008E4F78 /* CoreLocation.framework */,
+				CC4CA21A746696DD59B2B54F /* Pods_Tawsila.framework */,
+				C58DF0FD146BA2327FE74A07 /* Pods_TawsilaTests.framework */,
+				902A6B97238E8A10D5B05059 /* Pods_TawsilaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5BB10C981EEBEA8400F93FBE /* Tawsila */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BB10CC41EEBEA8600F93FBE /* Build configuration list for PBXNativeTarget "Tawsila" */;
+			buildPhases = (
+				3B500778131C6B0AE87940D8 /* [CP] Check Pods Manifest.lock */,
+				5BB10C951EEBEA8400F93FBE /* Sources */,
+				5BB10C961EEBEA8400F93FBE /* Frameworks */,
+				5BB10C971EEBEA8400F93FBE /* Resources */,
+				D277AA6EA5A6C04583B99768 /* [CP] Embed Pods Frameworks */,
+				94FACDA5E63842C53C494F93 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tawsila;
+			productName = Tawsila;
+			productReference = 5BB10C991EEBEA8500F93FBE /* Tawsila.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5BB10CAF1EEBEA8600F93FBE /* TawsilaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BB10CC71EEBEA8600F93FBE /* Build configuration list for PBXNativeTarget "TawsilaTests" */;
+			buildPhases = (
+				D531509EE09B38E0727BF1C4 /* [CP] Check Pods Manifest.lock */,
+				5BB10CAC1EEBEA8600F93FBE /* Sources */,
+				5BB10CAD1EEBEA8600F93FBE /* Frameworks */,
+				5BB10CAE1EEBEA8600F93FBE /* Resources */,
+				C03E3E069761F6C8C6806EA5 /* [CP] Embed Pods Frameworks */,
+				8921C195AE75AE84A463DA1C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BB10CB21EEBEA8600F93FBE /* PBXTargetDependency */,
+			);
+			name = TawsilaTests;
+			productName = TawsilaTests;
+			productReference = 5BB10CB01EEBEA8600F93FBE /* TawsilaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5BB10CBA1EEBEA8600F93FBE /* TawsilaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BB10CCA1EEBEA8600F93FBE /* Build configuration list for PBXNativeTarget "TawsilaUITests" */;
+			buildPhases = (
+				6B99B046A9060BC1D970FE06 /* [CP] Check Pods Manifest.lock */,
+				5BB10CB71EEBEA8600F93FBE /* Sources */,
+				5BB10CB81EEBEA8600F93FBE /* Frameworks */,
+				5BB10CB91EEBEA8600F93FBE /* Resources */,
+				87FEF11D2B272D1606994F29 /* [CP] Embed Pods Frameworks */,
+				52DE386FF4F5091BDBFDACAB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BB10CBD1EEBEA8600F93FBE /* PBXTargetDependency */,
+			);
+			name = TawsilaUITests;
+			productName = TawsilaUITests;
+			productReference = 5BB10CBB1EEBEA8600F93FBE /* TawsilaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BB10C911EEBEA8400F93FBE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = scientificweb;
+				TargetAttributes = {
+					5BB10C981EEBEA8400F93FBE = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					5BB10CAF1EEBEA8600F93FBE = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5BB10C981EEBEA8400F93FBE;
+					};
+					5BB10CBA1EEBEA8600F93FBE = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5BB10C981EEBEA8400F93FBE;
+					};
+				};
+			};
+			buildConfigurationList = 5BB10C941EEBEA8400F93FBE /* Build configuration list for PBXProject "Tawsila" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5BB10C901EEBEA8400F93FBE;
+			productRefGroup = 5BB10C9A1EEBEA8500F93FBE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BB10C981EEBEA8400F93FBE /* Tawsila */,
+				5BB10CAF1EEBEA8600F93FBE /* TawsilaTests */,
+				5BB10CBA1EEBEA8600F93FBE /* TawsilaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5BB10C971EEBEA8400F93FBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB10CAA1EEBEA8600F93FBE /* LaunchScreen.storyboard in Resources */,
+				5BE0D9DD1EEC1AC800392929 /* app_screen_background@3x.png in Resources */,
+				5BE0D9DB1EEC1AC800392929 /* app_screen_background.png in Resources */,
+				5BB10CD31EEBEB4E00F93FBE /* SignInOrCreateNewAccount.xib in Resources */,
+				5BB10CA71EEBEA8600F93FBE /* Assets.xcassets in Resources */,
+				5BE0D9DC1EEC1AC800392929 /* app_screen_background@2x.png in Resources */,
+				5BE0D9DF1EEC1AC800392929 /* homescreenbg@2x.png in Resources */,
+				5BE0D9E11EEC1AC800392929 /* image_text_homescreen.png in Resources */,
+				5BE0D9E21EEC1AC800392929 /* image_text_homescreen@2x.png in Resources */,
+				5BE0D9E01EEC1AC800392929 /* homescreenbg@3x.png in Resources */,
+				5BE0D9DE1EEC1AC800392929 /* homescreenbg.png in Resources */,
+				5BB10CE51EEBFA1700F93FBE /* SignInViewController.xib in Resources */,
+				5BB10CA21EEBEA8600F93FBE /* Main.storyboard in Resources */,
+				5BE0D9E31EEC1AC800392929 /* image_text_homescreen@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BB10CAE1EEBEA8600F93FBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BB10CB91EEBEA8600F93FBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B500778131C6B0AE87940D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		52DE386FF4F5091BDBFDACAB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TawsilaUITests/Pods-TawsilaUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B99B046A9060BC1D970FE06 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		87FEF11D2B272D1606994F29 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TawsilaUITests/Pods-TawsilaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8921C195AE75AE84A463DA1C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TawsilaTests/Pods-TawsilaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94FACDA5E63842C53C494F93 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tawsila/Pods-Tawsila-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C03E3E069761F6C8C6806EA5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TawsilaTests/Pods-TawsilaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D277AA6EA5A6C04583B99768 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tawsila/Pods-Tawsila-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D531509EE09B38E0727BF1C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BB10C951EEBEA8400F93FBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0439CA7C1EEC50B1008E4F78 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				5BB10C9F1EEBEA8500F93FBE /* ViewController.swift in Sources */,
+				0439CA7E1EEC50B1008E4F78 /* Utility.swift in Sources */,
+				5BB10CD21EEBEB4E00F93FBE /* SignInOrCreateNewAccount.swift in Sources */,
+				5BB10C9D1EEBEA8500F93FBE /* AppDelegate.swift in Sources */,
+				5BB10CE41EEBFA1700F93FBE /* SignInViewController.swift in Sources */,
+				0439CA7D1EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				5BB10CA51EEBEA8600F93FBE /* Tawsila.xcdatamodeld in Sources */,
+				0439CA7B1EEC50B1008E4F78 /* Constant.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BB10CAC1EEBEA8600F93FBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB10CB51EEBEA8600F93FBE /* TawsilaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BB10CB71EEBEA8600F93FBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB10CC01EEBEA8600F93FBE /* TawsilaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BB10CB21EEBEA8600F93FBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BB10C981EEBEA8400F93FBE /* Tawsila */;
+			targetProxy = 5BB10CB11EEBEA8600F93FBE /* PBXContainerItemProxy */;
+		};
+		5BB10CBD1EEBEA8600F93FBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BB10C981EEBEA8400F93FBE /* Tawsila */;
+			targetProxy = 5BB10CBC1EEBEA8600F93FBE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5BB10CA01EEBEA8600F93FBE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BB10CA11EEBEA8600F93FBE /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		5BB10CA81EEBEA8600F93FBE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BB10CA91EEBEA8600F93FBE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5BB10CC21EEBEA8600F93FBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5BB10CC31EEBEA8600F93FBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5BB10CC51EEBEA8600F93FBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C408D14D3B050F1B0661DF2 /* Pods-Tawsila.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Tawsila/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scientificweb.Tawsila;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tawsila/Tawsila-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5BB10CC61EEBEA8600F93FBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B6B5F2306DAE308EB562E74 /* Pods-Tawsila.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Tawsila/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scientificweb.Tawsila;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tawsila/Tawsila-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		5BB10CC81EEBEA8600F93FBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3AFF65445C9E0F59B56601F /* Pods-TawsilaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TawsilaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scientificweb.TawsilaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tawsila.app/Tawsila";
+			};
+			name = Debug;
+		};
+		5BB10CC91EEBEA8600F93FBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAD268A1D310DE5635B311E4 /* Pods-TawsilaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TawsilaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scientificweb.TawsilaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tawsila.app/Tawsila";
+			};
+			name = Release;
+		};
+		5BB10CCB1EEBEA8600F93FBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEBC3A5B36A411019C593179 /* Pods-TawsilaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = TawsilaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scientificweb.TawsilaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Tawsila;
+			};
+			name = Debug;
+		};
+		5BB10CCC1EEBEA8600F93FBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DE208DDC741A694D73C97FB /* Pods-TawsilaUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = TawsilaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scientificweb.TawsilaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Tawsila;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BB10C941EEBEA8400F93FBE /* Build configuration list for PBXProject "Tawsila" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BB10CC21EEBEA8600F93FBE /* Debug */,
+				5BB10CC31EEBEA8600F93FBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BB10CC41EEBEA8600F93FBE /* Build configuration list for PBXNativeTarget "Tawsila" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BB10CC51EEBEA8600F93FBE /* Debug */,
+				5BB10CC61EEBEA8600F93FBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BB10CC71EEBEA8600F93FBE /* Build configuration list for PBXNativeTarget "TawsilaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BB10CC81EEBEA8600F93FBE /* Debug */,
+				5BB10CC91EEBEA8600F93FBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BB10CCA1EEBEA8600F93FBE /* Build configuration list for PBXNativeTarget "TawsilaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BB10CCB1EEBEA8600F93FBE /* Debug */,
+				5BB10CCC1EEBEA8600F93FBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5BB10CA31EEBEA8600F93FBE /* Tawsila.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5BB10CA41EEBEA8600F93FBE /* Tawsila.xcdatamodel */,
+			);
+			currentVersion = 5BB10CA41EEBEA8600F93FBE /* Tawsila.xcdatamodel */;
+			name = Tawsila.xcdatamodeld;
+			path = ../Tawsila.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5BB10C911EEBEA8400F93FBE /* Project object */;
+}
