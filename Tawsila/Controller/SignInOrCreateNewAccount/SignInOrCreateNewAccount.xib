@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInOrCreateNewAccount" customModule="Tawsila" customModuleProvider="target">
             <connections>
+                <outlet property="btnCreateNewAccount" destination="KDl-HE-dJy" id="rnH-a0-ufZ"/>
+                <outlet property="btnSignIn" destination="U0k-KV-n8L" id="KeT-4a-FFe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,11 +25,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aV9-09-4fb">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homescreenbg.png" translatesAutoresizingMaskIntoConstraints="NO" id="LDi-v4-Esq">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="LDi-v4-Esq">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_text_homescreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="kpM-R6-FRK">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeTextImage" translatesAutoresizingMaskIntoConstraints="NO" id="kpM-R6-FRK">
                             <rect key="frame" x="60" y="230" width="200" height="70"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -54,6 +56,9 @@
                             <state key="normal" title="Sign in">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="actionSignIn:" destination="-1" eventType="touchUpInside" id="WJW-kQ-FnP"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDl-HE-dJy">
                             <rect key="frame" x="20" y="510" width="280" height="50"/>
@@ -66,6 +71,9 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="actionCreateNewAccout:" destination="-1" eventType="touchUpInside" id="Pr3-gM-y2G"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -106,7 +114,7 @@
         </view>
     </objects>
     <resources>
-        <image name="homescreenbg.png" width="1200" height="2056"/>
-        <image name="image_text_homescreen.png" width="224" height="66"/>
+        <image name="homeBgImage" width="1200" height="2056"/>
+        <image name="homeTextImage" width="224" height="66"/>
     </resources>
 </document>

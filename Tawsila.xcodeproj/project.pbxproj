@@ -27,15 +27,12 @@
 		5BB10CD31EEBEB4E00F93FBE /* SignInOrCreateNewAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB10CD11EEBEB4E00F93FBE /* SignInOrCreateNewAccount.xib */; };
 		5BB10CE41EEBFA1700F93FBE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB10CE21EEBFA1700F93FBE /* SignInViewController.swift */; };
 		5BB10CE51EEBFA1700F93FBE /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB10CE31EEBFA1700F93FBE /* SignInViewController.xib */; };
-		5BE0D9DB1EEC1AC800392929 /* app_screen_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9D21EEC1AC800392929 /* app_screen_background.png */; };
-		5BE0D9DC1EEC1AC800392929 /* app_screen_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9D31EEC1AC800392929 /* app_screen_background@2x.png */; };
-		5BE0D9DD1EEC1AC800392929 /* app_screen_background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9D41EEC1AC800392929 /* app_screen_background@3x.png */; };
-		5BE0D9DE1EEC1AC800392929 /* homescreenbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9D51EEC1AC800392929 /* homescreenbg.png */; };
-		5BE0D9DF1EEC1AC800392929 /* homescreenbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9D61EEC1AC800392929 /* homescreenbg@2x.png */; };
-		5BE0D9E01EEC1AC800392929 /* homescreenbg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9D71EEC1AC800392929 /* homescreenbg@3x.png */; };
-		5BE0D9E11EEC1AC800392929 /* image_text_homescreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9D81EEC1AC800392929 /* image_text_homescreen.png */; };
-		5BE0D9E21EEC1AC800392929 /* image_text_homescreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9D91EEC1AC800392929 /* image_text_homescreen@2x.png */; };
-		5BE0D9E31EEC1AC800392929 /* image_text_homescreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0D9DA1EEC1AC800392929 /* image_text_homescreen@3x.png */; };
+		81CB2E6B1EED19DA00D400FC /* VSCDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB2E671EED19DA00D400FC /* VSCDetailViewController.swift */; };
+		81CB2E6C1EED19DA00D400FC /* VSCMenuOptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB2E681EED19DA00D400FC /* VSCMenuOptionManager.swift */; };
+		81CB2E6D1EED19DA00D400FC /* VSCMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB2E691EED19DA00D400FC /* VSCMenuViewController.swift */; };
+		81CB2E6E1EED19DA00D400FC /* VSCSlidingPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB2E6A1EED19DA00D400FC /* VSCSlidingPanelViewController.swift */; };
+		81CB2E721EED1BD700D400FC /* CreateNewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB2E701EED1BD700D400FC /* CreateNewAccount.swift */; };
+		81CB2E731EED1BD700D400FC /* CreateNewAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81CB2E711EED1BD700D400FC /* CreateNewAccount.xib */; };
 		985F9BACAFDA64484ADF106D /* Pods_Tawsila.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4CA21A746696DD59B2B54F /* Pods_Tawsila.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,16 +81,13 @@
 		5BB10CD11EEBEB4E00F93FBE /* SignInOrCreateNewAccount.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInOrCreateNewAccount.xib; sourceTree = "<group>"; };
 		5BB10CE21EEBFA1700F93FBE /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		5BB10CE31EEBFA1700F93FBE /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
-		5BE0D9D21EEC1AC800392929 /* app_screen_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_screen_background.png; sourceTree = "<group>"; };
-		5BE0D9D31EEC1AC800392929 /* app_screen_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_screen_background@2x.png"; sourceTree = "<group>"; };
-		5BE0D9D41EEC1AC800392929 /* app_screen_background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_screen_background@3x.png"; sourceTree = "<group>"; };
-		5BE0D9D51EEC1AC800392929 /* homescreenbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homescreenbg.png; sourceTree = "<group>"; };
-		5BE0D9D61EEC1AC800392929 /* homescreenbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homescreenbg@2x.png"; sourceTree = "<group>"; };
-		5BE0D9D71EEC1AC800392929 /* homescreenbg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homescreenbg@3x.png"; sourceTree = "<group>"; };
-		5BE0D9D81EEC1AC800392929 /* image_text_homescreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_text_homescreen.png; sourceTree = "<group>"; };
-		5BE0D9D91EEC1AC800392929 /* image_text_homescreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_text_homescreen@2x.png"; sourceTree = "<group>"; };
-		5BE0D9DA1EEC1AC800392929 /* image_text_homescreen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_text_homescreen@3x.png"; sourceTree = "<group>"; };
 		5DE208DDC741A694D73C97FB /* Pods-TawsilaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TawsilaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TawsilaUITests/Pods-TawsilaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		81CB2E671EED19DA00D400FC /* VSCDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSCDetailViewController.swift; sourceTree = "<group>"; };
+		81CB2E681EED19DA00D400FC /* VSCMenuOptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSCMenuOptionManager.swift; sourceTree = "<group>"; };
+		81CB2E691EED19DA00D400FC /* VSCMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSCMenuViewController.swift; sourceTree = "<group>"; };
+		81CB2E6A1EED19DA00D400FC /* VSCSlidingPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSCSlidingPanelViewController.swift; sourceTree = "<group>"; };
+		81CB2E701EED1BD700D400FC /* CreateNewAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewAccount.swift; path = Tawsila/Controller/CreateNewAccount/CreateNewAccount.swift; sourceTree = SOURCE_ROOT; };
+		81CB2E711EED1BD700D400FC /* CreateNewAccount.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateNewAccount.xib; path = Tawsila/Controller/CreateNewAccount/CreateNewAccount.xib; sourceTree = SOURCE_ROOT; };
 		902A6B97238E8A10D5B05059 /* Pods_TawsilaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TawsilaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C408D14D3B050F1B0661DF2 /* Pods-Tawsila.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tawsila.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tawsila/Pods-Tawsila.debug.xcconfig"; sourceTree = "<group>"; };
 		C58DF0FD146BA2327FE74A07 /* Pods_TawsilaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TawsilaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,7 +174,6 @@
 			children = (
 				0439CA701EEC4FE4008E4F78 /* Tawsila-Bridging-Header.h */,
 				0439CA731EEC50B1008E4F78 /* Other */,
-				5BB10CD41EEBF69A00F93FBE /* Images */,
 				5BB10CCD1EEBEAE900F93FBE /* Appdelegate */,
 				5BB10CCE1EEBEAE900F93FBE /* Controller */,
 			);
@@ -222,8 +215,10 @@
 		5BB10CCE1EEBEAE900F93FBE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				81CB2E661EED19DA00D400FC /* SliderMenuViewController */,
 				5BB10CE11EEBFA0500F93FBE /* SignInViewController */,
 				5BB10CCF1EEBEB3B00F93FBE /* SignInOrCreateNewAccount */,
+				81CB2E6F1EED1B7F00D400FC /* CreateNewAccount */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -235,22 +230,6 @@
 				5BB10CD11EEBEB4E00F93FBE /* SignInOrCreateNewAccount.xib */,
 			);
 			path = SignInOrCreateNewAccount;
-			sourceTree = "<group>";
-		};
-		5BB10CD41EEBF69A00F93FBE /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				5BE0D9D21EEC1AC800392929 /* app_screen_background.png */,
-				5BE0D9D31EEC1AC800392929 /* app_screen_background@2x.png */,
-				5BE0D9D41EEC1AC800392929 /* app_screen_background@3x.png */,
-				5BE0D9D51EEC1AC800392929 /* homescreenbg.png */,
-				5BE0D9D61EEC1AC800392929 /* homescreenbg@2x.png */,
-				5BE0D9D71EEC1AC800392929 /* homescreenbg@3x.png */,
-				5BE0D9D81EEC1AC800392929 /* image_text_homescreen.png */,
-				5BE0D9D91EEC1AC800392929 /* image_text_homescreen@2x.png */,
-				5BE0D9DA1EEC1AC800392929 /* image_text_homescreen@3x.png */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 		5BB10CE11EEBFA0500F93FBE /* SignInViewController */ = {
@@ -273,6 +252,27 @@
 				5DE208DDC741A694D73C97FB /* Pods-TawsilaUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		81CB2E661EED19DA00D400FC /* SliderMenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				81CB2E671EED19DA00D400FC /* VSCDetailViewController.swift */,
+				81CB2E681EED19DA00D400FC /* VSCMenuOptionManager.swift */,
+				81CB2E691EED19DA00D400FC /* VSCMenuViewController.swift */,
+				81CB2E6A1EED19DA00D400FC /* VSCSlidingPanelViewController.swift */,
+			);
+			path = SliderMenuViewController;
+			sourceTree = "<group>";
+		};
+		81CB2E6F1EED1B7F00D400FC /* CreateNewAccount */ = {
+			isa = PBXGroup;
+			children = (
+				81CB2E701EED1BD700D400FC /* CreateNewAccount.swift */,
+				81CB2E711EED1BD700D400FC /* CreateNewAccount.xib */,
+			);
+			name = CreateNewAccount;
+			path = SliderMenuViewController;
 			sourceTree = "<group>";
 		};
 		B6E6273C0AB35D65D7360AF9 /* Frameworks */ = {
@@ -402,21 +402,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BE0D9DD1EEC1AC800392929 /* app_screen_background@3x.png in Resources */,
-				5BE0D9DB1EEC1AC800392929 /* app_screen_background.png in Resources */,
 				5BB10CD31EEBEB4E00F93FBE /* SignInOrCreateNewAccount.xib in Resources */,
 				045CF6FC1EEC7A800052DBC6 /* Assets.xcassets in Resources */,
-				5BE0D9DC1EEC1AC800392929 /* app_screen_background@2x.png in Resources */,
-				5BE0D9DF1EEC1AC800392929 /* homescreenbg@2x.png in Resources */,
-				5BE0D9E11EEC1AC800392929 /* image_text_homescreen.png in Resources */,
 				045CF7001EEC7A9F0052DBC6 /* Main.storyboard in Resources */,
 				045CF7021EEC7AB80052DBC6 /* Info.plist in Resources */,
 				045CF6FF1EEC7A9F0052DBC6 /* LaunchScreen.storyboard in Resources */,
-				5BE0D9E21EEC1AC800392929 /* image_text_homescreen@2x.png in Resources */,
-				5BE0D9E01EEC1AC800392929 /* homescreenbg@3x.png in Resources */,
-				5BE0D9DE1EEC1AC800392929 /* homescreenbg.png in Resources */,
+				81CB2E731EED1BD700D400FC /* CreateNewAccount.xib in Resources */,
 				5BB10CE51EEBFA1700F93FBE /* SignInViewController.xib in Resources */,
-				5BE0D9E31EEC1AC800392929 /* image_text_homescreen@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,10 +573,15 @@
 			files = (
 				0439CA7C1EEC50B1008E4F78 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				5BB10C9F1EEBEA8500F93FBE /* ViewController.swift in Sources */,
+				81CB2E6D1EED19DA00D400FC /* VSCMenuViewController.swift in Sources */,
 				0439CA7E1EEC50B1008E4F78 /* Utility.swift in Sources */,
 				045CF6FA1EEC7A010052DBC6 /* AppDelegate.swift in Sources */,
+				81CB2E6B1EED19DA00D400FC /* VSCDetailViewController.swift in Sources */,
 				5BB10CD21EEBEB4E00F93FBE /* SignInOrCreateNewAccount.swift in Sources */,
+				81CB2E6E1EED19DA00D400FC /* VSCSlidingPanelViewController.swift in Sources */,
+				81CB2E721EED1BD700D400FC /* CreateNewAccount.swift in Sources */,
 				5BB10CE41EEBFA1700F93FBE /* SignInViewController.swift in Sources */,
+				81CB2E6C1EED19DA00D400FC /* VSCMenuOptionManager.swift in Sources */,
 				0439CA7D1EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				5BB10CA51EEBEA8600F93FBE /* Tawsila.xcdatamodeld in Sources */,
 				0439CA7B1EEC50B1008E4F78 /* Constant.swift in Sources */,

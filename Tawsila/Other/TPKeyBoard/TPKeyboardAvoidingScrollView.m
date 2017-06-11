@@ -29,6 +29,7 @@
 
 -(void)awakeFromNib {
     [self setup];
+    [super awakeFromNib];
 }
 
 -(void)dealloc {

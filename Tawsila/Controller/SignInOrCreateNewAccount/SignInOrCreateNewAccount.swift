@@ -9,10 +9,12 @@
 import UIKit
 
 class SignInOrCreateNewAccount: UIViewController {
+    @IBOutlet var btnSignIn: UIButton!
+    @IBOutlet var btnCreateNewAccount: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
     }
 
@@ -20,16 +22,14 @@ class SignInOrCreateNewAccount: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func actionSignIn(_ sender: Any) {
+        let obj : SignInViewController = SignInViewController(nibName: "SignInViewController", bundle: nil)
+        navigationController?.pushViewController(obj, animated: true)
     }
-    */
-
+    
+    @IBAction func actionCreateNewAccout(_ sender: Any) {
+        let obj : CreateNewAccount = CreateNewAccount(nibName: "CreateNewAccount", bundle: nil)
+        navigationController?.pushViewController(obj, animated: true)
+    }
 }
