@@ -103,9 +103,9 @@ class HomeViewController: UIViewController ,GMSMapViewDelegate     {
     
     func tapCarBottom(sender:UIButton)  {
         
-//        let popUp : ViewDetailCar = Bundle.main.loadNibNamed("ViewDetailCar", owner: 0, options: nil)![0] as? UIView as! ViewDetailCar
-//        popUp.frame = self.view.frame
-//        self.view.addSubview(popUp)
+        let popUp : ViewDetailCar = Bundle.main.loadNibNamed("ViewDetailCar", owner: 0, options: nil)![0] as? UIView as! ViewDetailCar
+        popUp.frame = self.view.frame
+        self.view.addSubview(popUp)
     }
     
     // MARK:
