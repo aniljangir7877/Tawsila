@@ -35,6 +35,7 @@
 		81CB2E731EED1BD700D400FC /* CreateNewAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81CB2E711EED1BD700D400FC /* CreateNewAccount.xib */; };
 		92564FC01EEF09F300C59A4E /* ViewDetailCar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92564FBF1EEF09F300C59A4E /* ViewDetailCar.xib */; };
 		92564FC21EEF0AE300C59A4E /* ViewDetailCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92564FC11EEF0AE300C59A4E /* ViewDetailCar.swift */; };
+		92564FC41EEF251400C59A4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92564FC31EEF251400C59A4E /* Images.xcassets */; };
 		929D98F11EEEB26100A8E598 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 929D98E31EEEB26100A8E598 /* LICENSE.txt */; };
 		929D98F21EEEB26100A8E598 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929D98E41EEEB26100A8E598 /* Roboto-Black.ttf */; };
 		929D98F31EEEB26100A8E598 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929D98E51EEEB26100A8E598 /* Roboto-BlackItalic.ttf */; };
@@ -112,6 +113,7 @@
 		902A6B97238E8A10D5B05059 /* Pods_TawsilaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TawsilaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92564FBF1EEF09F300C59A4E /* ViewDetailCar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewDetailCar.xib; path = "Tawsila/Custom View/ViewDetailCar.xib"; sourceTree = SOURCE_ROOT; };
 		92564FC11EEF0AE300C59A4E /* ViewDetailCar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDetailCar.swift; path = "Tawsila/Custom View/ViewDetailCar.swift"; sourceTree = SOURCE_ROOT; };
+		92564FC31EEF251400C59A4E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		929D98E31EEEB26100A8E598 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		929D98E41EEEB26100A8E598 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		929D98E51EEEB26100A8E598 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				5BB10CCD1EEBEAE900F93FBE /* Appdelegate */,
 				5BB10CCE1EEBEAE900F93FBE /* Controller */,
 				929D98FF1EEEB37E00A8E598 /* CustomView */,
+				92564FC31EEF251400C59A4E /* Images.xcassets */,
 			);
 			path = Tawsila;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BB10CD31EEBEB4E00F93FBE /* SignInOrCreateNewAccount.xib in Resources */,
+				92564FC41EEF251400C59A4E /* Images.xcassets in Resources */,
 				929D98F41EEEB26100A8E598 /* Roboto-Bold.ttf in Resources */,
 				929D98FB1EEEB26100A8E598 /* Roboto-Regular.ttf in Resources */,
 				045CF6FC1EEC7A800052DBC6 /* Assets.xcassets in Resources */,
@@ -844,13 +848,16 @@
 			baseConfigurationReference = 9C408D14D3B050F1B0661DF2 /* Pods-Tawsila.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = GH42HPV99Q;
 				INFOPLIST_FILE = Tawsila/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scientificweb.Tawsila;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tawsila/Tawsila-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -859,13 +866,16 @@
 			baseConfigurationReference = 0B6B5F2306DAE308EB562E74 /* Pods-Tawsila.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = GH42HPV99Q;
 				INFOPLIST_FILE = Tawsila/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scientificweb.Tawsila;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tawsila/Tawsila-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
