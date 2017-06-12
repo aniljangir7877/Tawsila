@@ -21,6 +21,12 @@ class SignInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func tapSignin(_ sender: Any) {
+        
+        let obj : HomeViewController = HomeViewController(nibName: "HomeViewController", bundle: Bundle.main )
+        self.navigationController?.pushViewController(obj, animated: true)
+
+    }
 
     /*
     // MARK: - Navigation
