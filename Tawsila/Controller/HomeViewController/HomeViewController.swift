@@ -25,10 +25,11 @@ class HomeViewController: UIViewController ,GMSMapViewDelegate     {
     @IBOutlet var imageDestDot: UIImageView!
     @IBOutlet var imagePicDot: UIImageView!
     
+    @IBOutlet var buttonConfirmBooking: UIButton!
     var acController = GMSAutocompleteViewController()
     var locationManager = CLLocationManager()
     
-    @IBOutlet var bottomView: UIView!
+    @IBOutlet var viewBottom: UIView!
     @IBOutlet var scrollViewCars: UIScrollView!
     
     override func viewDidLoad()
@@ -42,6 +43,9 @@ class HomeViewController: UIViewController ,GMSMapViewDelegate     {
        
         viewDestinationAddress.layer.borderColor = UIColor.lightGray.cgColor
         viewDestinationAddress.layer.borderWidth = 1
+        viewDestinationAddress.isHidden = true
+        
+        buttonConfirmBooking.layer.cornerRadius = 3
         
         // -- Locaton Manager
         
@@ -115,6 +119,11 @@ class HomeViewController: UIViewController ,GMSMapViewDelegate     {
         imageDestDot.tintColor = UIColor.red
         imageDestDot.image = imageDestDot.image?.withRenderingMode(.alwaysTemplate)
         
+        viewDestinationAddress.isHidden = false
+        
+        UIView.animate(withDuration: 0.2) { 
+            self.viewBottom.frame =  CGRect(x: 0, y: Constant.ScreenSize.SCREEN_HEIGHT  , width: Constant.ScreenSize.SCREEN_WIDTH, height: 134)
+        }
     }
     
     @IBAction func tapRideLater(_ sender: Any) {
@@ -169,7 +178,8 @@ class HomeViewController: UIViewController ,GMSMapViewDelegate     {
                     self.lblPickAddress.text = addressString
                 }
             }
-            catch{
+            catch
+            {
                 print("error")
             }
             

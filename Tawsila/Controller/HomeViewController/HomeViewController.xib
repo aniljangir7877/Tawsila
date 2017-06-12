@@ -19,13 +19,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Tawsila" customModuleProvider="target">
             <connections>
-                <outlet property="bottomView" destination="KLv-B0-Qxj" id="Ug5-DT-hxI"/>
+                <outlet property="buttonConfirmBooking" destination="E8c-pP-Jbc" id="JPw-r2-D60"/>
                 <outlet property="imageDestDot" destination="sob-Xg-Jgj" id="KEa-7k-ICo"/>
                 <outlet property="imagePicDot" destination="DcS-6B-3AI" id="cLr-le-ogG"/>
                 <outlet property="lblDestinationAddress" destination="45l-Ss-92a" id="nza-6p-dPa"/>
                 <outlet property="lblPickAddress" destination="1by-EO-A0U" id="Tmv-wc-NBw"/>
                 <outlet property="scrollViewCars" destination="bNi-LM-BgP" id="KUQ-cg-cfY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewBottom" destination="KLv-B0-Qxj" id="YG2-ba-qg3"/>
                 <outlet property="viewDestinationAddress" destination="ecD-c4-awm" id="MAq-Jl-dVv"/>
                 <outlet property="viewForMap" destination="iYG-vS-5jL" id="0Im-Xz-FOK"/>
                 <outlet property="viewPickAddress" destination="MWc-Vk-Dvz" id="0yX-JE-PJW"/>
@@ -41,6 +42,15 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8c-pP-Jbc">
+                    <rect key="frame" x="8" y="624" width="359" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.71372549019999998" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
+                    <state key="normal" title="Comfirm Booking !">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KLv-B0-Qxj">
                     <rect key="frame" x="0.0" y="533" width="375" height="134"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
