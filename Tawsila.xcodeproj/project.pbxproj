@@ -33,6 +33,10 @@
 		81CB2E6E1EED19DA00D400FC /* VSCSlidingPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB2E6A1EED19DA00D400FC /* VSCSlidingPanelViewController.swift */; };
 		81CB2E721EED1BD700D400FC /* CreateNewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB2E701EED1BD700D400FC /* CreateNewAccount.swift */; };
 		81CB2E731EED1BD700D400FC /* CreateNewAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81CB2E711EED1BD700D400FC /* CreateNewAccount.xib */; };
+		92DEEE791EEE8C8B001B5DCA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DEEE741EEE8C8B001B5DCA /* HomeViewController.swift */; };
+		92DEEE7A1EEE8C8B001B5DCA /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92DEEE751EEE8C8B001B5DCA /* HomeViewController.xib */; };
+		92DEEE7B1EEE8C8B001B5DCA /* RideLaterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DEEE771EEE8C8B001B5DCA /* RideLaterVC.swift */; };
+		92DEEE7C1EEE8C8B001B5DCA /* RideLaterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92DEEE781EEE8C8B001B5DCA /* RideLaterVC.xib */; };
 		985F9BACAFDA64484ADF106D /* Pods_Tawsila.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4CA21A746696DD59B2B54F /* Pods_Tawsila.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +93,10 @@
 		81CB2E701EED1BD700D400FC /* CreateNewAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewAccount.swift; path = Tawsila/Controller/CreateNewAccount/CreateNewAccount.swift; sourceTree = SOURCE_ROOT; };
 		81CB2E711EED1BD700D400FC /* CreateNewAccount.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateNewAccount.xib; path = Tawsila/Controller/CreateNewAccount/CreateNewAccount.xib; sourceTree = SOURCE_ROOT; };
 		902A6B97238E8A10D5B05059 /* Pods_TawsilaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TawsilaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92DEEE741EEE8C8B001B5DCA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		92DEEE751EEE8C8B001B5DCA /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		92DEEE771EEE8C8B001B5DCA /* RideLaterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideLaterVC.swift; sourceTree = "<group>"; };
+		92DEEE781EEE8C8B001B5DCA /* RideLaterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RideLaterVC.xib; sourceTree = "<group>"; };
 		9C408D14D3B050F1B0661DF2 /* Pods-Tawsila.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tawsila.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tawsila/Pods-Tawsila.debug.xcconfig"; sourceTree = "<group>"; };
 		C58DF0FD146BA2327FE74A07 /* Pods_TawsilaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TawsilaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC4CA21A746696DD59B2B54F /* Pods_Tawsila.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tawsila.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +226,8 @@
 				81CB2E661EED19DA00D400FC /* SliderMenuViewController */,
 				5BB10CE11EEBFA0500F93FBE /* SignInViewController */,
 				5BB10CCF1EEBEB3B00F93FBE /* SignInOrCreateNewAccount */,
+				92DEEE731EEE8C8B001B5DCA /* HomeViewController */,
+				92DEEE761EEE8C8B001B5DCA /* RideLaterViewController */,
 				81CB2E6F1EED1B7F00D400FC /* CreateNewAccount */,
 			);
 			path = Controller;
@@ -274,6 +284,26 @@
 			name = CreateNewAccount;
 			path = SliderMenuViewController;
 			sourceTree = "<group>";
+		};
+		92DEEE731EEE8C8B001B5DCA /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				92DEEE741EEE8C8B001B5DCA /* HomeViewController.swift */,
+				92DEEE751EEE8C8B001B5DCA /* HomeViewController.xib */,
+			);
+			name = HomeViewController;
+			path = Tawsila/Controller/HomeViewController;
+			sourceTree = SOURCE_ROOT;
+		};
+		92DEEE761EEE8C8B001B5DCA /* RideLaterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				92DEEE771EEE8C8B001B5DCA /* RideLaterVC.swift */,
+				92DEEE781EEE8C8B001B5DCA /* RideLaterVC.xib */,
+			);
+			name = RideLaterViewController;
+			path = Tawsila/Controller/RideLaterViewController;
+			sourceTree = SOURCE_ROOT;
 		};
 		B6E6273C0AB35D65D7360AF9 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -406,9 +436,11 @@
 				045CF6FC1EEC7A800052DBC6 /* Assets.xcassets in Resources */,
 				045CF7001EEC7A9F0052DBC6 /* Main.storyboard in Resources */,
 				045CF7021EEC7AB80052DBC6 /* Info.plist in Resources */,
+				92DEEE7C1EEE8C8B001B5DCA /* RideLaterVC.xib in Resources */,
 				045CF6FF1EEC7A9F0052DBC6 /* LaunchScreen.storyboard in Resources */,
 				81CB2E731EED1BD700D400FC /* CreateNewAccount.xib in Resources */,
 				5BB10CE51EEBFA1700F93FBE /* SignInViewController.xib in Resources */,
+				92DEEE7A1EEE8C8B001B5DCA /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,10 +604,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0439CA7C1EEC50B1008E4F78 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				92DEEE7B1EEE8C8B001B5DCA /* RideLaterVC.swift in Sources */,
 				5BB10C9F1EEBEA8500F93FBE /* ViewController.swift in Sources */,
 				81CB2E6D1EED19DA00D400FC /* VSCMenuViewController.swift in Sources */,
 				0439CA7E1EEC50B1008E4F78 /* Utility.swift in Sources */,
 				045CF6FA1EEC7A010052DBC6 /* AppDelegate.swift in Sources */,
+				92DEEE791EEE8C8B001B5DCA /* HomeViewController.swift in Sources */,
 				81CB2E6B1EED19DA00D400FC /* VSCDetailViewController.swift in Sources */,
 				5BB10CD21EEBEB4E00F93FBE /* SignInOrCreateNewAccount.swift in Sources */,
 				81CB2E6E1EED19DA00D400FC /* VSCSlidingPanelViewController.swift in Sources */,

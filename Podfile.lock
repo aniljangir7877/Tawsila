@@ -1,5 +1,12 @@
 PODS:
   - Alamofire (4.4.0)
+  - GoogleMaps (2.3.0):
+    - GoogleMaps/Maps (= 2.3.0)
+  - GoogleMaps/Base (2.3.0)
+  - GoogleMaps/Maps (2.3.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.3.0):
+    - GoogleMaps/Base (= 2.3.0)
   - RappleProgressHUD (2.3.0)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
@@ -7,14 +14,18 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - GoogleMaps
+  - GooglePlaces
   - RappleProgressHUD
   - SDWebImage (~> 3.8)
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  GoogleMaps: 340a6a0bebd17c2db8abcd3921976c7c53c86cb8
+  GooglePlaces: 74d322c74184ea4576184089b496d291cf0dcd38
   RappleProgressHUD: d29a931f7e867e9d9c3b88831f62e8366976eb41
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: b0ef04bcdb226fac3b22684c43ab8ca4f20be6a7
+PODFILE CHECKSUM: 7674e04ecf9f5174aeb0216af992178e8a56f788
 
 COCOAPODS: 1.2.1
