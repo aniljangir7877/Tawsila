@@ -32,6 +32,8 @@ class HomeViewController: UIViewController ,GMSMapViewDelegate     {
     @IBOutlet var viewBottom: UIView!
     @IBOutlet var scrollViewCars: UIScrollView!
     
+    @IBOutlet var viewEstimate: UIView!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -46,6 +48,11 @@ class HomeViewController: UIViewController ,GMSMapViewDelegate     {
         viewDestinationAddress.isHidden = true
         
         buttonConfirmBooking.layer.cornerRadius = 3
+        
+        viewEstimate.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1).cgColor
+        viewEstimate.layer.borderWidth = 0.5
+        viewEstimate.layer.cornerRadius = 3
+
         
         // -- Locaton Manager
         
