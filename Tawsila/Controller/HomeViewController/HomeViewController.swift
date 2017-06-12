@@ -154,9 +154,6 @@ class HomeViewController: UIViewController ,GMSMapViewDelegate     {
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
         
-        //  print(position)
-        
-        //   NSString urlString = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=true&language=ENGLISH",locationResion.latitude,locationResion.longitude];
         
         let string:String = String (format: "http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=true&language=ENGLISH", position.target.latitude,position.target.longitude)
         
@@ -168,14 +165,20 @@ class HomeViewController: UIViewController ,GMSMapViewDelegate     {
             
             do
             {
-                
                 if (response.result.value != nil)
                 {
                     let array : NSArray = ((response.result.value as AnyObject).object(forKey:"results") as! NSArray)
-                    let dic = array.object(at: 0) as! NSDictionary
-                    let addressString = dic .object(forKey: "formatted_address") as! String
-                    
-                    self.lblPickAddress.text = addressString
+                
+                    if (array.count > 0)
+                    {
+                        let dic = array.object(at: 0) as! NSDictionary
+                        let addressString = dic .object(forKey: "formatted_address") as! String
+                        self.lblPickAddress.text = addressString
+                    }
+                }
+                else
+                {
+                    self.lblPickAddress.text = "location not found"
                 }
             }
             catch
@@ -204,12 +207,9 @@ class HomeViewController: UIViewController ,GMSMapViewDelegate     {
         //        acController.delegate = self as? GMSAutocompleteViewControllerDelegate;
         //        present(acController, animated: true, completion: nil)
         //        acController.delegate = self as Any as? GMSAutocompleteViewControllerDelegate
-        //
+
     }
-    
-    
-    
-    
+
 }
 
 // MARK:
