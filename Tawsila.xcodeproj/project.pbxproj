@@ -47,8 +47,6 @@
 		929D98FC1EEEB26100A8E598 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929D98EE1EEEB26100A8E598 /* Roboto-Thin.ttf */; };
 		929D98FD1EEEB26100A8E598 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929D98EF1EEEB26100A8E598 /* Roboto-ThinItalic.ttf */; };
 		929D98FE1EEEB26100A8E598 /* Roboto.zip in Resources */ = {isa = PBXBuildFile; fileRef = 929D98F01EEEB26100A8E598 /* Roboto.zip */; };
-		929D99011EEEB3B400A8E598 /* ViewDetailCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929D99001EEEB3B400A8E598 /* ViewDetailCar.swift */; };
-		929D99031EEEB3CE00A8E598 /* ViewDetailCar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929D99021EEEB3CE00A8E598 /* ViewDetailCar.xib */; };
 		92DEEE791EEE8C8B001B5DCA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DEEE741EEE8C8B001B5DCA /* HomeViewController.swift */; };
 		92DEEE7A1EEE8C8B001B5DCA /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92DEEE751EEE8C8B001B5DCA /* HomeViewController.xib */; };
 		92DEEE7B1EEE8C8B001B5DCA /* RideLaterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DEEE771EEE8C8B001B5DCA /* RideLaterVC.swift */; };
@@ -124,8 +122,6 @@
 		929D98EE1EEEB26100A8E598 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		929D98EF1EEEB26100A8E598 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		929D98F01EEEB26100A8E598 /* Roboto.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Roboto.zip; sourceTree = "<group>"; };
-		929D99001EEEB3B400A8E598 /* ViewDetailCar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDetailCar.swift; sourceTree = "<group>"; };
-		929D99021EEEB3CE00A8E598 /* ViewDetailCar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewDetailCar.xib; sourceTree = "<group>"; };
 		92DEEE741EEE8C8B001B5DCA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		92DEEE751EEE8C8B001B5DCA /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		92DEEE771EEE8C8B001B5DCA /* RideLaterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideLaterVC.swift; sourceTree = "<group>"; };
@@ -354,8 +350,6 @@
 		929D98FF1EEEB37E00A8E598 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				929D99001EEEB3B400A8E598 /* ViewDetailCar.swift */,
-				929D99021EEEB3CE00A8E598 /* ViewDetailCar.xib */,
 			);
 			name = CustomView;
 			path = ../../Tawsila222/Tawsila/CustomView;
@@ -516,7 +510,6 @@
 				045CF6FC1EEC7A800052DBC6 /* Assets.xcassets in Resources */,
 				045CF7001EEC7A9F0052DBC6 /* Main.storyboard in Resources */,
 				045CF7021EEC7AB80052DBC6 /* Info.plist in Resources */,
-				929D99031EEEB3CE00A8E598 /* ViewDetailCar.xib in Resources */,
 				92DEEE7C1EEE8C8B001B5DCA /* RideLaterVC.xib in Resources */,
 				929D98F71EEEB26100A8E598 /* Roboto-Light.ttf in Resources */,
 				929D98F21EEEB26100A8E598 /* Roboto-Black.ttf in Resources */,
@@ -707,7 +700,6 @@
 				5BB10CD21EEBEB4E00F93FBE /* SignInOrCreateNewAccount.swift in Sources */,
 				81CB2E6E1EED19DA00D400FC /* VSCSlidingPanelViewController.swift in Sources */,
 				81CB2E721EED1BD700D400FC /* CreateNewAccount.swift in Sources */,
-				929D99011EEEB3B400A8E598 /* ViewDetailCar.swift in Sources */,
 				5BB10CE41EEBFA1700F93FBE /* SignInViewController.swift in Sources */,
 				81CB2E6C1EED19DA00D400FC /* VSCMenuOptionManager.swift in Sources */,
 				0439CA7D1EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
