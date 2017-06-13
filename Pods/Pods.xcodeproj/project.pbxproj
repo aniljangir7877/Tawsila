@@ -111,10 +111,10 @@
 		09C094E3603DAC8B11D1A5A684051E65 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AE381C05E466581E374F76B68F6B299 /* UIButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+WebCache.m"; path = "SDWebImage/UIButton+WebCache.m"; sourceTree = "<group>"; };
 		0C5C5470D942A10F2CCD0FBAF1788A17 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
-		0EF9C7C5F575B4FCF952FD3F12DCF89C /* Pods_TawsilaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TawsilaUITests.framework; path = "Pods-TawsilaUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EF9C7C5F575B4FCF952FD3F12DCF89C /* Pods_TawsilaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TawsilaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		130136E8522752D0E45984F80AC30C59 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
 		1352C7FE8124B81FC03F24E4A261B5E9 /* Pods-TawsilaUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TawsilaUITests-frameworks.sh"; sourceTree = "<group>"; };
-		13FE229FF405478CAC36CD0E707DD7C0 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		13FE229FF405478CAC36CD0E707DD7C0 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		159803404F9BB2C4E237735711471EE3 /* SDWebImageCompat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCompat.m; path = SDWebImage/SDWebImageCompat.m; sourceTree = "<group>"; };
 		2159CBA4E02A99EF5B0D1FAC0A219C32 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+WebCache.h"; path = "SDWebImage/UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		24DF231FBAD54FEE0092F87212C95ABA /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MultiFormat.m"; path = "SDWebImage/UIImage+MultiFormat.m"; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		250470DE1B12E4FD75CDEC72A4CCF5E4 /* SDWebImageDecoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDecoder.h; path = SDWebImage/SDWebImageDecoder.h; sourceTree = "<group>"; };
 		253E8F6F7B3911036BC63BE85D39733F /* RappleActivityIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RappleActivityIndicatorView.swift; path = Pod/Classes/RappleActivityIndicatorView.swift; sourceTree = "<group>"; };
 		25995C28E3E8359FB6A0063B10F662F9 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
-		28C00284398E0964785FD69BCE44922C /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28C00284398E0964785FD69BCE44922C /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEE5A8E198B89A81F34EAAFBBBC0BCD /* SDImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCache.m; path = SDWebImage/SDImageCache.m; sourceTree = "<group>"; };
 		2D0869441911E2F232B559143292F5E1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D2096CD141AC8EF9D1A1F57CA88941F /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		3356B14230F4822191746815C891969D /* RappleAIPrivate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RappleAIPrivate.swift; path = Pod/Classes/RappleAIPrivate.swift; sourceTree = "<group>"; };
 		35CD2A311ECA804924230B1BF3ED32B3 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "SDWebImage/UIImage+MultiFormat.h"; sourceTree = "<group>"; };
 		3CC39D0B3EAC9C5071FB991077209A3A /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "SDWebImage/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
-		3CD92FB8B1F33F06CA9405ABF9BFB98C /* Pods-TawsilaUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TawsilaUITests.modulemap"; sourceTree = "<group>"; };
+		3CD92FB8B1F33F06CA9405ABF9BFB98C /* Pods-TawsilaUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TawsilaUITests.modulemap"; sourceTree = "<group>"; };
 		3F27840A7BAFA99157A2EB40C88F3FA0 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		45AF0AA802D46F923A2329F01C121CE4 /* Pods-TawsilaUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TawsilaUITests-resources.sh"; sourceTree = "<group>"; };
 		46E31193ED8B4145B030884B84565758 /* Pods-Tawsila-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tawsila-frameworks.sh"; sourceTree = "<group>"; };
@@ -158,28 +158,28 @@
 		6C984C5A47BC39E8A7EF212D66CDAA6B /* RappleProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RappleProgressHUD-umbrella.h"; sourceTree = "<group>"; };
 		6CE29CF4FF5C02028C0A06EC0D2A6120 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6D9D4F679B5DD03EF621171521D33D2D /* Pods-Tawsila-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tawsila-acknowledgements.markdown"; sourceTree = "<group>"; };
-		76B0C4F03E9FFB34903A20CE8F547AA1 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76B0C4F03E9FFB34903A20CE8F547AA1 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7938DC788DDCD6D04E40C44FE8B169EF /* Pods-TawsilaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TawsilaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		798B9E4FA6BFD6C688CB331B7B60BD8F /* Pods-TawsilaTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TawsilaTests-umbrella.h"; sourceTree = "<group>"; };
 		7A784F73CD5E0F9D0799E708F7C1932E /* Pods-Tawsila.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tawsila.release.xcconfig"; sourceTree = "<group>"; };
 		7B49406865825182827047FA27E74369 /* Pods-TawsilaUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TawsilaUITests-dummy.m"; sourceTree = "<group>"; };
 		7C6B0D2AFB76991EA4E6A9E9A534A97F /* SDWebImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SDWebImage-dummy.m"; sourceTree = "<group>"; };
 		8031DC482F2AEAF71D5D0A8519EDFF19 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
-		837D085938D9AD013DCA21FE6AF0E736 /* Pods_Tawsila.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Tawsila.framework; path = "Pods-Tawsila.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		837D085938D9AD013DCA21FE6AF0E736 /* Pods_Tawsila.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tawsila.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BBB3F5C00B4D4B2AB5FA37A890BB56 /* SDImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = SDWebImage/SDImageCache.h; sourceTree = "<group>"; };
 		8B97EE77C66E7B6AD4AC12E852A1C2A3 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		8BD0ED16E7EFAF150A3AD35217CE521F /* Pods-Tawsila-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tawsila-umbrella.h"; sourceTree = "<group>"; };
 		8CB1D5E100703D6C031FF6520C37EBCF /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		8EB11086259B4551169AF37B5CB9D10D /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		904D9A1C5520EA73F90BF2481E1A486C /* UIImage+GIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+GIF.h"; path = "SDWebImage/UIImage+GIF.h"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9627F48C8BD51CC742359EE14C6B2410 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		965B71BE61C92B5D153A2459E38ED289 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		96F90E4A82956EFC1D819EAF5DC7B32B /* Pods-TawsilaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TawsilaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		974C76251325098CAAAEB26D8B93DD41 /* RappleProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RappleProgressHUD-dummy.m"; sourceTree = "<group>"; };
 		994551E28CDBB8AF9F39DD1EB45D4A0D /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		9A04577E4F63842DDCA2EBEA9AE44A38 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
-		9A5F0BEB485E07509FD99D9B836A14E1 /* Pods-TawsilaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TawsilaTests.modulemap"; sourceTree = "<group>"; };
+		9A5F0BEB485E07509FD99D9B836A14E1 /* Pods-TawsilaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TawsilaTests.modulemap"; sourceTree = "<group>"; };
 		9BFED0DE53C32E547D2FEAD7BDAB7D91 /* Pods-TawsilaTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TawsilaTests-dummy.m"; sourceTree = "<group>"; };
 		9D729FB790D238F47D7F52A31BFB7440 /* SDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = SDWebImage/SDWebImageManager.h; sourceTree = "<group>"; };
 		A24A6FF350A40705595A8E7ABCF2B33F /* Pods-TawsilaTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TawsilaTests-resources.sh"; sourceTree = "<group>"; };
@@ -187,18 +187,18 @@
 		A6E441B94ABBB066B4A22A87A8AF5358 /* SDWebImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageManager.m; path = SDWebImage/SDWebImageManager.m; sourceTree = "<group>"; };
 		A863639DE8CAB44BB23579E776B28398 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImagePrefetcher.h; path = SDWebImage/SDWebImagePrefetcher.h; sourceTree = "<group>"; };
 		AB03222806F2E6838CAA0CFCC86672F6 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
-		ABADE17A0C114A64C210B648868625B0 /* Pods_TawsilaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TawsilaTests.framework; path = "Pods-TawsilaTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABADE17A0C114A64C210B648868625B0 /* Pods_TawsilaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TawsilaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF38A6257A00404A3070183F28C76715 /* SDWebImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-prefix.pch"; sourceTree = "<group>"; };
-		AFD09A649F10ED6E9CBA5298CB0E33DC /* RappleProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RappleProgressHUD.framework; path = RappleProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFD09A649F10ED6E9CBA5298CB0E33DC /* RappleProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RappleProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B04468160BB9194C848E53148FD52D9D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B33B6A38ADC53723926AFAAB6DFF0DF7 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		B746A92A4C1C2F9461866A8ED2BA8786 /* SDWebImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDWebImage.xcconfig; sourceTree = "<group>"; };
 		B89D1108698849928889D9C39BF500FB /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		BAF6F7296599D549979C1AB79113ED2D /* RappleProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RappleProgressHUD.modulemap; sourceTree = "<group>"; };
+		BAF6F7296599D549979C1AB79113ED2D /* RappleProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = RappleProgressHUD.modulemap; sourceTree = "<group>"; };
 		C13302242DD2298EE3D46A32C9A87C31 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "SDWebImage/NSData+ImageContentType.h"; sourceTree = "<group>"; };
 		C977D6704741FA2E494DAA798C0F341E /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+HighlightedWebCache.h"; path = "SDWebImage/UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
 		CB99C672F2C4D0EA7D14311D3DCAAFF7 /* Pods-Tawsila-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tawsila-acknowledgements.plist"; sourceTree = "<group>"; };
-		CB9F03D376D138855902FA4D9DE6BBEA /* SDWebImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SDWebImage.modulemap; sourceTree = "<group>"; };
+		CB9F03D376D138855902FA4D9DE6BBEA /* SDWebImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SDWebImage.modulemap; sourceTree = "<group>"; };
 		CBC54BD4AE841A05980015A38D5253B5 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		CCF8921868099104C698D96CF5ECB0CC /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "SDWebImage/UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		CEA5E981CC9F86CC8BE0BD6C8ABCD4AF /* Pods-TawsilaUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TawsilaUITests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 		E6469AE9FDF85F75EBE911C5B43C17D1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E67BD320E4EC9071CFDD87D081A8C18D /* Pods-Tawsila-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tawsila-resources.sh"; sourceTree = "<group>"; };
 		E7F10D432EB0FD1FCD0E5A8BD13E669F /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		EB85783B74867D89BF950F40BF01D87A /* Pods-Tawsila.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Tawsila.modulemap"; sourceTree = "<group>"; };
+		EB85783B74867D89BF950F40BF01D87A /* Pods-Tawsila.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Tawsila.modulemap"; sourceTree = "<group>"; };
 		EE9267BB4D4EC28EA72C6A7F73020A33 /* Pods-TawsilaTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TawsilaTests-frameworks.sh"; sourceTree = "<group>"; };
 		F04316A9501CEAA431DD3EA64B1932C1 /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
 		F1D04F84A8AE16CCE436E9199422AC8E /* RappleProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RappleProgressHUD-prefix.pch"; sourceTree = "<group>"; };
@@ -353,7 +353,6 @@
 				D843C63DC6343A040278BDD65BB5C58B /* Validation.swift */,
 				60E672499D59F917C71E62563AB94FDC /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -363,7 +362,6 @@
 				BCAD3EA258685E434202D534FB439416 /* Base */,
 				53276B8AC3383192135140A3F4AEB8D8 /* Maps */,
 			);
-			name = GoogleMaps;
 			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
@@ -381,7 +379,6 @@
 				55D6731E92FFE9CCE6E9F722C872FFC5 /* Frameworks */,
 				66B7192FF3240B028D112A219074FDB9 /* Resources */,
 			);
-			name = GooglePlaces;
 			path = GooglePlaces;
 			sourceTree = "<group>";
 		};
@@ -562,7 +559,6 @@
 				86587BDD7A13D3DC73670D7305204F99 /* Core */,
 				33D1CD4465A089ECE83D7723C2A96DDD /* Support Files */,
 			);
-			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -575,7 +571,6 @@
 				478287B0E186BC6A67C821D25732B485 /* RappleAIUIs.swift */,
 				DCDD36938D79C433BD50BDA90D476895 /* Support Files */,
 			);
-			name = RappleProgressHUD;
 			path = RappleProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -1311,6 +1306,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Alamofire;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;

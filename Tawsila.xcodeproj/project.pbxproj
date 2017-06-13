@@ -33,6 +33,12 @@
 		81CB2E6E1EED19DA00D400FC /* VSCSlidingPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB2E6A1EED19DA00D400FC /* VSCSlidingPanelViewController.swift */; };
 		81CB2E721EED1BD700D400FC /* CreateNewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB2E701EED1BD700D400FC /* CreateNewAccount.swift */; };
 		81CB2E731EED1BD700D400FC /* CreateNewAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81CB2E711EED1BD700D400FC /* CreateNewAccount.xib */; };
+		81E76BE11EEF73E500256FD4 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E76BD91EEF73E500256FD4 /* ChangePasswordViewController.swift */; };
+		81E76BE21EEF73E500256FD4 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81E76BDA1EEF73E500256FD4 /* ChangePasswordViewController.xib */; };
+		81E76BE31EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E76BDC1EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.swift */; };
+		81E76BE41EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81E76BDD1EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.xib */; };
+		81E76BE51EEF73E500256FD4 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E76BDF1EEF73E500256FD4 /* WalletViewController.swift */; };
+		81E76BE61EEF73E500256FD4 /* WalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81E76BE01EEF73E500256FD4 /* WalletViewController.xib */; };
 		92564FC01EEF09F300C59A4E /* ViewDetailCar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92564FBF1EEF09F300C59A4E /* ViewDetailCar.xib */; };
 		92564FC21EEF0AE300C59A4E /* ViewDetailCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92564FC11EEF0AE300C59A4E /* ViewDetailCar.swift */; };
 		92564FC41EEF251400C59A4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92564FC31EEF251400C59A4E /* Images.xcassets */; };
@@ -110,6 +116,12 @@
 		81CB2E6A1EED19DA00D400FC /* VSCSlidingPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSCSlidingPanelViewController.swift; sourceTree = "<group>"; };
 		81CB2E701EED1BD700D400FC /* CreateNewAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewAccount.swift; path = Tawsila/Controller/CreateNewAccount/CreateNewAccount.swift; sourceTree = SOURCE_ROOT; };
 		81CB2E711EED1BD700D400FC /* CreateNewAccount.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateNewAccount.xib; path = Tawsila/Controller/CreateNewAccount/CreateNewAccount.xib; sourceTree = SOURCE_ROOT; };
+		81E76BD91EEF73E500256FD4 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		81E76BDA1EEF73E500256FD4 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		81E76BDC1EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletViewControllerCustomCellTableView.swift; sourceTree = "<group>"; };
+		81E76BDD1EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalletViewControllerCustomCellTableView.xib; sourceTree = "<group>"; };
+		81E76BDF1EEF73E500256FD4 /* WalletViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		81E76BE01EEF73E500256FD4 /* WalletViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalletViewController.xib; sourceTree = "<group>"; };
 		902A6B97238E8A10D5B05059 /* Pods_TawsilaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TawsilaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92564FBF1EEF09F300C59A4E /* ViewDetailCar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewDetailCar.xib; path = "Tawsila/Custom View/ViewDetailCar.xib"; sourceTree = SOURCE_ROOT; };
 		92564FC11EEF0AE300C59A4E /* ViewDetailCar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDetailCar.swift; path = "Tawsila/Custom View/ViewDetailCar.swift"; sourceTree = SOURCE_ROOT; };
@@ -263,6 +275,9 @@
 		5BB10CCE1EEBEAE900F93FBE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				81E76BD81EEF73E500256FD4 /* ChangePasswordViewController */,
+				81E76BDB1EEF73E500256FD4 /* CustomCellTableViewController */,
+				81E76BDE1EEF73E500256FD4 /* WalletViewController */,
 				81CB2E661EED19DA00D400FC /* SliderMenuViewController */,
 				5BB10CE11EEBFA0500F93FBE /* SignInViewController */,
 				5BB10CCF1EEBEB3B00F93FBE /* SignInOrCreateNewAccount */,
@@ -323,6 +338,36 @@
 			);
 			name = CreateNewAccount;
 			path = SliderMenuViewController;
+			sourceTree = "<group>";
+		};
+		81E76BD81EEF73E500256FD4 /* ChangePasswordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				81E76BD91EEF73E500256FD4 /* ChangePasswordViewController.swift */,
+				81E76BDA1EEF73E500256FD4 /* ChangePasswordViewController.xib */,
+			);
+			name = ChangePasswordViewController;
+			path = ../ChangePasswordViewController;
+			sourceTree = "<group>";
+		};
+		81E76BDB1EEF73E500256FD4 /* CustomCellTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				81E76BDC1EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.swift */,
+				81E76BDD1EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.xib */,
+			);
+			name = CustomCellTableViewController;
+			path = ../CustomCellTableViewController;
+			sourceTree = "<group>";
+		};
+		81E76BDE1EEF73E500256FD4 /* WalletViewController */ = {
+			isa = PBXGroup;
+			children = (
+				81E76BDF1EEF73E500256FD4 /* WalletViewController.swift */,
+				81E76BE01EEF73E500256FD4 /* WalletViewController.xib */,
+			);
+			name = WalletViewController;
+			path = ../WalletViewController;
 			sourceTree = "<group>";
 		};
 		929D98E11EEEB26100A8E598 /* Sources */ = {
@@ -473,7 +518,6 @@
 				TargetAttributes = {
 					5BB10C981EEBEA8400F93FBE = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = GH42HPV99Q;
 						ProvisioningStyle = Automatic;
 					};
 					5BB10CAF1EEBEA8600F93FBE = {
@@ -513,6 +557,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81E76BE41EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.xib in Resources */,
+				81E76BE61EEF73E500256FD4 /* WalletViewController.xib in Resources */,
 				5BB10CD31EEBEB4E00F93FBE /* SignInOrCreateNewAccount.xib in Resources */,
 				92564FC41EEF251400C59A4E /* Images.xcassets in Resources */,
 				929D98F41EEEB26100A8E598 /* Roboto-Bold.ttf in Resources */,
@@ -527,6 +573,7 @@
 				929D98F91EEEB26100A8E598 /* Roboto-Medium.ttf in Resources */,
 				929D98F61EEEB26100A8E598 /* Roboto-Italic.ttf in Resources */,
 				045CF6FF1EEC7A9F0052DBC6 /* LaunchScreen.storyboard in Resources */,
+				81E76BE21EEF73E500256FD4 /* ChangePasswordViewController.xib in Resources */,
 				929D98F31EEEB26100A8E598 /* Roboto-BlackItalic.ttf in Resources */,
 				929D98F81EEEB26100A8E598 /* Roboto-LightItalic.ttf in Resources */,
 				929D98FD1EEEB26100A8E598 /* Roboto-ThinItalic.ttf in Resources */,
@@ -702,11 +749,14 @@
 			files = (
 				0439CA7C1EEC50B1008E4F78 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				92DEEE7B1EEE8C8B001B5DCA /* RideLaterVC.swift in Sources */,
+				81E76BE31EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.swift in Sources */,
 				5BB10C9F1EEBEA8500F93FBE /* ViewController.swift in Sources */,
+				81E76BE11EEF73E500256FD4 /* ChangePasswordViewController.swift in Sources */,
 				81CB2E6D1EED19DA00D400FC /* VSCMenuViewController.swift in Sources */,
 				0439CA7E1EEC50B1008E4F78 /* Utility.swift in Sources */,
 				045CF6FA1EEC7A010052DBC6 /* AppDelegate.swift in Sources */,
 				92DEEE791EEE8C8B001B5DCA /* HomeViewController.swift in Sources */,
+				81E76BE51EEF73E500256FD4 /* WalletViewController.swift in Sources */,
 				81CB2E6B1EED19DA00D400FC /* VSCDetailViewController.swift in Sources */,
 				5BB10CD21EEBEB4E00F93FBE /* SignInOrCreateNewAccount.swift in Sources */,
 				81CB2E6E1EED19DA00D400FC /* VSCSlidingPanelViewController.swift in Sources */,
@@ -849,7 +899,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = GH42HPV99Q;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tawsila/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -867,7 +917,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = GH42HPV99Q;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tawsila/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

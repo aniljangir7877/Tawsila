@@ -17,7 +17,13 @@ class SignInOrCreateNewAccount: UIViewController {
         navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.backgroundColor = NavigationBackgraoungColor
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

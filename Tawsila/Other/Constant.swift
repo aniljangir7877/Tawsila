@@ -22,7 +22,7 @@ let kAPPName : String = "BLUBUMP"
 
 let USER_DEFAULT = UserDefaults.standard
 let THEME_COLOR = UIColor(red: 33/255.0, green: 134/255.0, blue: 226/255.0, alpha: 1.0)
-
+let NavigationBackgraoungColor = UIColor(red: 163.0/255.0, green: 135.0/255.0, blue: 3.0/255.0, alpha: 1.0) //vikram singh
 
 struct Constant {
     
@@ -206,6 +206,21 @@ extension UIViewController {
     
     func dismissKeyboard() {
         view.endEditing(true)
+    }
+    //bellow two methods are added for back button on navigtation bar by vikram singh
+    func backNavigationButton() ->UIBarButtonItem{
+        
+        let btn1 = UIButton(type: .custom)
+        btn1.setImage(UIImage(named: "backImge"), for: .normal)
+        btn1.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        btn1.addTarget(self, action: #selector(self.actionBackButton), for: .touchUpInside)
+        let item1 = UIBarButtonItem(customView: btn1)
+        navigationItem.setLeftBarButton(item1, animated: true)
+        return item1
+    }
+    
+    func actionBackButton(_ sender: Any)  {
+        navigationController?.popViewController(animated: true)
     }
 }
 
