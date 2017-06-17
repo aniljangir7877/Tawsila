@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "email.png",
+      "filename" : "write-email-envelope-button.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "email (1).png",
+      "filename" : "write-email-envelope-button (1).png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "email (2).png",
+      "filename" : "write-email-envelope-button (2).png",
       "scale" : "3x"
     }
   ],
