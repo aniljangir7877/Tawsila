@@ -52,9 +52,56 @@ class Utility
 	}
     
     
+    //----- SANJAY USE THIS FOR API
     
-    
-    
+    func postDataInDataForm(header: String,  inVC vc: UIViewController,  completion: @escaping (_ responce : NSDictionary,_ message : String, _ status : Bool) -> ()) {
+        
+        //RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
+        
+        let urlString           = NSString(format: "%@%@",BSE_URL,header)
+        
+        let escapedAddress = urlString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        
+        Alamofire.request(escapedAddress!, method: .post, encoding: JSONEncoding.default, headers: nil).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+                print(response)
+                
+                if let JSON = response.result.value {
+                    
+                    
+                    let responce = JSON as! NSDictionary
+                    
+                    
+                    let sucess = responce.object(forKey: "type") as! String
+                    
+                    let message = responce.object(forKey: "msg") as! String
+                    if  sucess == "error"
+                    {
+                        completion(responce,message , false )
+                    }
+                    else
+                    {
+                        completion(responce,message , true )
+                    }
+                    
+                    RappleActivityIndicatorView.stopAnimation()
+                }
+                
+                
+                break
+            case .failure(let error):
+                print(error)
+                Utility.sharedInstance.showAlert(kAPPName, msg:error.localizedDescription , controller: vc)
+                RappleActivityIndicatorView.stopAnimation()
+                break
+                
+                
+            }
+        }
+        
+    }
     
 	
 
@@ -62,7 +109,7 @@ class Utility
         
         //RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
         
-        let urlString           = NSString(format: "%@/%@",BSE_URL,header)
+        let urlString           = NSString(format: "%@%@",BSE_URL,header)
         
         let jsonData            = try! JSONSerialization.data(withJSONObject: parameter, options: .prettyPrinted)
         
@@ -84,11 +131,19 @@ class Utility
                     
                     let responce = JSON as! NSDictionary
                     
-                    let sucess = (responce.object(forKey: "response") as! NSDictionary).object(forKey: "status") as! Bool
                     
-                    let message = (responce.object(forKey: "response") as! NSDictionary).object(forKey: "message") as! String
+                    let sucess = responce.object(forKey: "type") as! String
                     
-                    completion(responce,message , sucess )
+                    let message = responce.object(forKey: "msg") as! String
+                    if  sucess == "error"
+                    {
+                       completion(responce,message , false )
+                    }
+                    else
+                    {
+                        completion(responce,message , true )
+                    }
+                    
                     RappleActivityIndicatorView.stopAnimation()
                 }
                 

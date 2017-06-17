@@ -10,6 +10,8 @@ target 'Tawsila' do
   pod 'SDWebImage', '~>3.8'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'Fabric'
+  pod 'Crashlytics'
   
   # Pods for Tawsila
 

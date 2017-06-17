@@ -10,7 +10,8 @@
 #define Tawsila_Bridging_Header_h
 
 #import "TPKeyboardAvoidingScrollView.h"
-
+#import "SlideNavigationController.h"
+#import "SSKeychain.h"
 
 #endif /* BLUBUMP_Bridging_Header_h */
 

@@ -1,0 +1,6 @@
+framework module Pods_Tawsila {
+  umbrella header "Pods-Tawsila-umbrella.h"
+
+  export *
+  module * { export * }
+}

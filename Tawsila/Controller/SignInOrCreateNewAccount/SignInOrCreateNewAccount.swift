@@ -15,14 +15,18 @@ class SignInOrCreateNewAccount: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
+        AppDelegateVariable.appDelegate.checkNewVerisonAvailabel(viewController: self)
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.backgroundColor = NavigationBackgraoungColor
+        
+        btnSignIn.layer.cornerRadius = 4.0
+        btnSignIn.layer.masksToBounds = true
     }
     override func viewDidDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = false
+//        navigationController?.navigationBar.isHidden = false
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

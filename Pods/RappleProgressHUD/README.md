@@ -5,13 +5,10 @@
 [![Platform](https://img.shields.io/cocoapods/p/RappleProgressHUD.svg?style=flat)](http://cocoapods.org/pods/RappleProgressHUD)
 
 
-User-friendly and easy to use activity / progress indicator view with Swift 3
-
-## Demo
-
+###Demo
 ![demo](Example/Demo/progress225.gif)
 
-## Requirements
+##Requirements
 - Swift 3
 - Xcode 8
 - iOS 8+
@@ -31,11 +28,15 @@ import RappleProgressHUD
 </BR>
 
 RappleActivityIndicatorView can be started using any of the starter methods mentioned below. 
-When calling these starter methods, two basic optional input values can be used to customize UIs.
+When calling these starter methods, two basic input values are required to customize UIs.
 
-**`label`** this is the text value we are gonna display with the animated indicator
+#### `label` 
 
-**`attributes`** this is a dictionary with following Keys.
+this is the text value we are gonna display with the animated indicator
+
+#### `attributes` 
+
+this is a dictionary with following Keys.
 
 - `RappleTintColorKey`               Color of the progress circle and text
 - `RappleScreenBGColorKey`           Background color (full screen background)

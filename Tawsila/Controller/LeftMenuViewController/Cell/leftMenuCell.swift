@@ -9,6 +9,8 @@
 import UIKit
 
 class leftMenuCell: UITableViewCell {
+    @IBOutlet var lblTitle: UILabel!
+    @IBOutlet var imgIcon: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -15,8 +15,9 @@
 		045CF6FA1EEC7A010052DBC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045CF6F91EEC7A010052DBC6 /* AppDelegate.swift */; };
 		045CF6FC1EEC7A800052DBC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045CF6FB1EEC7A800052DBC6 /* Assets.xcassets */; };
 		045CF6FF1EEC7A9F0052DBC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045CF6FD1EEC7A9F0052DBC6 /* LaunchScreen.storyboard */; };
-		045CF7001EEC7A9F0052DBC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045CF6FE1EEC7A9F0052DBC6 /* Main.storyboard */; };
 		045CF7021EEC7AB80052DBC6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 045CF7011EEC7AB80052DBC6 /* Info.plist */; };
+		04FA4CDC1EF5260900CF7618 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA4CDB1EF5260900CF7618 /* SSKeychain.m */; };
+		04FA4CE01EF538C300CF7618 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA4CDF1EF538C300CF7618 /* Reachability.swift */; };
 		25748615852ECA04BAFA9FED /* Pods_TawsilaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58DF0FD146BA2327FE74A07 /* Pods_TawsilaTests.framework */; };
 		52C7F42A8FC7221F0AC4CA93 /* Pods_TawsilaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902A6B97238E8A10D5B05059 /* Pods_TawsilaUITests.framework */; };
 		5BB10C9F1EEBEA8500F93FBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB10C9E1EEBEA8500F93FBE /* ViewController.swift */; };
@@ -27,10 +28,14 @@
 		5BB10CD31EEBEB4E00F93FBE /* SignInOrCreateNewAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB10CD11EEBEB4E00F93FBE /* SignInOrCreateNewAccount.xib */; };
 		5BB10CE41EEBFA1700F93FBE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB10CE21EEBFA1700F93FBE /* SignInViewController.swift */; };
 		5BB10CE51EEBFA1700F93FBE /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB10CE31EEBFA1700F93FBE /* SignInViewController.xib */; };
-		81CB2E6B1EED19DA00D400FC /* VSCDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB2E671EED19DA00D400FC /* VSCDetailViewController.swift */; };
-		81CB2E6C1EED19DA00D400FC /* VSCMenuOptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB2E681EED19DA00D400FC /* VSCMenuOptionManager.swift */; };
-		81CB2E6D1EED19DA00D400FC /* VSCMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB2E691EED19DA00D400FC /* VSCMenuViewController.swift */; };
-		81CB2E6E1EED19DA00D400FC /* VSCSlidingPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB2E6A1EED19DA00D400FC /* VSCSlidingPanelViewController.swift */; };
+		8145BFAA1EF235C100B544A1 /* HomeViewControlle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8145BFA81EF235C100B544A1 /* HomeViewControlle.swift */; };
+		814C6FBA1EF048A600985702 /* MyRidesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C6FB81EF048A600985702 /* MyRidesVC.swift */; };
+		814C6FBB1EF048A600985702 /* MyRidesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814C6FB91EF048A600985702 /* MyRidesVC.xib */; };
+		814C6FBE1EF0572A00985702 /* VSCSliderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C6FBD1EF0572A00985702 /* VSCSliderViewCell.swift */; };
+		814C6FC11EF05A8400985702 /* MyRidesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C6FBF1EF05A8400985702 /* MyRidesTableViewCell.swift */; };
+		814C6FC21EF05A8400985702 /* MyRidesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814C6FC01EF05A8400985702 /* MyRidesTableViewCell.xib */; };
+		814C6FCF1EF0DC4600985702 /* settingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C6FCD1EF0DC4600985702 /* settingTableCell.swift */; };
+		814C6FD01EF0DC4600985702 /* settingTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814C6FCE1EF0DC4600985702 /* settingTableCell.xib */; };
 		81CB2E721EED1BD700D400FC /* CreateNewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB2E701EED1BD700D400FC /* CreateNewAccount.swift */; };
 		81CB2E731EED1BD700D400FC /* CreateNewAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81CB2E711EED1BD700D400FC /* CreateNewAccount.xib */; };
 		81E76BE11EEF73E500256FD4 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E76BD91EEF73E500256FD4 /* ChangePasswordViewController.swift */; };
@@ -39,9 +44,27 @@
 		81E76BE41EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81E76BDD1EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.xib */; };
 		81E76BE51EEF73E500256FD4 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E76BDF1EEF73E500256FD4 /* WalletViewController.swift */; };
 		81E76BE61EEF73E500256FD4 /* WalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81E76BE01EEF73E500256FD4 /* WalletViewController.xib */; };
+		81E76BEC1EEF7F5F00256FD4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E76BEA1EEF7F5F00256FD4 /* SettingViewController.swift */; };
+		81E76BED1EEF7F5F00256FD4 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81E76BEB1EEF7F5F00256FD4 /* SettingViewController.xib */; };
+		81E76BEF1EEF841800256FD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E76BEE1EEF841800256FD4 /* Main.storyboard */; };
+		81F2EBFD1EF18AA60065D2BD /* menu-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 81F2EBEE1EF18AA60065D2BD /* menu-button.png */; };
+		81F2EBFE1EF18AA60065D2BD /* menu-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81F2EBEF1EF18AA60065D2BD /* menu-button@2x.png */; };
+		81F2EBFF1EF18AA60065D2BD /* SlideNavigationContorllerAnimatorFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F2EBF21EF18AA60065D2BD /* SlideNavigationContorllerAnimatorFade.m */; };
+		81F2EC001EF18AA60065D2BD /* SlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F2EBF41EF18AA60065D2BD /* SlideNavigationContorllerAnimatorScale.m */; };
+		81F2EC011EF18AA60065D2BD /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F2EBF61EF18AA60065D2BD /* SlideNavigationContorllerAnimatorScaleAndFade.m */; };
+		81F2EC021EF18AA60065D2BD /* SlideNavigationContorllerAnimatorSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F2EBF81EF18AA60065D2BD /* SlideNavigationContorllerAnimatorSlide.m */; };
+		81F2EC031EF18AA60065D2BD /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F2EBFA1EF18AA60065D2BD /* SlideNavigationContorllerAnimatorSlideAndFade.m */; };
+		81F2EC041EF18AA60065D2BD /* SlideNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F2EBFC1EF18AA60065D2BD /* SlideNavigationController.m */; };
+		81F2EC081EF18D0D0065D2BD /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2EC061EF18D0D0065D2BD /* LeftMenuViewController.swift */; };
+		81F2EC091EF18D0D0065D2BD /* LeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F2EC071EF18D0D0065D2BD /* LeftMenuViewController.xib */; };
+		81F2EC0D1EF190BE0065D2BD /* leftMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2EC0B1EF190BE0065D2BD /* leftMenuCell.swift */; };
+		81F2EC0E1EF190BE0065D2BD /* leftMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F2EC0C1EF190BE0065D2BD /* leftMenuCell.xib */; };
+		81F2EC121EF19AC70065D2BD /* rightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2EC101EF19AC70065D2BD /* rightMenuViewController.swift */; };
+		81F2EC131EF19AC70065D2BD /* rightMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F2EC111EF19AC70065D2BD /* rightMenuViewController.xib */; };
+		81F2EC171EF19B070065D2BD /* rightMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2EC151EF19B070065D2BD /* rightMenuCell.swift */; };
+		81F2EC181EF19B070065D2BD /* rightMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F2EC161EF19B070065D2BD /* rightMenuCell.xib */; };
 		92564FC01EEF09F300C59A4E /* ViewDetailCar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92564FBF1EEF09F300C59A4E /* ViewDetailCar.xib */; };
 		92564FC21EEF0AE300C59A4E /* ViewDetailCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92564FC11EEF0AE300C59A4E /* ViewDetailCar.swift */; };
-		92564FC41EEF251400C59A4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92564FC31EEF251400C59A4E /* Images.xcassets */; };
 		929D98F11EEEB26100A8E598 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 929D98E31EEEB26100A8E598 /* LICENSE.txt */; };
 		929D98F21EEEB26100A8E598 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929D98E41EEEB26100A8E598 /* Roboto-Black.ttf */; };
 		929D98F31EEEB26100A8E598 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929D98E51EEEB26100A8E598 /* Roboto-BlackItalic.ttf */; };
@@ -56,11 +79,10 @@
 		929D98FC1EEEB26100A8E598 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929D98EE1EEEB26100A8E598 /* Roboto-Thin.ttf */; };
 		929D98FD1EEEB26100A8E598 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929D98EF1EEEB26100A8E598 /* Roboto-ThinItalic.ttf */; };
 		929D98FE1EEEB26100A8E598 /* Roboto.zip in Resources */ = {isa = PBXBuildFile; fileRef = 929D98F01EEEB26100A8E598 /* Roboto.zip */; };
-		92DEEE791EEE8C8B001B5DCA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DEEE741EEE8C8B001B5DCA /* HomeViewController.swift */; };
-		92DEEE7A1EEE8C8B001B5DCA /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92DEEE751EEE8C8B001B5DCA /* HomeViewController.xib */; };
+		92DEEE7A1EEE8C8B001B5DCA /* HomeViewControlle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92DEEE751EEE8C8B001B5DCA /* HomeViewControlle.xib */; };
 		92DEEE7B1EEE8C8B001B5DCA /* RideLaterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DEEE771EEE8C8B001B5DCA /* RideLaterVC.swift */; };
-		92DEEE7C1EEE8C8B001B5DCA /* RideLaterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92DEEE781EEE8C8B001B5DCA /* RideLaterVC.xib */; };
 		92DEEE7E1EEE9181001B5DCA /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92DEEE7D1EEE9181001B5DCA /* AddressBook.framework */; };
+		970B2DAD1EF281AC0027F0C3 /* RideLaterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 970B2DAC1EF281AC0027F0C3 /* RideLaterVC.xib */; };
 		985F9BACAFDA64484ADF106D /* Pods_Tawsila.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4CA21A746696DD59B2B54F /* Pods_Tawsila.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,8 +115,10 @@
 		045CF6F91EEC7A010052DBC6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		045CF6FB1EEC7A800052DBC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		045CF6FD1EEC7A9F0052DBC6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		045CF6FE1EEC7A9F0052DBC6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		045CF7011EEC7AB80052DBC6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04FA4CDA1EF5260900CF7618 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		04FA4CDB1EF5260900CF7618 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		04FA4CDF1EF538C300CF7618 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		0B6B5F2306DAE308EB562E74 /* Pods-Tawsila.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tawsila.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tawsila/Pods-Tawsila.release.xcconfig"; sourceTree = "<group>"; };
 		5BB10C991EEBEA8500F93FBE /* Tawsila.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tawsila.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB10C9E1EEBEA8500F93FBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
@@ -110,10 +134,14 @@
 		5BB10CE21EEBFA1700F93FBE /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		5BB10CE31EEBFA1700F93FBE /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		5DE208DDC741A694D73C97FB /* Pods-TawsilaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TawsilaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TawsilaUITests/Pods-TawsilaUITests.release.xcconfig"; sourceTree = "<group>"; };
-		81CB2E671EED19DA00D400FC /* VSCDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSCDetailViewController.swift; sourceTree = "<group>"; };
-		81CB2E681EED19DA00D400FC /* VSCMenuOptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSCMenuOptionManager.swift; sourceTree = "<group>"; };
-		81CB2E691EED19DA00D400FC /* VSCMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSCMenuViewController.swift; sourceTree = "<group>"; };
-		81CB2E6A1EED19DA00D400FC /* VSCSlidingPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSCSlidingPanelViewController.swift; sourceTree = "<group>"; };
+		8145BFA81EF235C100B544A1 /* HomeViewControlle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControlle.swift; sourceTree = "<group>"; };
+		814C6FB81EF048A600985702 /* MyRidesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyRidesVC.swift; path = MyRides/MyRidesVC.swift; sourceTree = "<group>"; };
+		814C6FB91EF048A600985702 /* MyRidesVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyRidesVC.xib; path = MyRides/MyRidesVC.xib; sourceTree = "<group>"; };
+		814C6FBD1EF0572A00985702 /* VSCSliderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSCSliderViewCell.swift; sourceTree = "<group>"; };
+		814C6FBF1EF05A8400985702 /* MyRidesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRidesTableViewCell.swift; sourceTree = "<group>"; };
+		814C6FC01EF05A8400985702 /* MyRidesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyRidesTableViewCell.xib; sourceTree = "<group>"; };
+		814C6FCD1EF0DC4600985702 /* settingTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingTableCell.swift; sourceTree = "<group>"; };
+		814C6FCE1EF0DC4600985702 /* settingTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = settingTableCell.xib; sourceTree = "<group>"; };
 		81CB2E701EED1BD700D400FC /* CreateNewAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewAccount.swift; path = Tawsila/Controller/CreateNewAccount/CreateNewAccount.swift; sourceTree = SOURCE_ROOT; };
 		81CB2E711EED1BD700D400FC /* CreateNewAccount.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateNewAccount.xib; path = Tawsila/Controller/CreateNewAccount/CreateNewAccount.xib; sourceTree = SOURCE_ROOT; };
 		81E76BD91EEF73E500256FD4 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -122,10 +150,35 @@
 		81E76BDD1EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalletViewControllerCustomCellTableView.xib; sourceTree = "<group>"; };
 		81E76BDF1EEF73E500256FD4 /* WalletViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		81E76BE01EEF73E500256FD4 /* WalletViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalletViewController.xib; sourceTree = "<group>"; };
+		81E76BEA1EEF7F5F00256FD4 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = Settings/SettingViewController.swift; sourceTree = "<group>"; };
+		81E76BEB1EEF7F5F00256FD4 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingViewController.xib; path = Settings/SettingViewController.xib; sourceTree = "<group>"; };
+		81E76BEE1EEF841800256FD4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		81F2EBEE1EF18AA60065D2BD /* menu-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-button.png"; sourceTree = "<group>"; };
+		81F2EBEF1EF18AA60065D2BD /* menu-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-button@2x.png"; sourceTree = "<group>"; };
+		81F2EBF01EF18AA60065D2BD /* SlideNavigationContorllerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimator.h; sourceTree = "<group>"; };
+		81F2EBF11EF18AA60065D2BD /* SlideNavigationContorllerAnimatorFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorFade.h; sourceTree = "<group>"; };
+		81F2EBF21EF18AA60065D2BD /* SlideNavigationContorllerAnimatorFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorFade.m; sourceTree = "<group>"; };
+		81F2EBF31EF18AA60065D2BD /* SlideNavigationContorllerAnimatorScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorScale.h; sourceTree = "<group>"; };
+		81F2EBF41EF18AA60065D2BD /* SlideNavigationContorllerAnimatorScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorScale.m; sourceTree = "<group>"; };
+		81F2EBF51EF18AA60065D2BD /* SlideNavigationContorllerAnimatorScaleAndFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorScaleAndFade.h; sourceTree = "<group>"; };
+		81F2EBF61EF18AA60065D2BD /* SlideNavigationContorllerAnimatorScaleAndFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorScaleAndFade.m; sourceTree = "<group>"; };
+		81F2EBF71EF18AA60065D2BD /* SlideNavigationContorllerAnimatorSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorSlide.h; sourceTree = "<group>"; };
+		81F2EBF81EF18AA60065D2BD /* SlideNavigationContorllerAnimatorSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorSlide.m; sourceTree = "<group>"; };
+		81F2EBF91EF18AA60065D2BD /* SlideNavigationContorllerAnimatorSlideAndFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorSlideAndFade.h; sourceTree = "<group>"; };
+		81F2EBFA1EF18AA60065D2BD /* SlideNavigationContorllerAnimatorSlideAndFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorSlideAndFade.m; sourceTree = "<group>"; };
+		81F2EBFB1EF18AA60065D2BD /* SlideNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationController.h; sourceTree = "<group>"; };
+		81F2EBFC1EF18AA60065D2BD /* SlideNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationController.m; sourceTree = "<group>"; };
+		81F2EC061EF18D0D0065D2BD /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuViewController.swift; path = LeftMenuViewController/LeftMenuViewController.swift; sourceTree = "<group>"; };
+		81F2EC071EF18D0D0065D2BD /* LeftMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LeftMenuViewController.xib; path = LeftMenuViewController/LeftMenuViewController.xib; sourceTree = "<group>"; };
+		81F2EC0B1EF190BE0065D2BD /* leftMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = leftMenuCell.swift; path = LeftMenuViewController/Cell/leftMenuCell.swift; sourceTree = "<group>"; };
+		81F2EC0C1EF190BE0065D2BD /* leftMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = leftMenuCell.xib; path = LeftMenuViewController/Cell/leftMenuCell.xib; sourceTree = "<group>"; };
+		81F2EC101EF19AC70065D2BD /* rightMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = rightMenuViewController.swift; path = rightMenu/rightMenuViewController.swift; sourceTree = "<group>"; };
+		81F2EC111EF19AC70065D2BD /* rightMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = rightMenuViewController.xib; path = rightMenu/rightMenuViewController.xib; sourceTree = "<group>"; };
+		81F2EC151EF19B070065D2BD /* rightMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = rightMenuCell.swift; path = rightMenu/cell/rightMenuCell.swift; sourceTree = "<group>"; };
+		81F2EC161EF19B070065D2BD /* rightMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = rightMenuCell.xib; path = rightMenu/cell/rightMenuCell.xib; sourceTree = "<group>"; };
 		902A6B97238E8A10D5B05059 /* Pods_TawsilaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TawsilaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92564FBF1EEF09F300C59A4E /* ViewDetailCar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewDetailCar.xib; path = "Tawsila/Custom View/ViewDetailCar.xib"; sourceTree = SOURCE_ROOT; };
 		92564FC11EEF0AE300C59A4E /* ViewDetailCar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDetailCar.swift; path = "Tawsila/Custom View/ViewDetailCar.swift"; sourceTree = SOURCE_ROOT; };
-		92564FC31EEF251400C59A4E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		929D98E31EEEB26100A8E598 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		929D98E41EEEB26100A8E598 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		929D98E51EEEB26100A8E598 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -140,11 +193,10 @@
 		929D98EE1EEEB26100A8E598 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		929D98EF1EEEB26100A8E598 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		929D98F01EEEB26100A8E598 /* Roboto.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Roboto.zip; sourceTree = "<group>"; };
-		92DEEE741EEE8C8B001B5DCA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		92DEEE751EEE8C8B001B5DCA /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		92DEEE751EEE8C8B001B5DCA /* HomeViewControlle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewControlle.xib; sourceTree = "<group>"; };
 		92DEEE771EEE8C8B001B5DCA /* RideLaterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideLaterVC.swift; sourceTree = "<group>"; };
-		92DEEE781EEE8C8B001B5DCA /* RideLaterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RideLaterVC.xib; sourceTree = "<group>"; };
 		92DEEE7D1EEE9181001B5DCA /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		970B2DAC1EF281AC0027F0C3 /* RideLaterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RideLaterVC.xib; sourceTree = "<group>"; };
 		9C408D14D3B050F1B0661DF2 /* Pods-Tawsila.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tawsila.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tawsila/Pods-Tawsila.debug.xcconfig"; sourceTree = "<group>"; };
 		C58DF0FD146BA2327FE74A07 /* Pods_TawsilaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TawsilaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC4CA21A746696DD59B2B54F /* Pods_Tawsila.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tawsila.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +238,9 @@
 		0439CA731EEC50B1008E4F78 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				04FA4CDE1EF538C300CF7618 /* Reachability */,
+				04FA4CD91EF5260900CF7618 /* SSKEYCHAIN */,
+				81F2EBED1EF18AA60065D2BD /* SliderMenuViewController */,
 				0439CA741EEC50B1008E4F78 /* Constant.swift */,
 				0439CA751EEC50B1008E4F78 /* TPKeyBoard */,
 				0439CA7A1EEC50B1008E4F78 /* Utility.swift */,
@@ -202,6 +257,23 @@
 				0439CA791EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
 			);
 			path = TPKeyBoard;
+			sourceTree = "<group>";
+		};
+		04FA4CD91EF5260900CF7618 /* SSKEYCHAIN */ = {
+			isa = PBXGroup;
+			children = (
+				04FA4CDA1EF5260900CF7618 /* SSKeychain.h */,
+				04FA4CDB1EF5260900CF7618 /* SSKeychain.m */,
+			);
+			path = SSKEYCHAIN;
+			sourceTree = "<group>";
+		};
+		04FA4CDE1EF538C300CF7618 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				04FA4CDF1EF538C300CF7618 /* Reachability.swift */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		5BB10C901EEBEA8400F93FBE = {
@@ -235,7 +307,6 @@
 				5BB10CCD1EEBEAE900F93FBE /* Appdelegate */,
 				5BB10CCE1EEBEAE900F93FBE /* Controller */,
 				929D98FF1EEEB37E00A8E598 /* CustomView */,
-				92564FC31EEF251400C59A4E /* Images.xcassets */,
 			);
 			path = Tawsila;
 			sourceTree = "<group>";
@@ -264,7 +335,7 @@
 				045CF6F91EEC7A010052DBC6 /* AppDelegate.swift */,
 				5BB10C9E1EEBEA8500F93FBE /* ViewController.swift */,
 				045CF6FD1EEC7A9F0052DBC6 /* LaunchScreen.storyboard */,
-				045CF6FE1EEC7A9F0052DBC6 /* Main.storyboard */,
+				81E76BEE1EEF841800256FD4 /* Main.storyboard */,
 				045CF7011EEC7AB80052DBC6 /* Info.plist */,
 				045CF6FB1EEC7A800052DBC6 /* Assets.xcassets */,
 				5BB10CA31EEBEA8600F93FBE /* Tawsila.xcdatamodeld */,
@@ -275,10 +346,14 @@
 		5BB10CCE1EEBEAE900F93FBE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				81F2EC0F1EF19A8D0065D2BD /* RightMenu */,
+				81F2EC051EF18CC80065D2BD /* LeftMenu */,
+				814C6FBC1EF048C300985702 /* UITableViewCell */,
+				814C6FB71EF0487900985702 /* MyRides */,
+				81E76BE71EEF7EFE00256FD4 /* SettingsViewController */,
 				81E76BD81EEF73E500256FD4 /* ChangePasswordViewController */,
 				81E76BDB1EEF73E500256FD4 /* CustomCellTableViewController */,
 				81E76BDE1EEF73E500256FD4 /* WalletViewController */,
-				81CB2E661EED19DA00D400FC /* SliderMenuViewController */,
 				5BB10CE11EEBFA0500F93FBE /* SignInViewController */,
 				5BB10CCF1EEBEB3B00F93FBE /* SignInOrCreateNewAccount */,
 				92DEEE731EEE8C8B001B5DCA /* HomeViewController */,
@@ -319,15 +394,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		81CB2E661EED19DA00D400FC /* SliderMenuViewController */ = {
+		814C6FB71EF0487900985702 /* MyRides */ = {
 			isa = PBXGroup;
 			children = (
-				81CB2E671EED19DA00D400FC /* VSCDetailViewController.swift */,
-				81CB2E681EED19DA00D400FC /* VSCMenuOptionManager.swift */,
-				81CB2E691EED19DA00D400FC /* VSCMenuViewController.swift */,
-				81CB2E6A1EED19DA00D400FC /* VSCSlidingPanelViewController.swift */,
+				814C6FB81EF048A600985702 /* MyRidesVC.swift */,
+				814C6FB91EF048A600985702 /* MyRidesVC.xib */,
 			);
-			path = SliderMenuViewController;
+			name = MyRides;
+			sourceTree = "<group>";
+		};
+		814C6FBC1EF048C300985702 /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				814C6FBD1EF0572A00985702 /* VSCSliderViewCell.swift */,
+				814C6FBF1EF05A8400985702 /* MyRidesTableViewCell.swift */,
+				814C6FC01EF05A8400985702 /* MyRidesTableViewCell.xib */,
+				814C6FCD1EF0DC4600985702 /* settingTableCell.swift */,
+				814C6FCE1EF0DC4600985702 /* settingTableCell.xib */,
+			);
+			name = UITableViewCell;
 			sourceTree = "<group>";
 		};
 		81CB2E6F1EED1B7F00D400FC /* CreateNewAccount */ = {
@@ -368,6 +453,75 @@
 			);
 			name = WalletViewController;
 			path = ../WalletViewController;
+			sourceTree = "<group>";
+		};
+		81E76BE71EEF7EFE00256FD4 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				81E76BEA1EEF7F5F00256FD4 /* SettingViewController.swift */,
+				81E76BEB1EEF7F5F00256FD4 /* SettingViewController.xib */,
+			);
+			name = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		81F2EBED1EF18AA60065D2BD /* SliderMenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				81F2EBEE1EF18AA60065D2BD /* menu-button.png */,
+				81F2EBEF1EF18AA60065D2BD /* menu-button@2x.png */,
+				81F2EBF01EF18AA60065D2BD /* SlideNavigationContorllerAnimator.h */,
+				81F2EBF11EF18AA60065D2BD /* SlideNavigationContorllerAnimatorFade.h */,
+				81F2EBF21EF18AA60065D2BD /* SlideNavigationContorllerAnimatorFade.m */,
+				81F2EBF31EF18AA60065D2BD /* SlideNavigationContorllerAnimatorScale.h */,
+				81F2EBF41EF18AA60065D2BD /* SlideNavigationContorllerAnimatorScale.m */,
+				81F2EBF51EF18AA60065D2BD /* SlideNavigationContorllerAnimatorScaleAndFade.h */,
+				81F2EBF61EF18AA60065D2BD /* SlideNavigationContorllerAnimatorScaleAndFade.m */,
+				81F2EBF71EF18AA60065D2BD /* SlideNavigationContorllerAnimatorSlide.h */,
+				81F2EBF81EF18AA60065D2BD /* SlideNavigationContorllerAnimatorSlide.m */,
+				81F2EBF91EF18AA60065D2BD /* SlideNavigationContorllerAnimatorSlideAndFade.h */,
+				81F2EBFA1EF18AA60065D2BD /* SlideNavigationContorllerAnimatorSlideAndFade.m */,
+				81F2EBFB1EF18AA60065D2BD /* SlideNavigationController.h */,
+				81F2EBFC1EF18AA60065D2BD /* SlideNavigationController.m */,
+			);
+			path = SliderMenuViewController;
+			sourceTree = "<group>";
+		};
+		81F2EC051EF18CC80065D2BD /* LeftMenu */ = {
+			isa = PBXGroup;
+			children = (
+				81F2EC0A1EF190870065D2BD /* Cell */,
+				81F2EC061EF18D0D0065D2BD /* LeftMenuViewController.swift */,
+				81F2EC071EF18D0D0065D2BD /* LeftMenuViewController.xib */,
+			);
+			name = LeftMenu;
+			sourceTree = "<group>";
+		};
+		81F2EC0A1EF190870065D2BD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				81F2EC0B1EF190BE0065D2BD /* leftMenuCell.swift */,
+				81F2EC0C1EF190BE0065D2BD /* leftMenuCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		81F2EC0F1EF19A8D0065D2BD /* RightMenu */ = {
+			isa = PBXGroup;
+			children = (
+				81F2EC141EF19ACB0065D2BD /* cell */,
+				81F2EC101EF19AC70065D2BD /* rightMenuViewController.swift */,
+				81F2EC111EF19AC70065D2BD /* rightMenuViewController.xib */,
+			);
+			name = RightMenu;
+			sourceTree = "<group>";
+		};
+		81F2EC141EF19ACB0065D2BD /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				81F2EC151EF19B070065D2BD /* rightMenuCell.swift */,
+				81F2EC161EF19B070065D2BD /* rightMenuCell.xib */,
+			);
+			name = cell;
 			sourceTree = "<group>";
 		};
 		929D98E11EEEB26100A8E598 /* Sources */ = {
@@ -412,8 +566,8 @@
 		92DEEE731EEE8C8B001B5DCA /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
-				92DEEE741EEE8C8B001B5DCA /* HomeViewController.swift */,
-				92DEEE751EEE8C8B001B5DCA /* HomeViewController.xib */,
+				92DEEE751EEE8C8B001B5DCA /* HomeViewControlle.xib */,
+				8145BFA81EF235C100B544A1 /* HomeViewControlle.swift */,
 			);
 			name = HomeViewController;
 			path = Tawsila/Controller/HomeViewController;
@@ -423,7 +577,7 @@
 			isa = PBXGroup;
 			children = (
 				92DEEE771EEE8C8B001B5DCA /* RideLaterVC.swift */,
-				92DEEE781EEE8C8B001B5DCA /* RideLaterVC.xib */,
+				970B2DAC1EF281AC0027F0C3 /* RideLaterVC.xib */,
 			);
 			name = RideLaterViewController;
 			path = Tawsila/Controller/RideLaterViewController;
@@ -454,6 +608,7 @@
 				5BB10C971EEBEA8400F93FBE /* Resources */,
 				D277AA6EA5A6C04583B99768 /* [CP] Embed Pods Frameworks */,
 				94FACDA5E63842C53C494F93 /* [CP] Copy Pods Resources */,
+				04FA4CDD1EF5342700CF7618 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -557,18 +712,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81F2EBFD1EF18AA60065D2BD /* menu-button.png in Resources */,
+				81F2EC0E1EF190BE0065D2BD /* leftMenuCell.xib in Resources */,
 				81E76BE41EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.xib in Resources */,
 				81E76BE61EEF73E500256FD4 /* WalletViewController.xib in Resources */,
 				5BB10CD31EEBEB4E00F93FBE /* SignInOrCreateNewAccount.xib in Resources */,
-				92564FC41EEF251400C59A4E /* Images.xcassets in Resources */,
 				929D98F41EEEB26100A8E598 /* Roboto-Bold.ttf in Resources */,
+				814C6FC21EF05A8400985702 /* MyRidesTableViewCell.xib in Resources */,
 				929D98FB1EEEB26100A8E598 /* Roboto-Regular.ttf in Resources */,
+				970B2DAD1EF281AC0027F0C3 /* RideLaterVC.xib in Resources */,
 				045CF6FC1EEC7A800052DBC6 /* Assets.xcassets in Resources */,
 				92564FC01EEF09F300C59A4E /* ViewDetailCar.xib in Resources */,
-				045CF7001EEC7A9F0052DBC6 /* Main.storyboard in Resources */,
 				045CF7021EEC7AB80052DBC6 /* Info.plist in Resources */,
-				92DEEE7C1EEE8C8B001B5DCA /* RideLaterVC.xib in Resources */,
+				814C6FD01EF0DC4600985702 /* settingTableCell.xib in Resources */,
+				81F2EC181EF19B070065D2BD /* rightMenuCell.xib in Resources */,
 				929D98F71EEEB26100A8E598 /* Roboto-Light.ttf in Resources */,
+				81E76BED1EEF7F5F00256FD4 /* SettingViewController.xib in Resources */,
 				929D98F21EEEB26100A8E598 /* Roboto-Black.ttf in Resources */,
 				929D98F91EEEB26100A8E598 /* Roboto-Medium.ttf in Resources */,
 				929D98F61EEEB26100A8E598 /* Roboto-Italic.ttf in Resources */,
@@ -576,15 +735,20 @@
 				81E76BE21EEF73E500256FD4 /* ChangePasswordViewController.xib in Resources */,
 				929D98F31EEEB26100A8E598 /* Roboto-BlackItalic.ttf in Resources */,
 				929D98F81EEEB26100A8E598 /* Roboto-LightItalic.ttf in Resources */,
+				81F2EC131EF19AC70065D2BD /* rightMenuViewController.xib in Resources */,
 				929D98FD1EEEB26100A8E598 /* Roboto-ThinItalic.ttf in Resources */,
 				929D98FC1EEEB26100A8E598 /* Roboto-Thin.ttf in Resources */,
 				81CB2E731EED1BD700D400FC /* CreateNewAccount.xib in Resources */,
 				5BB10CE51EEBFA1700F93FBE /* SignInViewController.xib in Resources */,
 				929D98F11EEEB26100A8E598 /* LICENSE.txt in Resources */,
+				81E76BEF1EEF841800256FD4 /* Main.storyboard in Resources */,
 				929D98F51EEEB26100A8E598 /* Roboto-BoldItalic.ttf in Resources */,
+				81F2EC091EF18D0D0065D2BD /* LeftMenuViewController.xib in Resources */,
+				814C6FBB1EF048A600985702 /* MyRidesVC.xib in Resources */,
 				929D98FA1EEEB26100A8E598 /* Roboto-MediumItalic.ttf in Resources */,
 				929D98FE1EEEB26100A8E598 /* Roboto.zip in Resources */,
-				92DEEE7A1EEE8C8B001B5DCA /* HomeViewController.xib in Resources */,
+				92DEEE7A1EEE8C8B001B5DCA /* HomeViewControlle.xib in Resources */,
+				81F2EBFE1EF18AA60065D2BD /* menu-button@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +769,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		04FA4CDD1EF5342700CF7618 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" efa02f4c09f247450a177a7f01b4743a6377bd8a e8517d640a641791bb4e93aa5342c558a0397f3639b76ab3411cd347b623fb9b";
+		};
 		3B500778131C6B0AE87940D8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -747,26 +924,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8145BFAA1EF235C100B544A1 /* HomeViewControlle.swift in Sources */,
 				0439CA7C1EEC50B1008E4F78 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				92DEEE7B1EEE8C8B001B5DCA /* RideLaterVC.swift in Sources */,
 				81E76BE31EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.swift in Sources */,
+				81F2EC041EF18AA60065D2BD /* SlideNavigationController.m in Sources */,
+				81F2EC121EF19AC70065D2BD /* rightMenuViewController.swift in Sources */,
 				5BB10C9F1EEBEA8500F93FBE /* ViewController.swift in Sources */,
 				81E76BE11EEF73E500256FD4 /* ChangePasswordViewController.swift in Sources */,
-				81CB2E6D1EED19DA00D400FC /* VSCMenuViewController.swift in Sources */,
+				81F2EC171EF19B070065D2BD /* rightMenuCell.swift in Sources */,
+				81E76BEC1EEF7F5F00256FD4 /* SettingViewController.swift in Sources */,
 				0439CA7E1EEC50B1008E4F78 /* Utility.swift in Sources */,
+				81F2EC031EF18AA60065D2BD /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
+				814C6FCF1EF0DC4600985702 /* settingTableCell.swift in Sources */,
+				81F2EC011EF18AA60065D2BD /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
+				814C6FBA1EF048A600985702 /* MyRidesVC.swift in Sources */,
 				045CF6FA1EEC7A010052DBC6 /* AppDelegate.swift in Sources */,
-				92DEEE791EEE8C8B001B5DCA /* HomeViewController.swift in Sources */,
 				81E76BE51EEF73E500256FD4 /* WalletViewController.swift in Sources */,
-				81CB2E6B1EED19DA00D400FC /* VSCDetailViewController.swift in Sources */,
+				81F2EC001EF18AA60065D2BD /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				5BB10CD21EEBEB4E00F93FBE /* SignInOrCreateNewAccount.swift in Sources */,
-				81CB2E6E1EED19DA00D400FC /* VSCSlidingPanelViewController.swift in Sources */,
+				81F2EBFF1EF18AA60065D2BD /* SlideNavigationContorllerAnimatorFade.m in Sources */,
 				81CB2E721EED1BD700D400FC /* CreateNewAccount.swift in Sources */,
+				81F2EC081EF18D0D0065D2BD /* LeftMenuViewController.swift in Sources */,
 				92564FC21EEF0AE300C59A4E /* ViewDetailCar.swift in Sources */,
+				81F2EC0D1EF190BE0065D2BD /* leftMenuCell.swift in Sources */,
 				5BB10CE41EEBFA1700F93FBE /* SignInViewController.swift in Sources */,
-				81CB2E6C1EED19DA00D400FC /* VSCMenuOptionManager.swift in Sources */,
+				04FA4CDC1EF5260900CF7618 /* SSKeychain.m in Sources */,
 				0439CA7D1EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				814C6FBE1EF0572A00985702 /* VSCSliderViewCell.swift in Sources */,
+				814C6FC11EF05A8400985702 /* MyRidesTableViewCell.swift in Sources */,
+				04FA4CE01EF538C300CF7618 /* Reachability.swift in Sources */,
 				5BB10CA51EEBEA8600F93FBE /* Tawsila.xcdatamodeld in Sources */,
 				0439CA7B1EEC50B1008E4F78 /* Constant.swift in Sources */,
+				81F2EC021EF18AA60065D2BD /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

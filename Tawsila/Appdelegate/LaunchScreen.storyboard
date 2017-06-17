@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,14 +25,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ahX-Q6-uc8">
-                                <rect key="frame" x="128" y="213.5" width="120" height="120"/>
+                                <rect key="frame" x="128" y="203.5" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="aIF-hf-3CG"/>
                                     <constraint firstAttribute="height" constant="120" id="u5r-Zi-xSK"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeTextImage" translatesAutoresizingMaskIntoConstraints="NO" id="AXa-tD-pJY">
-                                <rect key="frame" x="68" y="348.5" width="240" height="60"/>
+                                <rect key="frame" x="68" y="338.5" width="240" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="9QD-ib-ana"/>
                                     <constraint firstAttribute="height" constant="60" id="h2X-kj-mdh"/>
@@ -43,7 +43,7 @@
                         <constraints>
                             <constraint firstItem="ahX-Q6-uc8" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="3Gt-xF-vti"/>
                             <constraint firstItem="Qxo-Tf-izA" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Psz-CE-qhl"/>
-                            <constraint firstItem="ahX-Q6-uc8" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-60" id="cQb-WC-RMY"/>
+                            <constraint firstItem="ahX-Q6-uc8" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-70" id="cQb-WC-RMY"/>
                             <constraint firstItem="AXa-tD-pJY" firstAttribute="centerX" secondItem="ahX-Q6-uc8" secondAttribute="centerX" id="giu-jy-vIW"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Qxo-Tf-izA" secondAttribute="bottom" id="lYQ-0l-vXx"/>
                             <constraint firstAttribute="trailing" secondItem="Qxo-Tf-izA" secondAttribute="trailing" id="obM-z5-KPt"/>

@@ -10,6 +10,11 @@ import UIKit
 
 class settingTableCell: UITableViewCell {
 
+    @IBOutlet var viewdetail: UIView!
+    @IBOutlet var imgIcon: UIImageView!
+    @IBOutlet var lblTitle: UILabel!
+    @IBOutlet var lblDetails: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

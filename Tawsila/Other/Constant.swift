@@ -6,7 +6,6 @@
 //
 
 import Foundation
-//import Firebase
 import Alamofire
 
 
@@ -14,11 +13,11 @@ import Alamofire
 
 
 
-let BSE_URL   = "http://115.112.57.157/blubump/webservices01"
+let BSE_URL   = "http://taxiappsourcecode.com/api/index.php?option="
 //let BSE_URL_IMG   = "http://ec2-54-218-74-164.us-west-2.compute.amazonaws.com"
 
 let MSGTRY : String = "Please try again later."
-let kAPPName : String = "BLUBUMP"
+let kAPPName : String = "TAWSILA"
 
 let USER_DEFAULT = UserDefaults.standard
 let THEME_COLOR = UIColor(red: 33/255.0, green: 134/255.0, blue: 226/255.0, alpha: 1.0)
@@ -26,15 +25,7 @@ let NavigationBackgraoungColor = UIColor(red: 163.0/255.0, green: 135.0/255.0, b
 
 struct Constant {
     
-   /* static let EVENTS_REF	= Firebase(url: "\(BASE_URL)/events")
-	static let INFLUENCERS_REF	= Firebase(url: "\(BASE_URL)/influencers")
-    static let CATEGORY_REF = Firebase(url: "\(BASE_URL)/categories")
-	static let FRIENDS_REF	= Firebase(url: "\(BASE_URL)/friends")
-	static let BRANDS_REF	= Firebase(url: "\(BASE_URL)/brands")
-	static let TEAMS_REF	= Firebase(url: "\(BASE_URL)/teams")
-	static let TAILGATE_REF	= Firebase(url: "\(BASE_URL)/tailgate")
-	static let COUPONS_REF	= Firebase(url: "\(BASE_URL)/coupons")
-	*/
+ 
 
     
     struct Notifications {
