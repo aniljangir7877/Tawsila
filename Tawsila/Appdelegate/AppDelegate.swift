@@ -194,7 +194,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         return false
     }
     
-    
+    //check validation on password
+    func isValidPassword(_ testStr: String)->Bool{
+        
+        let passwordRegEx = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&]{6,}"
+        if let passwordTest = NSPredicate(format:"SELF MATCHES %@", passwordRegEx) as NSPredicate?
+        {
+            return passwordTest.evaluate(with: testStr)
+        }
+        return false
+    }
+
     
     
     
@@ -505,7 +515,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         return dict
     }
-    
+    //MARK:-------------------------Check App Langauge---------------------------------------
+    func checkAppLanguage() -> String {
+        // Get selectedLanguage for UserDefault  Vikram Singh depawat
+        if UserDefaults.standard.value(forKey: "LanguageSelected") != nil  {
+            strLanguage = UserDefaults.standard.value(forKey: "LanguageSelected") as! String
+        }
+        else {
+            UserDefaults.standard.setValue("en", forKey: "LanguageSelected")
+            strLanguage = "en"
+        }
+        return strLanguage
+    }
+
   
 }
 

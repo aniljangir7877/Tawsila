@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="bookingViewController" customModule="Tawsila" customModuleProvider="target">
+            <connections>
+                <outlet property="btbBack" destination="bQy-2p-xVy" id="qcv-1H-mOd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sa6-TF-Ibu">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQy-2p-xVy">
+                            <rect key="frame" x="8" y="20" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="zHw-kA-awJ"/>
+                            </constraints>
+                            <state key="normal" image="backImge"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xD-6x-ak4">
+                            <rect key="frame" x="127.5" y="20" width="120" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="3vm-Sw-fEG"/>
+                                <constraint firstAttribute="width" constant="120" id="krs-bJ-CqR"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.71372549019999998" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="8d6-sP-6d2"/>
+                        <constraint firstAttribute="bottom" secondItem="2xD-6x-ak4" secondAttribute="bottom" id="I5M-KG-fAn"/>
+                        <constraint firstItem="bQy-2p-xVy" firstAttribute="leading" secondItem="sa6-TF-Ibu" secondAttribute="leading" constant="8" id="PN7-nk-tre"/>
+                        <constraint firstItem="bQy-2p-xVy" firstAttribute="top" secondItem="sa6-TF-Ibu" secondAttribute="top" constant="20" id="VJ4-YG-Qab"/>
+                        <constraint firstItem="2xD-6x-ak4" firstAttribute="centerX" secondItem="sa6-TF-Ibu" secondAttribute="centerX" id="oPN-0G-Io2"/>
+                        <constraint firstAttribute="bottom" secondItem="bQy-2p-xVy" secondAttribute="bottom" id="qoa-CY-bIN"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="dyK-tQ-cs7">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="deS-kH-aID">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="sa6-TF-Ibu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5Ge-Ll-Sov"/>
+                <constraint firstAttribute="bottom" secondItem="deS-kH-aID" secondAttribute="bottom" id="8Xl-Jc-M8X"/>
+                <constraint firstItem="dyK-tQ-cs7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="F1a-dz-j0Q"/>
+                <constraint firstAttribute="trailing" secondItem="dyK-tQ-cs7" secondAttribute="trailing" id="ODi-oA-typ"/>
+                <constraint firstItem="sa6-TF-Ibu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UZ2-0T-EvN"/>
+                <constraint firstItem="deS-kH-aID" firstAttribute="top" secondItem="sa6-TF-Ibu" secondAttribute="bottom" id="ZJ9-Xb-8uY"/>
+                <constraint firstAttribute="trailing" secondItem="deS-kH-aID" secondAttribute="trailing" id="cDH-7e-kfZ"/>
+                <constraint firstAttribute="trailing" secondItem="sa6-TF-Ibu" secondAttribute="trailing" id="cpn-yR-lM5"/>
+                <constraint firstItem="deS-kH-aID" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nqs-4o-aH5"/>
+                <constraint firstAttribute="bottom" secondItem="dyK-tQ-cs7" secondAttribute="bottom" id="oWh-nU-xdp"/>
+                <constraint firstItem="dyK-tQ-cs7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="rlc-dI-Nbs"/>
+            </constraints>
+            <point key="canvasLocation" x="-153.5" y="10.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="appBgImage" width="1200" height="2015"/>
+        <image name="backImge" width="22" height="22"/>
+    </resources>
+</document>
