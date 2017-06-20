@@ -71,7 +71,7 @@ class CreateNewAccount: UIViewController {
         
         RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
         
-//        let parameters = [
+//        let parameter s = [
 //             "username" :  self.txtUserFullName.text! as String,
 //            "email" :  self.txtemail.text! as String,
 //            "password":   self.txtpassword.text! as String,
