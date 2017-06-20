@@ -26,9 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var deviceTokenStr = ""
     var window: UIWindow?
     var navContorller : UINavigationController?
-
+    var strLanguage: String!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
+      
+        // checekApplication selected language (Vikram Singh)//20-jun-2017
+            strLanguage = checkAppLanguage()
         
        // Fabric.sharedSDK().debug = true
         //Fabric.with([Crashlytics.self()])
@@ -515,17 +519,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         return dict
     }
+   
     //MARK:-------------------------Check App Langauge---------------------------------------
     func checkAppLanguage() -> String {
         // Get selectedLanguage for UserDefault  Vikram Singh depawat
+        var lang : String!
         if UserDefaults.standard.value(forKey: "LanguageSelected") != nil  {
-            strLanguage = UserDefaults.standard.value(forKey: "LanguageSelected") as! String
+            lang = UserDefaults.standard.value(forKey: "LanguageSelected") as! String
         }
         else {
             UserDefaults.standard.setValue("en", forKey: "LanguageSelected")
-            strLanguage = "en"
+            lang = "en"
         }
-        return strLanguage
+        return lang
     }
 
   

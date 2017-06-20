@@ -26,8 +26,10 @@ class CreateNewAccount: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let img = UIImageView.init(frame: CGRect(x: 0, y: 0, width: 20, height: 40))
+        let img = UIImageView.init(frame: CGRect(x: 0, y: 10, width: 20, height: 20))
         img.image  = UIImage.init(named: "dropDown")
+        txtCountryCode.rightView?.frame = img.frame
+        txtCountryCode.rightViewMode = .always
         txtCountryCode.rightView = img
         btnSignUp.layer.cornerRadius = 4.0
         btnSignUp.layer.masksToBounds = true
@@ -35,7 +37,6 @@ class CreateNewAccount: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         isSelect = false
-        setViewAccodingToSelectedLanguage(lang:  AppDelegateVariable.appDelegate.checkAppLanguage())
     }
     
     override func didReceiveMemoryWarning() {
@@ -102,7 +103,8 @@ class CreateNewAccount: UIViewController {
                 /// NotificationCenter.default.post(name: Notification.Name(rawValue: "UserDidLoginNotification"), object: nil, userInfo: (userInfo as AnyObject) as? [AnyHashable : Any])
                 //  AppDelegateVariable.appDelegate.loginInMainView()
                 
-                
+                let obej: ConfirmationScreen = ConfirmationScreen(nibName: "ConfirmationScreen", bundle: nil)
+                self.navigationController?.pushViewController(obej, animated: true)
             }
             else
                 
@@ -137,8 +139,12 @@ class CreateNewAccount: UIViewController {
     
     @IBAction func actionback(_ sender: Any) {
         // SlideNavigationController.sharedInstance().toggleLeftMenu()
-        
-        navigationController?.popViewController(animated: true)
+        if viewArabic.isHidden  == false {
+            setRightToLeftViewTransition(true)
+        }
+        else{
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     

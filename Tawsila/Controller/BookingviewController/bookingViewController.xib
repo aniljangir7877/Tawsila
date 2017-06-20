@@ -12,6 +12,9 @@
         <array key="Roboto-Bold.ttf">
             <string>Roboto-Bold</string>
         </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="bookingViewController" customModule="Tawsila" customModuleProvider="target">
@@ -56,37 +59,101 @@
                         <constraint firstAttribute="bottom" secondItem="bQy-2p-xVy" secondAttribute="bottom" id="qoa-CY-bIN"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="dyK-tQ-cs7">
-                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                </imageView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="deS-kH-aID">
-                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </tableView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UVT-Zb-yL2">
+                    <rect key="frame" x="0.0" y="65" width="375" height="74"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="YgD-9B-zVF">
+                            <rect key="frame" x="15" y="10" width="40" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrm-K3-ZlT">
+                            <rect key="frame" x="70" y="11" width="288" height="21"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4FC-dw-0nb">
+                            <rect key="frame" x="70" y="39" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pFV-hQ-ik5">
+                            <rect key="frame" x="0.0" y="73" width="375" height="1"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dMH-EK-irT">
+                    <rect key="frame" x="0.0" y="213" width="375" height="51"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpg-uX-67V">
+                            <rect key="frame" x="11" y="15" width="347" height="21"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ztb-fq-Hmd">
+                            <rect key="frame" x="0.0" y="50" width="375" height="1"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sv9-GR-nTA">
+                    <rect key="frame" x="0.0" y="139" width="375" height="74"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="taxiOutstandingicon" translatesAutoresizingMaskIntoConstraints="NO" id="6hX-mG-fhY">
+                            <rect key="frame" x="15" y="10" width="40" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="416-PS-gca">
+                            <rect key="frame" x="70" y="6" width="288" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJP-GJ-xMe">
+                            <rect key="frame" x="0.0" y="73" width="375" height="1"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpJ-wj-FMN">
+                            <rect key="frame" x="70" y="41" width="288" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e7E-Xe-o0V">
+                    <rect key="frame" x="1" y="265" width="374" height="63"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="sa6-TF-Ibu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5Ge-Ll-Sov"/>
-                <constraint firstAttribute="bottom" secondItem="deS-kH-aID" secondAttribute="bottom" id="8Xl-Jc-M8X"/>
-                <constraint firstItem="dyK-tQ-cs7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="F1a-dz-j0Q"/>
-                <constraint firstAttribute="trailing" secondItem="dyK-tQ-cs7" secondAttribute="trailing" id="ODi-oA-typ"/>
                 <constraint firstItem="sa6-TF-Ibu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UZ2-0T-EvN"/>
-                <constraint firstItem="deS-kH-aID" firstAttribute="top" secondItem="sa6-TF-Ibu" secondAttribute="bottom" id="ZJ9-Xb-8uY"/>
-                <constraint firstAttribute="trailing" secondItem="deS-kH-aID" secondAttribute="trailing" id="cDH-7e-kfZ"/>
                 <constraint firstAttribute="trailing" secondItem="sa6-TF-Ibu" secondAttribute="trailing" id="cpn-yR-lM5"/>
-                <constraint firstItem="deS-kH-aID" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nqs-4o-aH5"/>
-                <constraint firstAttribute="bottom" secondItem="dyK-tQ-cs7" secondAttribute="bottom" id="oWh-nU-xdp"/>
-                <constraint firstItem="dyK-tQ-cs7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="rlc-dI-Nbs"/>
             </constraints>
-            <point key="canvasLocation" x="-153.5" y="10.5"/>
+            <point key="canvasLocation" x="-154.5" y="45.5"/>
         </view>
     </objects>
     <resources>
-        <image name="appBgImage" width="1200" height="2015"/>
         <image name="backImge" width="22" height="22"/>
+        <image name="taxiOutstandingicon" width="64" height="38"/>
+        <image name="userProfile" width="32" height="32"/>
     </resources>
 </document>
