@@ -38,6 +38,12 @@
 		814C6FD01EF0DC4600985702 /* settingTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814C6FCE1EF0DC4600985702 /* settingTableCell.xib */; };
 		81CB2E721EED1BD700D400FC /* CreateNewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB2E701EED1BD700D400FC /* CreateNewAccount.swift */; };
 		81CB2E731EED1BD700D400FC /* CreateNewAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81CB2E711EED1BD700D400FC /* CreateNewAccount.xib */; };
+		81D179F21EF84A3200976349 /* forgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D179F01EF84A3200976349 /* forgotPassword.swift */; };
+		81D179F31EF84A3200976349 /* forgotPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81D179F11EF84A3200976349 /* forgotPassword.xib */; };
+		81D179F71EF84A3F00976349 /* bookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D179F51EF84A3F00976349 /* bookingViewController.swift */; };
+		81D179F81EF84A3F00976349 /* bookingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81D179F61EF84A3F00976349 /* bookingViewController.xib */; };
+		81D17A011EF84C3200976349 /* ConfirmationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D179FF1EF84C3200976349 /* ConfirmationScreen.swift */; };
+		81D17A021EF84C3200976349 /* ConfirmationScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81D17A001EF84C3200976349 /* ConfirmationScreen.xib */; };
 		81E76BE11EEF73E500256FD4 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E76BD91EEF73E500256FD4 /* ChangePasswordViewController.swift */; };
 		81E76BE21EEF73E500256FD4 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81E76BDA1EEF73E500256FD4 /* ChangePasswordViewController.xib */; };
 		81E76BE31EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E76BDC1EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.swift */; };
@@ -144,6 +150,12 @@
 		814C6FCE1EF0DC4600985702 /* settingTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = settingTableCell.xib; sourceTree = "<group>"; };
 		81CB2E701EED1BD700D400FC /* CreateNewAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewAccount.swift; path = Tawsila/Controller/CreateNewAccount/CreateNewAccount.swift; sourceTree = SOURCE_ROOT; };
 		81CB2E711EED1BD700D400FC /* CreateNewAccount.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateNewAccount.xib; path = Tawsila/Controller/CreateNewAccount/CreateNewAccount.xib; sourceTree = SOURCE_ROOT; };
+		81D179F01EF84A3200976349 /* forgotPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forgotPassword.swift; sourceTree = "<group>"; };
+		81D179F11EF84A3200976349 /* forgotPassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = forgotPassword.xib; sourceTree = "<group>"; };
+		81D179F51EF84A3F00976349 /* bookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bookingViewController.swift; sourceTree = "<group>"; };
+		81D179F61EF84A3F00976349 /* bookingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = bookingViewController.xib; sourceTree = "<group>"; };
+		81D179FF1EF84C3200976349 /* ConfirmationScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationScreen.swift; sourceTree = "<group>"; };
+		81D17A001EF84C3200976349 /* ConfirmationScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmationScreen.xib; sourceTree = "<group>"; };
 		81E76BD91EEF73E500256FD4 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		81E76BDA1EEF73E500256FD4 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
 		81E76BDC1EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletViewControllerCustomCellTableView.swift; sourceTree = "<group>"; };
@@ -346,6 +358,9 @@
 		5BB10CCE1EEBEAE900F93FBE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				81D179FE1EF84C3200976349 /* ConfirmationScreen */,
+				81D179F41EF84A3F00976349 /* BookingviewController */,
+				81D179EF1EF84A3200976349 /* ForgotPassword */,
 				81F2EC0F1EF19A8D0065D2BD /* RightMenu */,
 				81F2EC051EF18CC80065D2BD /* LeftMenu */,
 				814C6FBC1EF048C300985702 /* UITableViewCell */,
@@ -423,6 +438,33 @@
 			);
 			name = CreateNewAccount;
 			path = SliderMenuViewController;
+			sourceTree = "<group>";
+		};
+		81D179EF1EF84A3200976349 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				81D179F01EF84A3200976349 /* forgotPassword.swift */,
+				81D179F11EF84A3200976349 /* forgotPassword.xib */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		81D179F41EF84A3F00976349 /* BookingviewController */ = {
+			isa = PBXGroup;
+			children = (
+				81D179F51EF84A3F00976349 /* bookingViewController.swift */,
+				81D179F61EF84A3F00976349 /* bookingViewController.xib */,
+			);
+			path = BookingviewController;
+			sourceTree = "<group>";
+		};
+		81D179FE1EF84C3200976349 /* ConfirmationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				81D179FF1EF84C3200976349 /* ConfirmationScreen.swift */,
+				81D17A001EF84C3200976349 /* ConfirmationScreen.xib */,
+			);
+			path = ConfirmationScreen;
 			sourceTree = "<group>";
 		};
 		81E76BD81EEF73E500256FD4 /* ChangePasswordViewController */ = {
@@ -719,6 +761,7 @@
 				5BB10CD31EEBEB4E00F93FBE /* SignInOrCreateNewAccount.xib in Resources */,
 				929D98F41EEEB26100A8E598 /* Roboto-Bold.ttf in Resources */,
 				814C6FC21EF05A8400985702 /* MyRidesTableViewCell.xib in Resources */,
+				81D179F31EF84A3200976349 /* forgotPassword.xib in Resources */,
 				929D98FB1EEEB26100A8E598 /* Roboto-Regular.ttf in Resources */,
 				970B2DAD1EF281AC0027F0C3 /* RideLaterVC.xib in Resources */,
 				045CF6FC1EEC7A800052DBC6 /* Assets.xcassets in Resources */,
@@ -727,10 +770,12 @@
 				814C6FD01EF0DC4600985702 /* settingTableCell.xib in Resources */,
 				81F2EC181EF19B070065D2BD /* rightMenuCell.xib in Resources */,
 				929D98F71EEEB26100A8E598 /* Roboto-Light.ttf in Resources */,
+				81D17A021EF84C3200976349 /* ConfirmationScreen.xib in Resources */,
 				81E76BED1EEF7F5F00256FD4 /* SettingViewController.xib in Resources */,
 				929D98F21EEEB26100A8E598 /* Roboto-Black.ttf in Resources */,
 				929D98F91EEEB26100A8E598 /* Roboto-Medium.ttf in Resources */,
 				929D98F61EEEB26100A8E598 /* Roboto-Italic.ttf in Resources */,
+				81D179F81EF84A3F00976349 /* bookingViewController.xib in Resources */,
 				045CF6FF1EEC7A9F0052DBC6 /* LaunchScreen.storyboard in Resources */,
 				81E76BE21EEF73E500256FD4 /* ChangePasswordViewController.xib in Resources */,
 				929D98F31EEEB26100A8E598 /* Roboto-BlackItalic.ttf in Resources */,
@@ -929,6 +974,7 @@
 				92DEEE7B1EEE8C8B001B5DCA /* RideLaterVC.swift in Sources */,
 				81E76BE31EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.swift in Sources */,
 				81F2EC041EF18AA60065D2BD /* SlideNavigationController.m in Sources */,
+				81D179F71EF84A3F00976349 /* bookingViewController.swift in Sources */,
 				81F2EC121EF19AC70065D2BD /* rightMenuViewController.swift in Sources */,
 				5BB10C9F1EEBEA8500F93FBE /* ViewController.swift in Sources */,
 				81E76BE11EEF73E500256FD4 /* ChangePasswordViewController.swift in Sources */,
@@ -955,6 +1001,8 @@
 				814C6FC11EF05A8400985702 /* MyRidesTableViewCell.swift in Sources */,
 				04FA4CE01EF538C300CF7618 /* Reachability.swift in Sources */,
 				5BB10CA51EEBEA8600F93FBE /* Tawsila.xcdatamodeld in Sources */,
+				81D17A011EF84C3200976349 /* ConfirmationScreen.swift in Sources */,
+				81D179F21EF84A3200976349 /* forgotPassword.swift in Sources */,
 				0439CA7B1EEC50B1008E4F78 /* Constant.swift in Sources */,
 				81F2EC021EF18AA60065D2BD /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 			);

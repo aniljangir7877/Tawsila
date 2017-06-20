@@ -213,5 +213,28 @@ extension UIViewController {
     func actionBackButton(_ sender: Any)  {
         navigationController?.popViewController(animated: true)
     }
+    
+    func setLeftToRightViewTransition(_ viewC: UIViewController){
+   //    let obj : SignInOrCreateNewAccount = SignInOrCreateNewAccount(nibName: "SignInOrCreateNewAccount", bundle: nil)
+        let transition = CATransition.init()
+        transition.duration = 0.45
+        transition.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionDefault)
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromLeft
+        navigationController?.view.layer.add(transition, forKey: nil)
+        navigationController?.pushViewController(viewC, animated: true)
+     //   navigationController?.popViewController(animated: true)
+    }
+    
+    func setRightToLeftViewTransition(_ isBack:Bool){
+        let transition = CATransition.init()
+        transition.duration = 0.45
+        transition.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionDefault)
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromRight
+        navigationController?.view.layer.add(transition, forKey: nil)
+        navigationController?.popViewController(animated: isBack)
+    }
+    
 }
 

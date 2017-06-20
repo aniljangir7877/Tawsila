@@ -11,12 +11,14 @@ import UIKit
 class SignInOrCreateNewAccount: UIViewController {
     @IBOutlet var btnSignIn: UIButton!
     @IBOutlet var btnCreateNewAccount: UIButton!
-
+    var lang: String!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         AppDelegateVariable.appDelegate.checkNewVerisonAvailabel(viewController: self)
         // Do any additional setup after loading the view.
+        lang = AppDelegateVariable.appDelegate.checkAppLanguage()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
@@ -40,6 +42,10 @@ class SignInOrCreateNewAccount: UIViewController {
     
     @IBAction func actionCreateNewAccout(_ sender: Any) {
         let obj : CreateNewAccount = CreateNewAccount(nibName: "CreateNewAccount", bundle: nil)
+        if lang == "ar" {
+            setLeftToRightViewTransition(obj)
+        }else{
         navigationController?.pushViewController(obj, animated: true)
+        }
     }
 }
