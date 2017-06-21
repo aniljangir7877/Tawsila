@@ -28,7 +28,7 @@
                 <outlet property="txtCountryCode" destination="So3-Oo-AXe" id="teS-rt-6yS"/>
                 <outlet property="txtInvitationCode" destination="jZu-TX-25a" id="uoz-FP-h4q"/>
                 <outlet property="txtMobile" destination="s7j-jA-qVy" id="D3p-mD-1tc"/>
-                <outlet property="txtUserFullName" destination="vJw-PZ-bXi" id="D54-cI-mbu"/>
+                <outlet property="txtUserFullName" destination="NvN-o1-aSU" id="u2p-ex-mUO"/>
                 <outlet property="txtemail" destination="eIn-la-h7o" id="d7F-H4-KUR"/>
                 <outlet property="txtpassword" destination="CCm-Yw-mAh" id="Nhc-bk-Gxz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -512,6 +512,9 @@ Cg
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="q84-or-rFi"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -556,6 +559,9 @@ Cg
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="Vvi-aS-i37"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -600,6 +606,9 @@ Cg
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="vLf-QH-lN9"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -644,6 +653,9 @@ Cg
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="Sok-Lc-GNw"/>
+                                            </connections>
                                         </textField>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+91" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="So3-Oo-AXe">
                                             <rect key="frame" x="54" y="11" width="76" height="30"/>
@@ -701,6 +713,9 @@ Cg
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="sCC-7H-ptG"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

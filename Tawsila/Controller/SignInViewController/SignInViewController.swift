@@ -96,6 +96,7 @@ class SignInViewController: UIViewController {
                 
                 USER_DEFAULT.set("1", forKey: "isLogin")
                 USER_DEFAULT.set(userDict, forKey: "userData")
+                AppDelegateVariable.appDelegate.sliderMenuControllser()
               
                 
                 //print("Location:  \(userInfo)")

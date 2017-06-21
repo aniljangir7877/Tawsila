@@ -43,11 +43,14 @@ class ConfirmationScreen: UIViewController, UITextFieldDelegate {
     
     //MARK:- UIButton's Action 
     @IBAction func actionContinue(_ sender: Any) {
+        AppDelegateVariable.appDelegate.sliderMenuControllser()
     }
     
     @IBAction func actionDidNotGetCode(_ sender: Any) {
+        AppDelegateVariable.appDelegate.sliderMenuControllser()
     }
     @IBAction func actionResendCode(_ sender: Any) {
+        AppDelegateVariable.appDelegate.sliderMenuControllser()
     }
     
     //MARK: -UITextField Delegate Method implemnet

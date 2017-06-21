@@ -105,11 +105,16 @@ class CreateNewAccount: UIViewController {
             
             if status == true
             {
-                // var userDict = (((dataDictionary.object(forKey: "response") as! NSDictionary).object(forKey: "data")) as! NSDictionary).mutableCopy() as! NSMutableDictionary
-                //userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict) as! NSMutableDictionary
+                var userDict = ((dataDictionary.object(forKey: "result") as! NSArray).object(at: 0) as! NSDictionary).mutableCopy() as! NSMutableDictionary
+                userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict)
                 
-                //                USER_DEFAULT.set("1", forKey: "isLogin")
-                //                USER_DEFAULT.set(userDict, forKey: "userData")
+                USER_DEFAULT.set("1", forKey: "isLogin")
+                USER_DEFAULT.set(userDict, forKey: "userData")
+                let verification = ConfirmationScreen()
+                self.navigationController?.pushViewController(verification, animated: true)
+                
+                
+              //  AppDelegateVariable.appDelegate.sliderMenuControllser()
                 
                 
                 //print("Location:  \(userInfo)")

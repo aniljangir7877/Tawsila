@@ -41,6 +41,10 @@ class SettingViewController: UIViewController {
         imgEng.image = UIImage.init(named: "circle")
         imgArbic.image = UIImage.init(named: "circle")
         
+        self.lblUserName.text = (USER_DEFAULT.object(forKey: "userData") as! NSDictionary).object(forKey: "username") as? String
+         self.lblMobileNumber.text = (USER_DEFAULT.object(forKey: "userData") as! NSDictionary).object(forKey: "mobile") as? String
+         self.lblEmailAddress.text = (USER_DEFAULT.object(forKey: "userData") as! NSDictionary).object(forKey: "email") as? String
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -89,12 +93,13 @@ class SettingViewController: UIViewController {
         
         let alert = UIAlertController.init(title: "", message: "Are you sure you want to sign out?", preferredStyle: .alert)
         let actionOK = UIAlertAction.init(title: "OK", style: .default) { (alert: UIAlertAction!) in
-             let obj : SignInOrCreateNewAccount = SignInOrCreateNewAccount(nibName: "SignInOrCreateNewAccount", bundle: nil)
-            
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.navContorller = SlideNavigationController.init(rootViewController: obj)
-            appDelegate.window?.rootViewController = appDelegate.navContorller
-            appDelegate.window?.makeKeyAndVisible()
+           // let obj : SignInOrCreateNewAccount = SignInOrCreateNewAccount(nibName: "SignInOrCreateNewAccount", bundle: nil)
+            USER_DEFAULT.set("0", forKey: "isLogin")
+            AppDelegateVariable.appDelegate.sliderMenuControllser()
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            appDelegate.navController = SlideNavigationController.init(rootViewController: obj)
+//            appDelegate.window?.rootViewController = appDelegate.navContorller
+//            appDelegate.window?.makeKeyAndVisible()
         }
         let actionCancel = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
         
