@@ -37,7 +37,7 @@ class Utility
     //Use to encode password for signup
   
 		
-	//get color a String
+	//get color a String -- 
 	
 	
 	func heightForView(_ text:String, font:UIFont, width:CGFloat) -> CGFloat{

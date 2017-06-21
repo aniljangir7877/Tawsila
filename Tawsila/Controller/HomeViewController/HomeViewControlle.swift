@@ -330,19 +330,19 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             // "username => Mandatory, purpose => Mandatory [PTPT,AT,HR,OT], pickup_area => Mandatory, pickup_date => Mandatory, drop_area => Mandatory, pickup_time => Mandatory, area, landmark,
             // pickup_address => Mandatory, taxi_type => Mandatory, departure_time, departure_date, return_date, flight_number, package, promo_code, distance => Mandatory, amount => Mandatory, address, transfer, payment_media => Mandatory, km, timetype, lat => Mandatory, long => Mandatory, random => 78945662, device_id=> Mandatory
             
-            
+            let random : String = "24324323"
             
             let dic = NSMutableDictionary()
             
             dic.setValue("scientificwebs", forKey: "username")
             dic.setValue("PTPT", forKey: "purpose")
-            dic.setValue("Jaipur", forKey: "pickup_area")
+            dic.setValue(lblPickAddress.text, forKey: "pickup_area")
             dic.setValue("21/06/2017", forKey: "pickup_date")
             dic.setValue("05:05 am", forKey: "pickup_time")
-            dic.setValue("Jaipur", forKey: "drop_area")
-            dic.setValue("jaipur", forKey: "area")
+            dic.setValue(lblDestinationAddress.text, forKey: "drop_area")
+            dic.setValue("", forKey: "area")
             dic.setValue("", forKey: "landmark")
-            dic.setValue("jaipur", forKey: "pickup_address")
+            dic.setValue(lblPickAddress.text, forKey: "pickup_address")
             dic.setValue("sedan", forKey: "taxi_type")
             dic.setValue("", forKey: "departure_time")
             dic.setValue("", forKey: "departure_date")
@@ -356,9 +356,9 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             dic.setValue("cash", forKey: "payment_media")
             dic.setValue("15", forKey: "km")
             dic.setValue("", forKey: "timetype")
-            dic.setValue("26.000", forKey: "lat")
-            dic.setValue("75.66", forKey: "long")
-            dic.setValue("234234234", forKey: "random")
+            dic.setValue(String (format: "%f", pickUpCordinate.latitude), forKey: "lat")
+            dic.setValue(String (format: "%f", destinationCordinate.longitude), forKey: "long")
+            dic.setValue(random, forKey: "random")
             dic.setValue("2341234234345234", forKey: "device_id")
             
            // let str = "http://taxiappsourcecode.com/api/index.php?option=booking_request"

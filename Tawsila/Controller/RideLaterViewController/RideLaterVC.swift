@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import Alamofire
-
+import RappleProgressHUD
 
 class RideLaterVC: UIViewController ,GMSMapViewDelegate
 {
@@ -32,6 +32,9 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate
     
     @IBOutlet var lblDestination: UILabel!
     @IBOutlet var lblLocatoin: UILabel!
+    
+    var pickUpCordinate : CLLocationCoordinate2D!
+    var destinationCordinate : CLLocationCoordinate2D!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,7 +147,6 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate
     
     
     
-    
     @IBAction func tapPickTime(_ sender: Any) {
     }
     
@@ -157,6 +159,73 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate
     }
     
     @IBAction func tapDestination(_ sender: Any) {
+        
+        
+        
+      //  "username => Mandatory, purpose => Mandatory [PTPT,AT,HR,OT], pickup_area => Mandatory, pickup_date => Mandatory, drop_area => Mandatory, pickup_time => Mandatory, area, landmark,
+      //  pickup_address => Mandatory, taxi_type => Mandatory, departure_time, departure_date, return_date, flight_number, package, promo_code, distance => Mandatory, amount => Mandatory, address, transfer, payment_media => Mandatory, km, timetype, lat => Mandatory, long => Mandatory, random => 78945662, device_id=> Mandatory
+        
+        
+        let random : String = "24324323"
+        
+        let dic = NSMutableDictionary()
+        
+        dic.setValue("scientificwebs", forKey: "username")
+        dic.setValue("PTPT", forKey: "purpose")
+        dic.setValue(lblLocatoin.text, forKey: "pickup_area")
+        dic.setValue(pickDate.text, forKey: "pickup_date")
+        dic.setValue(pickTime.text, forKey: "pickup_time")
+        dic.setValue(lblDestination.text, forKey: "drop_area")
+        dic.setValue("", forKey: "area")
+        dic.setValue("", forKey: "landmark")
+        dic.setValue(lblLocatoin.text, forKey: "pickup_address")
+        dic.setValue("sedan", forKey: "taxi_type")
+        dic.setValue("", forKey: "departure_time")
+        dic.setValue("", forKey: "departure_date")
+        dic.setValue("", forKey: "flight_number")
+        dic.setValue("", forKey: "package")
+        dic.setValue("", forKey: "promo_code")
+        dic.setValue("15", forKey: "distance")
+        dic.setValue("150", forKey: "amount")
+        dic.setValue("jaipur", forKey: "address")
+        dic.setValue("", forKey: "transfer")
+        dic.setValue("cash", forKey: "payment_media")
+        dic.setValue("15", forKey: "km")
+        dic.setValue("", forKey: "timetype")
+        dic.setValue(String (format: "%f", pickUpCordinate.latitude), forKey: "lat")
+        dic.setValue(String (format: "%f", destinationCordinate.longitude), forKey: "long")
+        dic.setValue(random, forKey: "random")
+        dic.setValue("2341234234345234", forKey: "device_id")
+        
+        // let str = "http://taxiappsourcecode.com/api/index.php?option=booking_request"
+        
+        RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
+        
+        let parameterString = String(format : "index.php?option=booking_request")
+        
+        Utility.sharedInstance.postDataInJson(header: parameterString,  withParameter:dic ,inVC: self) { (dataDictionary, msg, status) in
+            
+            if status == true
+            {
+                var userDict = (dataDictionary.object(forKey: "result") as! NSDictionary).mutableCopy() as! NSMutableDictionary
+                userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict)
+                
+                USER_DEFAULT.set("1", forKey: "isLogin")
+                USER_DEFAULT.set(userDict, forKey: "userData")
+                
+                
+                //print("Location:  \(userInfo)")
+                /// NotificationCenter.default.post(name: Notification.Name(rawValue: "UserDidLoginNotification"), object: nil, userInfo: (userInfo as AnyObject) as? [AnyHashable : Any])
+                // AppDelegateVariable.appDelegate.loginInMainView()
+            }
+            else
+                
+            {
+                Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
+            }
+            
+        }
+
         
     }
 }

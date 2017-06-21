@@ -88,6 +88,8 @@
 		92DEEE7A1EEE8C8B001B5DCA /* HomeViewControlle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92DEEE751EEE8C8B001B5DCA /* HomeViewControlle.xib */; };
 		92DEEE7B1EEE8C8B001B5DCA /* RideLaterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DEEE771EEE8C8B001B5DCA /* RideLaterVC.swift */; };
 		92DEEE7E1EEE9181001B5DCA /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92DEEE7D1EEE9181001B5DCA /* AddressBook.framework */; };
+		92E9DA2F1EFAEAA6004786EE /* PickUPRideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9DA2E1EFAEAA6004786EE /* PickUPRideVC.swift */; };
+		92E9DA311EFAEACA004786EE /* PickUPRideVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92E9DA301EFAEACA004786EE /* PickUPRideVC.xib */; };
 		970B2DAD1EF281AC0027F0C3 /* RideLaterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 970B2DAC1EF281AC0027F0C3 /* RideLaterVC.xib */; };
 		985F9BACAFDA64484ADF106D /* Pods_Tawsila.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4CA21A746696DD59B2B54F /* Pods_Tawsila.framework */; };
 /* End PBXBuildFile section */
@@ -208,6 +210,8 @@
 		92DEEE751EEE8C8B001B5DCA /* HomeViewControlle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewControlle.xib; sourceTree = "<group>"; };
 		92DEEE771EEE8C8B001B5DCA /* RideLaterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideLaterVC.swift; sourceTree = "<group>"; };
 		92DEEE7D1EEE9181001B5DCA /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		92E9DA2E1EFAEAA6004786EE /* PickUPRideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickUPRideVC.swift; path = PickUPRideVC/PickUPRideVC.swift; sourceTree = "<group>"; };
+		92E9DA301EFAEACA004786EE /* PickUPRideVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PickUPRideVC.xib; path = PickUPRideVC/PickUPRideVC.xib; sourceTree = "<group>"; };
 		970B2DAC1EF281AC0027F0C3 /* RideLaterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RideLaterVC.xib; sourceTree = "<group>"; };
 		9C408D14D3B050F1B0661DF2 /* Pods-Tawsila.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tawsila.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tawsila/Pods-Tawsila.debug.xcconfig"; sourceTree = "<group>"; };
 		C58DF0FD146BA2327FE74A07 /* Pods_TawsilaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TawsilaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -374,6 +378,8 @@
 				92DEEE731EEE8C8B001B5DCA /* HomeViewController */,
 				92DEEE761EEE8C8B001B5DCA /* RideLaterViewController */,
 				81CB2E6F1EED1B7F00D400FC /* CreateNewAccount */,
+				92E9DA2E1EFAEAA6004786EE /* PickUPRideVC.swift */,
+				92E9DA301EFAEACA004786EE /* PickUPRideVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -780,6 +786,7 @@
 				81E76BE21EEF73E500256FD4 /* ChangePasswordViewController.xib in Resources */,
 				929D98F31EEEB26100A8E598 /* Roboto-BlackItalic.ttf in Resources */,
 				929D98F81EEEB26100A8E598 /* Roboto-LightItalic.ttf in Resources */,
+				92E9DA311EFAEACA004786EE /* PickUPRideVC.xib in Resources */,
 				81F2EC131EF19AC70065D2BD /* rightMenuViewController.xib in Resources */,
 				929D98FD1EEEB26100A8E598 /* Roboto-ThinItalic.ttf in Resources */,
 				929D98FC1EEEB26100A8E598 /* Roboto-Thin.ttf in Resources */,
@@ -999,6 +1006,7 @@
 				0439CA7D1EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				814C6FBE1EF0572A00985702 /* VSCSliderViewCell.swift in Sources */,
 				814C6FC11EF05A8400985702 /* MyRidesTableViewCell.swift in Sources */,
+				92E9DA2F1EFAEAA6004786EE /* PickUPRideVC.swift in Sources */,
 				04FA4CE01EF538C300CF7618 /* Reachability.swift in Sources */,
 				5BB10CA51EEBEA8600F93FBE /* Tawsila.xcdatamodeld in Sources */,
 				81D17A011EF84C3200976349 /* ConfirmationScreen.swift in Sources */,
