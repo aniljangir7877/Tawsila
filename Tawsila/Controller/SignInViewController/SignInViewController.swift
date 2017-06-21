@@ -48,7 +48,7 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func actionForgotPassword(_ sender: Any) {
-        let obj : ChangePasswordViewController = ChangePasswordViewController(nibName: "ChangePasswordViewController", bundle: nil)
+        let obj : forgotPassword = forgotPassword(nibName: "forgotPassword", bundle: nil)
         navigationController?.pushViewController(obj, animated: true)
         
     }

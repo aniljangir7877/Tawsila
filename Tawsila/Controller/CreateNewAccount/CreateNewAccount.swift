@@ -77,7 +77,7 @@ class CreateNewAccount: UIViewController {
         
         RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
         
-<<<<<<< HEAD
+//<<<<<<< HEAD
 //        let parameter s = [
 //             "username" :  self.txtUserFullName.text! as String,
 //            "email" :  self.txtemail.text! as String,
@@ -89,7 +89,7 @@ class CreateNewAccount: UIViewController {
 //            
 //        ]
           let parameterString = String(format : "register&username=%@&email=%@&password=%@&mobile=%@&country_mobile_code=%@&terms_and_condition=%@&device_id=%@",self.txtUserFullName.text! as String,self.txtemail.text! as String,self.txtpassword.text! as String,self.txtMobile.text! as String,"91","","1234567890")
-=======
+//=======
         //        let parameters = [
         //             "username" :  self.txtUserFullName.text! as String,
         //            "email" :  self.txtemail.text! as String,
@@ -100,8 +100,7 @@ class CreateNewAccount: UIViewController {
         //            "device_id" : "123456789"
         //
         //        ]
-        let parameterString = String(format : "register&username=%@&email=%@&password=%@&mobile=%@&country_mobile_code=%@&terms_and_condition=%@&device_id=%@",self.txtUserFullName.text! as String,self.txtemail.text! as String,self.txtpassword.text! as String,self.txtMobile.text! as String,"91","","1234567890")
->>>>>>> e0d25e47d49dd5473c751927147f180b243f0428
+       // let parameterString = String(format : "register&username=%@&email=%@&password=%@&mobile=%@&country_mobile_code=%@&terms_and_condition=%@&device_id=%@",self.txtUserFullName.text! as String,self.txtemail.text! as String,self.txtpassword.text! as String,self.txtMobile.text! as String,"91","","1234567890")//>>>>>>> e0d25e47d49dd5473c751927147f180b243f0428
         Utility.sharedInstance.postDataInDataForm(header: parameterString,  inVC: self) { (dataDictionary, msg, status) in
             
             if status == true

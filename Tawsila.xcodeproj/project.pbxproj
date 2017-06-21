@@ -84,7 +84,6 @@
 		929D98FB1EEEB26100A8E598 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929D98ED1EEEB26100A8E598 /* Roboto-Regular.ttf */; };
 		929D98FC1EEEB26100A8E598 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929D98EE1EEEB26100A8E598 /* Roboto-Thin.ttf */; };
 		929D98FD1EEEB26100A8E598 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 929D98EF1EEEB26100A8E598 /* Roboto-ThinItalic.ttf */; };
-		929D98FE1EEEB26100A8E598 /* Roboto.zip in Resources */ = {isa = PBXBuildFile; fileRef = 929D98F01EEEB26100A8E598 /* Roboto.zip */; };
 		92DEEE7A1EEE8C8B001B5DCA /* HomeViewControlle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92DEEE751EEE8C8B001B5DCA /* HomeViewControlle.xib */; };
 		92DEEE7B1EEE8C8B001B5DCA /* RideLaterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DEEE771EEE8C8B001B5DCA /* RideLaterVC.swift */; };
 		92DEEE7E1EEE9181001B5DCA /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92DEEE7D1EEE9181001B5DCA /* AddressBook.framework */; };
@@ -204,7 +203,6 @@
 		929D98ED1EEEB26100A8E598 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		929D98EE1EEEB26100A8E598 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		929D98EF1EEEB26100A8E598 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
-		929D98F01EEEB26100A8E598 /* Roboto.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Roboto.zip; sourceTree = "<group>"; };
 		92DEEE751EEE8C8B001B5DCA /* HomeViewControlle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewControlle.xib; sourceTree = "<group>"; };
 		92DEEE771EEE8C8B001B5DCA /* RideLaterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideLaterVC.swift; sourceTree = "<group>"; };
 		92DEEE7D1EEE9181001B5DCA /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -570,7 +568,6 @@
 			isa = PBXGroup;
 			children = (
 				929D98E21EEEB26100A8E598 /* Roboto */,
-				929D98F01EEEB26100A8E598 /* Roboto.zip */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -791,7 +788,6 @@
 				81F2EC091EF18D0D0065D2BD /* LeftMenuViewController.xib in Resources */,
 				814C6FBB1EF048A600985702 /* MyRidesVC.xib in Resources */,
 				929D98FA1EEEB26100A8E598 /* Roboto-MediumItalic.ttf in Resources */,
-				929D98FE1EEEB26100A8E598 /* Roboto.zip in Resources */,
 				92DEEE7A1EEE8C8B001B5DCA /* HomeViewControlle.xib in Resources */,
 				81F2EBFE1EF18AA60065D2BD /* menu-button@2x.png in Resources */,
 			);
