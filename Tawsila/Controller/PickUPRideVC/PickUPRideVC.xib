@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PickUPRideVC" customModule="Tawsila" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PickUPRideVC" customModule="Tawsila">
             <connections>
                 <outlet property="viewForMap" destination="9jg-C3-4De" id="yjf-m0-v0l"/>
             </connections>

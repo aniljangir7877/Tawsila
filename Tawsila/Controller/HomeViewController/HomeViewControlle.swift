@@ -217,6 +217,8 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             self.viewBottom.frame =  CGRect(x: 0, y: Constant.ScreenSize.SCREEN_HEIGHT-134  , width: Constant.ScreenSize.SCREEN_WIDTH, height: 134)
         }
 
+        mapView.animate(toZoom: 10)
+
     }
     
     
@@ -472,6 +474,7 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         
         mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 100))
         self.tagBookNow = 2
+        
 
         
     }
