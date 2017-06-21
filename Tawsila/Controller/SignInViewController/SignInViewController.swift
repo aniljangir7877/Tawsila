@@ -92,7 +92,7 @@ class SignInViewController: UIViewController {
             if status == true
             {
                 var userDict = (dataDictionary.object(forKey: "result") as! NSDictionary).mutableCopy() as! NSMutableDictionary
-                userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict) as! NSMutableDictionary
+                userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict) 
                 
                 USER_DEFAULT.set("1", forKey: "isLogin")
                 USER_DEFAULT.set(userDict, forKey: "userData")
