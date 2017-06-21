@@ -44,13 +44,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
        // let obj : SignInOrCreateNewAccount = SignInOrCreateNewAccount(nibName: "SignInOrCreateNewAccount", bundle: nil)
         
-//        let obj : HomeViewControlle = HomeViewControlle(nibName: "HomeViewControlle", bundle: nil)
-//        
+//<<<<<<< HEAD
+////        let obj : HomeViewControlle = HomeViewControlle(nibName: "HomeViewControlle", bundle: nil)
+////        
+////        navContorller = SlideNavigationController.init(rootViewController: obj)
+////        self.window = UIWindow(frame: UIScreen.main.bounds)
+////        self.window?.rootViewController = navContorller
+////        navContorller?.navigationBar.isHidden = true
+////        self.window?.makeKeyAndVisible()
+//=======
+        self.sliderMenuControllser()
+       // let obj : HomeViewControlle = HomeViewControlle(nibName: "HomeViewControlle", bundle: nil)
+        
 //        navContorller = SlideNavigationController.init(rootViewController: obj)
 //        self.window = UIWindow(frame: UIScreen.main.bounds)
 //        self.window?.rootViewController = navContorller
 //        navContorller?.navigationBar.isHidden = true
 //        self.window?.makeKeyAndVisible()
+//>>>>>>> a13e96c6d8c53c14144ab82d6a026b09a1d35d23
         
         
         

@@ -69,6 +69,8 @@
 		81F2EC131EF19AC70065D2BD /* rightMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F2EC111EF19AC70065D2BD /* rightMenuViewController.xib */; };
 		81F2EC171EF19B070065D2BD /* rightMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2EC151EF19B070065D2BD /* rightMenuCell.swift */; };
 		81F2EC181EF19B070065D2BD /* rightMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F2EC161EF19B070065D2BD /* rightMenuCell.xib */; };
+		92034A951EFAF8790064DAFE /* PickUPRideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92034A931EFAF8790064DAFE /* PickUPRideVC.swift */; };
+		92034A961EFAF8790064DAFE /* PickUPRideVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92034A941EFAF8790064DAFE /* PickUPRideVC.xib */; };
 		92564FC01EEF09F300C59A4E /* ViewDetailCar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92564FBF1EEF09F300C59A4E /* ViewDetailCar.xib */; };
 		92564FC21EEF0AE300C59A4E /* ViewDetailCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92564FC11EEF0AE300C59A4E /* ViewDetailCar.swift */; };
 		929D98F11EEEB26100A8E598 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 929D98E31EEEB26100A8E598 /* LICENSE.txt */; };
@@ -188,6 +190,8 @@
 		81F2EC151EF19B070065D2BD /* rightMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = rightMenuCell.swift; path = rightMenu/cell/rightMenuCell.swift; sourceTree = "<group>"; };
 		81F2EC161EF19B070065D2BD /* rightMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = rightMenuCell.xib; path = rightMenu/cell/rightMenuCell.xib; sourceTree = "<group>"; };
 		902A6B97238E8A10D5B05059 /* Pods_TawsilaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TawsilaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92034A931EFAF8790064DAFE /* PickUPRideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickUPRideVC.swift; sourceTree = "<group>"; };
+		92034A941EFAF8790064DAFE /* PickUPRideVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickUPRideVC.xib; sourceTree = "<group>"; };
 		92564FBF1EEF09F300C59A4E /* ViewDetailCar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewDetailCar.xib; path = "Tawsila/Custom View/ViewDetailCar.xib"; sourceTree = SOURCE_ROOT; };
 		92564FC11EEF0AE300C59A4E /* ViewDetailCar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDetailCar.swift; path = "Tawsila/Custom View/ViewDetailCar.swift"; sourceTree = SOURCE_ROOT; };
 		929D98E31EEEB26100A8E598 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -356,6 +360,7 @@
 		5BB10CCE1EEBEAE900F93FBE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				92034A921EFAF8380064DAFE /* PicupRideVC */,
 				81D179FE1EF84C3200976349 /* ConfirmationScreen */,
 				81D179F41EF84A3F00976349 /* BookingviewController */,
 				81D179EF1EF84A3200976349 /* ForgotPassword */,
@@ -562,6 +567,15 @@
 				81F2EC161EF19B070065D2BD /* rightMenuCell.xib */,
 			);
 			name = cell;
+			sourceTree = "<group>";
+		};
+		92034A921EFAF8380064DAFE /* PicupRideVC */ = {
+			isa = PBXGroup;
+			children = (
+				92034A931EFAF8790064DAFE /* PickUPRideVC.swift */,
+				92034A941EFAF8790064DAFE /* PickUPRideVC.xib */,
+			);
+			name = PicupRideVC;
 			sourceTree = "<group>";
 		};
 		929D98E11EEEB26100A8E598 /* Sources */ = {
@@ -781,6 +795,7 @@
 				929D98FD1EEEB26100A8E598 /* Roboto-ThinItalic.ttf in Resources */,
 				929D98FC1EEEB26100A8E598 /* Roboto-Thin.ttf in Resources */,
 				81CB2E731EED1BD700D400FC /* CreateNewAccount.xib in Resources */,
+				92034A961EFAF8790064DAFE /* PickUPRideVC.xib in Resources */,
 				5BB10CE51EEBFA1700F93FBE /* SignInViewController.xib in Resources */,
 				929D98F11EEEB26100A8E598 /* LICENSE.txt in Resources */,
 				81E76BEF1EEF841800256FD4 /* Main.storyboard in Resources */,
@@ -995,6 +1010,7 @@
 				0439CA7D1EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				814C6FBE1EF0572A00985702 /* VSCSliderViewCell.swift in Sources */,
 				814C6FC11EF05A8400985702 /* MyRidesTableViewCell.swift in Sources */,
+				92034A951EFAF8790064DAFE /* PickUPRideVC.swift in Sources */,
 				04FA4CE01EF538C300CF7618 /* Reachability.swift in Sources */,
 				5BB10CA51EEBEA8600F93FBE /* Tawsila.xcdatamodeld in Sources */,
 				81D17A011EF84C3200976349 /* ConfirmationScreen.swift in Sources */,

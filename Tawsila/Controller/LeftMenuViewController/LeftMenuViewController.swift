@@ -14,6 +14,7 @@ class LeftMenuViewController: UIViewController, UITableViewDelegate, UITableView
     var arrLeftMenu =  [["image" : "home", "key" : "Home"], ["image" : "myride", "key" : "My rides"], ["image" : "wallet", "key" : "Wallet"], ["image" : "freeRide", "key" : "Get Free Rides"], ["image" : "settings", "key" : "Settings"], ["image" : "contactUs", "key" : "Contact us"],  ["image" : "help", "key" : "Help"]]
     
     override func viewDidLoad() {
+         self.lblUserDetail.text = (USER_DEFAULT.object(forKey: "userData") as! NSDictionary).object(forKey: "email") as? String
         super.viewDidLoad()
         //lblUserDetail.text = ""
     }
