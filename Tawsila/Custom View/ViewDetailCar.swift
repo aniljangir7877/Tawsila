@@ -11,6 +11,10 @@ import UIKit
 class ViewDetailCar: UIView {
 
    
+    @IBOutlet var car_price: UILabel!
+    @IBOutlet var car_facility: UILabel!
+    @IBOutlet var car_detail: UILabel!
+    @IBOutlet var cat_type: UILabel!
     @IBOutlet var viewMid: UIView!
     
     override func draw(_ rect: CGRect) {

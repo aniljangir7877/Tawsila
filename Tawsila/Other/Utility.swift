@@ -159,9 +159,7 @@ class Utility
             }
         }
         
-
-        
-//        Alamofire.upload(
+//      Alamofire.upload(
 //            multipartFormData: { multipartFormData in
 //                for (key, value) in parameter {
 //                    multipartFormData.append(((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!), withName: key as! String)

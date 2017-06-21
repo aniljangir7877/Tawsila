@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -19,14 +19,19 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewControlle" customModule="Tawsila" customModuleProvider="target">
             <connections>
+                <outlet property="btnCancel" destination="7Up-yb-izc" id="DL7-El-erE"/>
                 <outlet property="buttonConfirmBooking" destination="E8c-pP-Jbc" id="JPw-r2-D60"/>
                 <outlet property="imageDestDot" destination="sob-Xg-Jgj" id="KEa-7k-ICo"/>
                 <outlet property="imagePicDot" destination="DcS-6B-3AI" id="cLr-le-ogG"/>
+                <outlet property="imgMidPin" destination="oUt-pB-BpM" id="sKN-Pc-8DU"/>
                 <outlet property="lblDestinationAddress" destination="45l-Ss-92a" id="nza-6p-dPa"/>
+                <outlet property="lblEstimatedFare" destination="lGM-Cw-zn4" id="Z00-yN-IeL"/>
+                <outlet property="lblEstimatedTime" destination="oMP-11-uZV" id="lZr-KG-bMb"/>
                 <outlet property="lblPickAddress" destination="1by-EO-A0U" id="Tmv-wc-NBw"/>
                 <outlet property="scrollViewCars" destination="bNi-LM-BgP" id="KUQ-cg-cfY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="Ebg-iF-Q2S"/>
                 <outlet property="viewBottom" destination="KLv-B0-Qxj" id="YG2-ba-qg3"/>
+                <outlet property="viewConfirmBtns" destination="fax-eN-FO4" id="F5B-Yt-rBc"/>
                 <outlet property="viewDestinationAddress" destination="ecD-c4-awm" id="MAq-Jl-dVv"/>
                 <outlet property="viewEstimate" destination="nZl-4q-AkF" id="sYD-ke-0Ki"/>
                 <outlet property="viewForMap" destination="iYG-vS-5jL" id="0Im-Xz-FOK"/>
@@ -43,18 +48,37 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8c-pP-Jbc">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fax-eN-FO4">
                     <rect key="frame" x="8" y="624" width="359" height="35"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <color key="backgroundColor" red="0.71372549019999998" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
-                    <state key="normal" title="Comfirm Booking !">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="tapConfirmBooking:" destination="-1" eventType="touchUpInside" id="jIC-uw-D1A"/>
-                    </connections>
-                </button>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8c-pP-Jbc">
+                            <rect key="frame" x="0.0" y="0.0" width="254" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <color key="backgroundColor" red="0.71372549019999998" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
+                            <state key="normal" title="Comfirm Booking !">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="tapConfirmBooking:" destination="-1" eventType="touchUpInside" id="jIC-uw-D1A"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Up-yb-izc">
+                            <rect key="frame" x="255" y="0.0" width="103" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <color key="backgroundColor" red="0.71372549019999998" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
+                            <state key="normal" title="Cencel">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="tapCacelBooking:" destination="-1" eventType="touchUpInside" id="pu6-Rl-Xyv"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nZl-4q-AkF">
                     <rect key="frame" x="8" y="566" width="359" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
