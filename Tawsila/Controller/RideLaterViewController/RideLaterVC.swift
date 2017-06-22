@@ -12,7 +12,7 @@ import GooglePlaces
 import Alamofire
 import RappleProgressHUD
 
-class RideLaterVC: UIViewController ,GMSMapViewDelegate
+class RideLaterVC: UIViewController ,GMSMapViewDelegate , GMSAutocompleteViewControllerDelegate
 {
     
     var viewDatePicker : UIView!
@@ -150,12 +150,10 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate
     @IBAction func tapPickTime(_ sender: Any) {
     }
     
-    @IBAction func tapLocation(_ sender: Any) {
-        
+    @IBAction func tapLocation(_ sender: Any){
         acController = GMSAutocompleteViewController()
         present(acController, animated: true, completion: nil)
-        acController.delegate = self as? GMSAutocompleteViewControllerDelegate
-        
+        acController.delegate = self
     }
     
     @IBAction func tapDestination(_ sender: Any) {
@@ -219,15 +217,39 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate
                 // AppDelegateVariable.appDelegate.loginInMainView()
             }
             else
-                
             {
                 Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
             }
-            
         }
-
-        
     }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace)
+    {
+        print("Place name: \(place.name)")
+        // print("Place address: \(place.formattedAddress)")
+        // print("Place attributions: \(place.attributions)")
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // User canceled the operation.
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+
 }
 
 // MARK:
