@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RappleProgressHUD
 
 class forgotPassword: UIViewController, UITextFieldDelegate {
 
@@ -19,6 +20,55 @@ class forgotPassword: UIViewController, UITextFieldDelegate {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func actionSendNewPassword(_ sender: Any) {
+        if  Reachability.isConnectedToNetwork() == false
+        {
+            Utility.sharedInstance.showAlert("Alert", msg: "Internet Connection not Availabel!", controller: self)
+            return
+        }
+        if (Utility.sharedInstance.trim(self.txtEmail.text!)).characters.count == 0 {
+            Utility.sharedInstance.showAlert("Alert", msg: "Please enter your email.", controller: self)
+            return
+        }
+        
+        if (AppDelegateVariable.appDelegate.isValidEmail(self.txtEmail.text!) == false)
+        {
+            Utility.sharedInstance.showAlert("Alert", msg: "Please enter valid email.", controller: self)
+            return
+        }
+        
+        
+        RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
+        
+        
+        let parameterString = String(format : "forgot_password&email=%@",self.txtEmail.text! as String)
+        
+        Utility.sharedInstance.postDataInDataForm(header: parameterString, inVC: self) { (dataDictionary, msg, status) in
+            
+            if status == true
+            {
+                 Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
+              _ =  self.navigationController?.popViewController(animated: true)
+//                var userDict = (dataDictionary.object(forKey: "result") as! NSDictionary).mutableCopy() as! NSMutableDictionary
+//                userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict) as! NSMutableDictionary
+//                
+//                USER_DEFAULT.set("1", forKey: "isLogin")
+//                USER_DEFAULT.set(userDict, forKey: "userData")
+                
+                
+                //print("Location:  \(userInfo)")
+                /// NotificationCenter.default.post(name: Notification.Name(rawValue: "UserDidLoginNotification"), object: nil, userInfo: (userInfo as AnyObject) as? [AnyHashable : Any])
+                // AppDelegateVariable.appDelegate.loginInMainView()
+                
+                
+            }
+            else
+                
+            {
+                Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
+            }
+            
+        }
+
         
     }
     
@@ -40,16 +90,9 @@ class forgotPassword: UIViewController, UITextFieldDelegate {
     
     //MARK:  - UITextFieldDelegate method implemnet
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if (Utility.sharedInstance.trim(textField.text!)).characters.count == 0 {
-            Utility.sharedInstance.showAlert("Alert", msg: "Please enter your email.", controller: self)
-            return
-        }
         
-        if (AppDelegateVariable.appDelegate.isValidEmail(textField.text!) == false)
-        {
-            Utility.sharedInstance.showAlert("Alert", msg: "Please enter valid email.", controller: self)
-            return
-        }
+        
+
         
     }
     

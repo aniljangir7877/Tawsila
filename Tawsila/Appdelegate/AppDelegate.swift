@@ -26,8 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     let locationManager = CLLocationManager()
     var deviceTokenStr = ""
     var window: UIWindow?
-    var navContorller : UINavigationController?
+    var navController : UINavigationController?
     var strLanguage: String!
+    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
@@ -44,13 +45,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
        // let obj : SignInOrCreateNewAccount = SignInOrCreateNewAccount(nibName: "SignInOrCreateNewAccount", bundle: nil)
         
-        let obj : HomeViewControlle = HomeViewControlle(nibName: "HomeViewControlle", bundle: nil)
+//<<<<<<< HEAD
+////        let obj : HomeViewControlle = HomeViewControlle(nibName: "HomeViewControlle", bundle: nil)
+////        
+////        navContorller = SlideNavigationController.init(rootViewController: obj)
+////        self.window = UIWindow(frame: UIScreen.main.bounds)
+////        self.window?.rootViewController = navContorller
+////        navContorller?.navigationBar.isHidden = true
+////        self.window?.makeKeyAndVisible()
+//=======
+        self.sliderMenuControllser()
+       // let obj : HomeViewControlle = HomeViewControlle(nibName: "HomeViewControlle", bundle: nil)
         
-        navContorller = SlideNavigationController.init(rootViewController: obj)
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = navContorller
-        navContorller?.navigationBar.isHidden = true
-        self.window?.makeKeyAndVisible()
+//        navContorller = SlideNavigationController.init(rootViewController: obj)
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        self.window?.rootViewController = navContorller
+//        navContorller?.navigationBar.isHidden = true
+//        self.window?.makeKeyAndVisible()
+//>>>>>>> a13e96c6d8c53c14144ab82d6a026b09a1d35d23
         
         
         
@@ -100,6 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 //            print("Font Names = [\(names)]")
 //        }
 
+        self.sliderMenuControllser()
         
         return true
     }
@@ -219,50 +232,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func sliderMenuControllser()
     {
-//        self.window = UIWindow(frame:  UIScreen.main.bounds)
-//        self.window?.backgroundColor=UIColor(white: 255.0, alpha: 1.0)
-//        let userId  = USER_DEFAULT.object(forKey: "userid") as? String
-//        if userId == "0" || userId == nil
-//        {
-//            isGuest = true
-//        }
-//        else
-//        {
-//            isGuest = false
-//        }
-//        if isGuest == true {
-//            let homeVC : HomeVC = HomeVC(nibName : "HomeVC" , bundle : nil)
-//            self.navController = SlideNavigationController(rootViewController: homeVC)
-//            
-//            
-//            UINavigationBar.appearance().barTintColor = self.hexStringToUIColor(hex: "F69222")
-//            //UIColor(red: 241.0/255.0, green:147.0/255.0, blue: 34/255.0, alpha: 1.0)
-//        }
-//        else{
-//            let homeVC : MemberHomePageViewController = MemberHomePageViewController(nibName : "MemberHomePageViewController" , bundle : nil)
-//            self.navController = SlideNavigationController(rootViewController: homeVC)
-//            
-//            UINavigationBar.appearance().barTintColor = self.hexStringToUIColor(hex: "86BE50")
-//            //UIColor(red: 114.0/255.0, green:180/255.0, blue: 51.0/255.0, alpha: 1.0)
-//            
-//        }
-//        UINavigationBar.appearance().isTranslucent = false
-//        let leftVC : LeftMenuController = LeftMenuController(nibName : "LeftMenuController" , bundle : nil)
-//        
-//        SlideNavigationController.sharedInstance().leftMenu=leftVC
-//        
-//        self.window?.rootViewController = self.navController
-//        
-//        
-//        UIView.transition(with: window!, duration: 1.0, options: .transitionCrossDissolve, animations: {
-//            self.window?.rootViewController = self.navController
-//        }, completion: { completed in
-//            // maybe do something here
-//        })
-//        //
-//        //  AppDelegate.window?.rootViewController?.presentViewController(AppDelegate.tabBarController!, animated: true, completion: nil)
-//        
-//        self.window?.makeKeyAndVisible()
+        self.window = UIWindow(frame:  UIScreen.main.bounds)
+        self.window?.backgroundColor=UIColor(white: 255.0, alpha: 1.0)
+        let userId  = USER_DEFAULT.object(forKey: "isLogin") as? String
+        if userId == "0" || userId == nil
+        {
+            let homeVC : SignInOrCreateNewAccount = SignInOrCreateNewAccount(nibName : "SignInOrCreateNewAccount" , bundle : nil)
+            self.navController?.isNavigationBarHidden  = true
+            self.navController = SlideNavigationController(rootViewController: homeVC)
+        }
+        else
+        {
+          
+            let homeVC : HomeViewControlle = HomeViewControlle(nibName : "HomeViewControlle" , bundle : nil)
+            self.navController = SlideNavigationController(rootViewController: homeVC)
+            self.navController?.isNavigationBarHidden = true
+          //  UINavigationBar.appearance().barTintColor = self.hexStringToUIColor(hex: "86BE50")
+           
+            
+        }
+        UINavigationBar.appearance().isTranslucent = false
+        let leftVC : LeftMenuViewController = LeftMenuViewController(nibName : "LeftMenuViewController" , bundle : nil)
+        
+        SlideNavigationController.sharedInstance().leftMenu=leftVC
+        
+        self.window?.rootViewController = self.navController
+        self.window?.makeKeyAndVisible()
         
         
         

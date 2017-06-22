@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import RappleProgressHUD
 
 class MyRidesVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tblMyRides: UITableView!
+    var arrayRideData : NSMutableArray = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tblMyRides.tableFooterView = UIView()
+        self.getAllMyRide()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -25,13 +30,57 @@ class MyRidesVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
             
     }
     
+    func getAllMyRide()
+    {
+        if  Reachability.isConnectedToNetwork() == false
+        {
+            Utility.sharedInstance.showAlert("Alert", msg: "Internet Connection not Availabel!", controller: self)
+            return
+        }
+        RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
+        
+        
+        let parameterString = String(format : "get_user_booking&username=%@",((USER_DEFAULT.object(forKey: "userData") as! NSDictionary).object(forKey: "username") as? String)!)
+        
+        Utility.sharedInstance.postDataInDataForm(header: parameterString, inVC: self) { (dataDictionary, msg, status) in
+            
+            if status == true
+            {
+                let userDict = dataDictionary.object(forKey: "result") as! NSArray
+                
+                print(userDict.count)
+                print(userDict)
+                if msg == "No record found"
+                {
+                    Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
+                }
+                else
+                {
+                    self.arrayRideData = userDict.mutableCopy()  as! NSMutableArray
+                    self.tblMyRides.reloadData()
+                }
+               
+                
+                
+            }
+            else
+                
+            {
+                Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
+            }
+            
+        }
+        
+
+    }
+    
     //MARK :- UITableViewDelegate and DataSource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return arrayRideData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

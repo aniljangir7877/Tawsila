@@ -77,6 +77,19 @@ class CreateNewAccount: UIViewController {
         
         RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
         
+//<<<<<<< HEAD
+//        let parameter s = [
+//             "username" :  self.txtUserFullName.text! as String,
+//            "email" :  self.txtemail.text! as String,
+//            "password":   self.txtpassword.text! as String,
+//            "phone":   self.txtpassword.text! as String,
+//            "country_mobile_code" : "91",
+//            "terms_and_condition" : "",
+//            "device_id" : "123456789"
+//            
+//        ]
+          let parameterString = String(format : "register&username=%@&email=%@&password=%@&mobile=%@&country_mobile_code=%@&terms_and_condition=%@&device_id=%@",self.txtUserFullName.text! as String,self.txtemail.text! as String,self.txtpassword.text! as String,self.txtMobile.text! as String,"91","","1234567890")
+//=======
         //        let parameters = [
         //             "username" :  self.txtUserFullName.text! as String,
         //            "email" :  self.txtemail.text! as String,
@@ -87,16 +100,21 @@ class CreateNewAccount: UIViewController {
         //            "device_id" : "123456789"
         //
         //        ]
-        let parameterString = String(format : "register&username=%@&email=%@&password=%@&mobile=%@&country_mobile_code=%@&terms_and_condition=%@&device_id=%@",self.txtUserFullName.text! as String,self.txtemail.text! as String,self.txtpassword.text! as String,self.txtMobile.text! as String,"91","","1234567890")
+       // let parameterString = String(format : "register&username=%@&email=%@&password=%@&mobile=%@&country_mobile_code=%@&terms_and_condition=%@&device_id=%@",self.txtUserFullName.text! as String,self.txtemail.text! as String,self.txtpassword.text! as String,self.txtMobile.text! as String,"91","","1234567890")//>>>>>>> e0d25e47d49dd5473c751927147f180b243f0428
         Utility.sharedInstance.postDataInDataForm(header: parameterString,  inVC: self) { (dataDictionary, msg, status) in
             
             if status == true
             {
-                // var userDict = (((dataDictionary.object(forKey: "response") as! NSDictionary).object(forKey: "data")) as! NSDictionary).mutableCopy() as! NSMutableDictionary
-                //userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict) as! NSMutableDictionary
+                var userDict = ((dataDictionary.object(forKey: "result") as! NSArray).object(at: 0) as! NSDictionary).mutableCopy() as! NSMutableDictionary
+                userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict)
                 
-                //                USER_DEFAULT.set("1", forKey: "isLogin")
-                //                USER_DEFAULT.set(userDict, forKey: "userData")
+                USER_DEFAULT.set("1", forKey: "isLogin")
+                USER_DEFAULT.set(userDict, forKey: "userData")
+                let verification = ConfirmationScreen()
+                self.navigationController?.pushViewController(verification, animated: true)
+                
+                
+              //  AppDelegateVariable.appDelegate.sliderMenuControllser()
                 
                 
                 //print("Location:  \(userInfo)")

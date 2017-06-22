@@ -86,7 +86,7 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self .perform( #selector(updateLocation), with: 1, afterDelay: 0)
+        self .perform( #selector(self.updateLocation), with: 1, afterDelay: 0)
         
 
         // MARK: - Load Cars API
@@ -202,6 +202,7 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             self.viewBottom.frame =  CGRect(x: 0, y: Constant.ScreenSize.SCREEN_HEIGHT  , width: Constant.ScreenSize.SCREEN_WIDTH, height: 134)
         }
         
+
     }
     
     @IBAction func tapCacelBooking(_ sender: Any)
@@ -217,10 +218,28 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             self.viewBottom.frame =  CGRect(x: 0, y: Constant.ScreenSize.SCREEN_HEIGHT-134  , width: Constant.ScreenSize.SCREEN_WIDTH, height: 134)
         }
 
-        mapView.animate(toZoom: 10)
-
     }
     
+//}
+    
+//    @IBAction func tapCacelBooking(_ sender: Any)
+//    {
+//        viewDestinationAddress.isHidden = true
+//        tagBookNow = 0;
+//        imagePicDot.image = #imageLiteral(resourceName: "Search")
+//        mapView.clear()
+//        imgMidPin.isHidden = false
+//
+//        UIView.animate(withDuration: 0.2)
+//        {
+//            self.viewBottom.frame =  CGRect(x: 0, y: Constant.ScreenSize.SCREEN_HEIGHT-134  , width: Constant.ScreenSize.SCREEN_WIDTH, height: 134)
+//        }
+//
+//        mapView.animate(toZoom: 10)
+//
+//    }
+//    
+
     
     @IBAction func tapRideLater(_ sender: Any) {
         
@@ -236,7 +255,7 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
     
     func updateLocation()
     {
-        let lat = locationManager.location?.coordinate.latitude
+        let lat =    locationManager.location?.coordinate.latitude
         let lon = locationManager.location?.coordinate.longitude
         
         let camera = GMSCameraPosition.camera(withLatitude: lat!, longitude: lon!, zoom: 10.0)
@@ -332,12 +351,25 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             // "username => Mandatory, purpose => Mandatory [PTPT,AT,HR,OT], pickup_area => Mandatory, pickup_date => Mandatory, drop_area => Mandatory, pickup_time => Mandatory, area, landmark,
             // pickup_address => Mandatory, taxi_type => Mandatory, departure_time, departure_date, return_date, flight_number, package, promo_code, distance => Mandatory, amount => Mandatory, address, transfer, payment_media => Mandatory, km, timetype, lat => Mandatory, long => Mandatory, random => 78945662, device_id=> Mandatory
             
+//<<<<<<< HEAD
+//            
+//=======
             let random : String = "24324323"
+//>>>>>>> a13e96c6d8c53c14144ab82d6a026b09a1d35d23
             
             let dic = NSMutableDictionary()
             
             dic.setValue("scientificwebs", forKey: "username")
             dic.setValue("PTPT", forKey: "purpose")
+////<<<<<<< HEAD
+//            dic.setValue("Jaipur", forKey: "pickup_area")
+//            dic.setValue("21/06/2017", forKey: "pickup_date")
+//            dic.setValue("05:05 am", forKey: "pickup_time")
+//            dic.setValue("Jaipur", forKey: "drop_area")
+//            dic.setValue("jaipur", forKey: "area")
+//            dic.setValue("", forKey: "landmark")
+//            dic.setValue("jaipur", forKey: "pickup_address")
+//=======
             dic.setValue(lblPickAddress.text, forKey: "pickup_area")
             dic.setValue("21/06/2017", forKey: "pickup_date")
             dic.setValue("05:05 am", forKey: "pickup_time")
@@ -345,6 +377,7 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             dic.setValue("", forKey: "area")
             dic.setValue("", forKey: "landmark")
             dic.setValue(lblPickAddress.text, forKey: "pickup_address")
+//>>>>>>> a13e96c6d8c53c14144ab82d6a026b09a1d35d23
             dic.setValue("sedan", forKey: "taxi_type")
             dic.setValue("", forKey: "departure_time")
             dic.setValue("", forKey: "departure_date")
@@ -358,9 +391,15 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             dic.setValue("cash", forKey: "payment_media")
             dic.setValue("15", forKey: "km")
             dic.setValue("", forKey: "timetype")
+//<<<<<<< HEAD
+//            dic.setValue("26.000", forKey: "lat")
+//            dic.setValue("75.66", forKey: "long")
+//            dic.setValue("234234234", forKey: "random")
+//=======
             dic.setValue(String (format: "%f", pickUpCordinate.latitude), forKey: "lat")
             dic.setValue(String (format: "%f", destinationCordinate.longitude), forKey: "long")
             dic.setValue(random, forKey: "random")
+//>>>>>>> a13e96c6d8c53c14144ab82d6a026b09a1d35d23
             dic.setValue("2341234234345234", forKey: "device_id")
             
            // let str = "http://taxiappsourcecode.com/api/index.php?option=booking_request"
@@ -474,8 +513,6 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         
         mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 100))
         self.tagBookNow = 2
-        
-
         
     }
     
