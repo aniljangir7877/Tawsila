@@ -41,25 +41,25 @@ class ChangePasswordViewController: UIViewController
         RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
         
         
-        let parameterString = String(format : "reset_forgot_password&username=%@",((USER_DEFAULT.object(forKey: "userData") as! NSDictionary).object(forKey: "id") as? String)!)
+        let parameterString = String(format : "%@reset_forgot_password&id=%@&password=%@&confirmpassword=%@",BSE_URL,((USER_DEFAULT.object(forKey: "userData") as! NSDictionary).object(forKey: "id") as? String)!,self.txtNewPassword.text!,self.txtConfrPassword.text!)
         
         Utility.sharedInstance.postDataInDataForm(header: parameterString, inVC: self) { (dataDictionary, msg, status) in
             
             if status == true
             {
-                let userDict = dataDictionary.object(forKey: "result") as! NSArray
-                
-                print(userDict.count)
-                print(userDict)
-                if msg == "No record found"
-                {
+//                let userDict = dataDictionary.object(forKey: "result") as! NSArray
+//                
+//                print(userDict.count)
+//                print(userDict)
+//                if msg == "No record found"
+//                {
                     Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
-                }
-                else
-                {
-//                    self.arrayRideData = userDict.mutableCopy()  as! NSMutableArray
-//                    self.tblMyRides.reloadData()
-                }
+//                }
+//                else
+//                {
+////                    self.arrayRideData = userDict.mutableCopy()  as! NSMutableArray
+////                    self.tblMyRides.reloadData()
+//                }
                 
                 
                 
