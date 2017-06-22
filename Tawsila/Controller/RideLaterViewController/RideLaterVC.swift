@@ -23,6 +23,8 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate , GMSAutocompleteViewCon
     var acController = GMSAutocompleteViewController()
     
     var temp : Int!
+    var tempLoc : Int!
+
     
     @IBOutlet var imgLocation: UIImageView!
     @IBOutlet var imgDest: UIImageView!
@@ -54,6 +56,11 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate , GMSAutocompleteViewCon
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func tapBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     
     @IBAction func tapPickDate(_ sender: UIButton)
     {
@@ -154,14 +161,24 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate , GMSAutocompleteViewCon
         acController = GMSAutocompleteViewController()
         present(acController, animated: true, completion: nil)
         acController.delegate = self
+        tempLoc = 1
     }
     
     @IBAction func tapDestination(_ sender: Any) {
+    
+        acController = GMSAutocompleteViewController()
+        present(acController, animated: true, completion: nil)
+        acController.delegate = self
+        tempLoc = 2
         
-        
-        
-      //  "username => Mandatory, purpose => Mandatory [PTPT,AT,HR,OT], pickup_area => Mandatory, pickup_date => Mandatory, drop_area => Mandatory, pickup_time => Mandatory, area, landmark,
-      //  pickup_address => Mandatory, taxi_type => Mandatory, departure_time, departure_date, return_date, flight_number, package, promo_code, distance => Mandatory, amount => Mandatory, address, transfer, payment_media => Mandatory, km, timetype, lat => Mandatory, long => Mandatory, random => 78945662, device_id=> Mandatory
+    }
+    
+    
+    
+    @IBAction func tapScheduleRide(_ sender: Any)
+    {
+        //  "username => Mandatory, purpose => Mandatory [PTPT,AT,HR,OT], pickup_area => Mandatory, pickup_date => Mandatory, drop_area => Mandatory, pickup_time => Mandatory, area, landmark,
+        //  pickup_address => Mandatory, taxi_type => Mandatory, departure_time, departure_date, return_date, flight_number, package, promo_code, distance => Mandatory, amount => Mandatory, address, transfer, payment_media => Mandatory, km, timetype, lat => Mandatory, long => Mandatory, random => 78945662, device_id=> Mandatory
         
         
         let random : String = "24324323"
@@ -195,11 +212,10 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate , GMSAutocompleteViewCon
         dic.setValue(random, forKey: "random")
         dic.setValue("2341234234345234", forKey: "device_id")
         
-        // let str = "http://taxiappsourcecode.com/api/index.php?option=booking_request"
-        
+        // http://taxiappsourcecode.com/api/index.php?
         RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
         
-        let parameterString = String(format : "index.php?option=booking_request")
+        let parameterString = String(format : "index.php?booking_request_schedule")
         
         Utility.sharedInstance.postDataInJson(header: parameterString,  withParameter:dic ,inVC: self) { (dataDictionary, msg, status) in
             
@@ -221,14 +237,26 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate , GMSAutocompleteViewCon
                 Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
             }
         }
+ 
     }
+    
     
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace)
     {
+        
         print("Place name: \(place.name)")
         // print("Place address: \(place.formattedAddress)")
         // print("Place attributions: \(place.attributions)")
         dismiss(animated: true, completion: nil)
+        
+        if tempLoc == 1 {
+            pickUpCordinate = place.coordinate
+            lblLocatoin.text = place.formattedAddress
+        }
+        else{
+            destinationCordinate = place.coordinate
+            lblDestination.text = place.formattedAddress
+        }
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
@@ -252,38 +280,4 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate , GMSAutocompleteViewCon
 
 }
 
-// MARK:
-// MARK: - GMSAutocomplete Delegate
-
-extension ViewController: GMSAutocompleteViewControllerDelegate {
-    
-    // Handle the user's selection.
-    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace)
-    {
-        print("Place name: \(place.name)")
-        // print("Place address: \(place.formattedAddress)")
-        // print("Place attributions: \(place.attributions)")
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        // TODO: handle the error.
-        print("Error: ", error.localizedDescription)
-    }
-    
-    // User canceled the operation.
-    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    // Turn the network activity indicator on and off again.
-    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-    }
-    
-    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-    }
-    
-}
 

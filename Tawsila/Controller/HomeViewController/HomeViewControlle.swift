@@ -13,7 +13,7 @@ import RappleProgressHUD
 import Alamofire
 
 
-class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationControllerDelegate    {
+class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationControllerDelegate ,GMSAutocompleteViewControllerDelegate   {
     
     var mapView: GMSMapView!
     @IBOutlet var viewForMap: UIView!
@@ -490,49 +490,43 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
     
     @IBAction func tapSearch(_ sender: Any) {
         
-        //        acController = GMSAutocompleteViewController()
-        //        acController.delegate = self as? GMSAutocompleteViewControllerDelegate;
-        //        present(acController, animated: true, completion: nil)
-        //        acController.delegate = self as Any as? GMSAutocompleteViewControllerDelegate
+                acController = GMSAutocompleteViewController()
+                acController.delegate = self
+                present(acController, animated: true, completion: nil)
         
     }
     
+        func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace)
+        {
+            //print("Place name: \(place.name)")
+            // print("Place address: \(place.formattedAddress)")
+            // print("Place attributions: \(place.attributions)")
+            dismiss(animated: true, completion: nil)
+            let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 10.0)
+            mapView.camera = camera
+
+        }
+    
+        func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+            // TODO: handle the error.
+            print("Error: ", error.localizedDescription)
+        }
+    
+        // User canceled the operation.
+        func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+            dismiss(animated: true, completion: nil)
+        }
+    
+        // Turn the network activity indicator on and off again.
+        func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        }
+    
+        func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }
+        
+   
+    
 }
-
-// MARK:
-// MARK: - GMSAutocomplete Delegate
-
-//extension ViewController: GMSAutocompleteViewControllerDelegate {
-//
-//    // Handle the user's selection.
-//    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace)
-//    {
-//        print("Place name: \(place.name)")
-//        // print("Place address: \(place.formattedAddress)")
-//        // print("Place attributions: \(place.attributions)")
-//        dismiss(animated: true, completion: nil)
-//    }
-//
-//    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-//        // TODO: handle the error.
-//        print("Error: ", error.localizedDescription)
-//    }
-//
-//    // User canceled the operation.
-//    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-//        dismiss(animated: true, completion: nil)
-//    }
-//
-//    // Turn the network activity indicator on and off again.
-//    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-//    }
-//
-//    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-//        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-//    }
-//    
-//}
-
-
 
