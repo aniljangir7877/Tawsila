@@ -117,31 +117,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        print("Hello, vikram")
+      
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-       self.application(application, didFinishLaunchingWithOptions: nil)
+        self.application(application, didFinishLaunchingWithOptions: nil)
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-        if let language = UserDefaults.standard.value(forKey: "LanguageSelected"){
-            
-        }
+            strLanguage = UserDefaults.standard.value(forKey: "LanguageSelected") as! String
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        print("Hello, vikram")
+      
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        print("Hello, vikram")
         self.saveContext()
     }
 
@@ -207,6 +204,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     
+    // MARK: - Validate User Information Fields  ///vikram singh depawat
+    
+    // check Validation on Email field
     func isValidEmail(_ testStr:String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
         if let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx) as NSPredicate? {
@@ -215,10 +215,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         return false
     }
     
-    //check validation on password
+    // check validation on User Name field
+    func isValidUserName(_ testStr: String)->Bool{
+    
+        let userNameRegEx = "[A-Za-z]{3,30}"
+        if let userNameTest = NSPredicate(format: "SELF MATCHES %@", userNameRegEx) as NSPredicate?{
+            return userNameTest.evaluate(with:testStr)
+        }
+        return false
+    }
+    
+    // check validation on mobile field
+    func isValidMobileNumber(_ testStr: String)->Bool{
+       let mobNumerRegEx = "[0-9]{10}"
+        if let mobileTest = NSPredicate(format: "SELF MATCHES %@", mobNumerRegEx) as NSPredicate?{
+            return mobileTest.evaluate(with:testStr)
+        }
+        return false
+    }
+    
+    //check validation on password field
     func isValidPassword(_ testStr: String)->Bool{
         
-        let passwordRegEx = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&]{6,}"
+        let passwordRegEx = "^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{6,32}$"
         if let passwordTest = NSPredicate(format:"SELF MATCHES %@", passwordRegEx) as NSPredicate?
         {
             return passwordTest.evaluate(with: testStr)
@@ -233,11 +252,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     {
         self.window = UIWindow(frame:  UIScreen.main.bounds)
         self.window?.backgroundColor=UIColor(white: 255.0, alpha: 1.0)
+      
         let userId  = USER_DEFAULT.object(forKey: "isLogin") as? String
         if userId == "0" || userId == nil
         {
             let homeVC : SignInOrCreateNewAccount = SignInOrCreateNewAccount(nibName : "SignInOrCreateNewAccount" , bundle : nil)
-            self.navController?.isNavigationBarHidden  = true
             self.navController = SlideNavigationController(rootViewController: homeVC)
         }
         else
@@ -245,21 +264,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
           
             let homeVC : HomeViewControlle = HomeViewControlle(nibName : "HomeViewControlle" , bundle : nil)
             self.navController = SlideNavigationController(rootViewController: homeVC)
-            self.navController?.isNavigationBarHidden = true
-          //  UINavigationBar.appearance().barTintColor = self.hexStringToUIColor(hex: "86BE50")
-           
             
         }
+          self.navController?.isNavigationBarHidden  = true
         UINavigationBar.appearance().isTranslucent = false
+     
         let leftVC : LeftMenuViewController = LeftMenuViewController(nibName : "LeftMenuViewController" , bundle : nil)
-        
         SlideNavigationController.sharedInstance().leftMenu=leftVC
+        
+        let rightVC: rightMenuViewController = rightMenuViewController(nibName: "rightMenuViewController", bundle: nil)
+        SlideNavigationController.sharedInstance().rightMenu = rightVC
         
         self.window?.rootViewController = self.navController
         self.window?.makeKeyAndVisible()
-        
-        
-        
+    
     }
     //MARK: --------------- LOGOUT A USER ---------------
     
@@ -404,17 +422,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
                     OperationQueue.main.addOperation {
                     }
-                    print("error=\(error)")
+                    print("error=\(String(describing: error))")
                     return
                 }
                 
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(response)")
+                    print("response = \(String(describing: response))")
                 }
                 
                 let responseString = String(data: data, encoding: .utf8)
-                print("responseString = \(responseString)")
+                print("responseString = \(String(describing: responseString))")
                 
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? NSDictionary

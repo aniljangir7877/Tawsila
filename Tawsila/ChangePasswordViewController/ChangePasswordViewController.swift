@@ -1,22 +1,25 @@
 
 import UIKit
 import RappleProgressHUD
-class ChangePasswordViewController: UIViewController
+class ChangePasswordViewController: UIViewController, UITextFieldDelegate
 {
     @IBOutlet var txtCurrentPassword: UITextField!
-    
     @IBOutlet weak var btnSavePassword: UIButton!
     @IBOutlet var txtNewPassword: UITextField!
     @IBOutlet var txtConfrPassword: UITextField!
+    @IBOutlet var viewArabic: UIView!
+    @IBOutlet var viewEnglish: UIView!
+    
+    @IBOutlet var txtCurrentPasswordAr: UITextField!
+    @IBOutlet var txtNewPasswordAr: UITextField!
+    @IBOutlet var txtConfrPasswordAr: UITextField!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-       
-
     }
     override func viewWillAppear(_ animated: Bool) {
-        btnSavePassword.layer.cornerRadius = 4.0
-        btnSavePassword.layer.masksToBounds = true
+        setShowAndHideViews(viewEnglish, vArb: viewArabic)
     }
     @IBAction func actionSaveNewPassword(_ sender: Any) {
          self.changePassword()
@@ -28,7 +31,7 @@ class ChangePasswordViewController: UIViewController
     }
    
     @IBAction func actionBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+       actionBackButton(sender)
     }
     
     func changePassword()
@@ -40,8 +43,12 @@ class ChangePasswordViewController: UIViewController
         }
         RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
         
-        
-        let parameterString = String(format : "%@reset_forgot_password&id=%@&password=%@&confirmpassword=%@",BSE_URL,((USER_DEFAULT.object(forKey: "userData") as! NSDictionary).object(forKey: "id") as? String)!,self.txtNewPassword.text!,self.txtConfrPassword.text!)
+        var parameterString : String!
+        if AppDelegateVariable.appDelegate.strLanguage == "en" {
+             parameterString = String(format : "%@reset_forgot_password&id=%@&password=%@&confirmpassword=%@",BSE_URL,((USER_DEFAULT.object(forKey: "userData") as! NSDictionary).object(forKey: "id") as? String)!,self.txtNewPassword.text!,self.txtConfrPassword.text!)
+        }else{
+             parameterString = String(format : "%@reset_forgot_password&id=%@&password=%@&confirmpassword=%@",BSE_URL,((USER_DEFAULT.object(forKey: "userData") as! NSDictionary).object(forKey: "id") as? String)!,self.txtNewPasswordAr.text!,self.txtConfrPasswordAr.text!)
+        }
         
         Utility.sharedInstance.postDataInDataForm(header: parameterString, inVC: self) { (dataDictionary, msg, status) in
             
@@ -75,6 +82,24 @@ class ChangePasswordViewController: UIViewController
         
     }
     
-   
+    // MARK: - UITextFieldDelegate implement
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField == txtNewPassword || textField == txtNewPasswordAr  {
+            if  textField.text == txtCurrentPassword.text ||  textField.text == txtCurrentPasswordAr.text{
+                Utility.sharedInstance.showAlert("Alert", msg: "Your previous password and new password are same. Please change password.", controller: self)
+            }
+        }
+        if textField == txtConfrPassword || textField == txtConfrPasswordAr  {
+            if  textField.text != txtNewPassword.text ||  textField.text != txtNewPasswordAr.text{
+                Utility.sharedInstance.showAlert("Alert", msg: "Password doesn't match.", controller: self)
+            }
+        }
+        return true
+    }
+    
 
 }

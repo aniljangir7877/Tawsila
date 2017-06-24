@@ -9,20 +9,20 @@
 import UIKit
 
 class ConfirmationScreen: UIViewController, UITextFieldDelegate {
-
-    @IBOutlet var actionBack: UIButton!
-    @IBOutlet var btnContinue: UIButton!
+    
+    @IBOutlet var txtVerificationCode: UITextField!
+    @IBOutlet var txtVerficationCodeAr: UITextField!
+   @IBOutlet var viewArabic: UIView!
+    @IBOutlet var viewEnglish: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    @IBOutlet var txtVerificationCode: UITextField!
-    override func viewWillAppear(_ animated: Bool) {
-        actionBack.addTarget(self, action: #selector(actionBackButton(_:)), for: UIControlEvents.touchUpInside)
-        btnContinue.layer.cornerRadius = 4.0
-        btnContinue.layer.masksToBounds = true
+     override func viewWillAppear(_ animated: Bool) {
+      setShowAndHideViews(viewEnglish, vArb: viewArabic)
     }
+    
    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -41,7 +41,7 @@ class ConfirmationScreen: UIViewController, UITextFieldDelegate {
     */
 
     
-    //MARK:- UIButton's Action 
+    //MARK:- UIButton's Action
     @IBAction func actionContinue(_ sender: Any) {
         AppDelegateVariable.appDelegate.sliderMenuControllser()
     }

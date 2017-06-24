@@ -14,46 +14,72 @@ import RappleProgressHUD
 
 class RideLaterVC: UIViewController ,GMSMapViewDelegate , GMSAutocompleteViewControllerDelegate
 {
-    
+    @IBOutlet var viewArabic: UIView!
+    @IBOutlet var viewEnglish: UIView!
     var viewDatePicker : UIView!
+    var acController = GMSAutocompleteViewController()
+    var temp : Int!
+    var pickUpAddress = String ()
     
     @IBOutlet var pickDate: UITextField!
     @IBOutlet var pickTime: UITextField!
-    
-    var acController = GMSAutocompleteViewController()
-    
-    var temp : Int!
-    
     @IBOutlet var imgLocation: UIImageView!
     @IBOutlet var imgDest: UIImageView!
     @IBOutlet var btnSchduleRide: UIButton!
-    
-    var pickUpAddress = String ()
-    
     @IBOutlet var lblDestination: UILabel!
     @IBOutlet var lblLocatoin: UILabel!
+    
+    @IBOutlet var pickDateAr: UITextField!
+    @IBOutlet var pickTimeAr: UITextField!
+    @IBOutlet var imgLocationAr: UIImageView!
+    @IBOutlet var imgDestAr: UIImageView!
+    @IBOutlet var btnSchduleRideAr: UIButton!
+    @IBOutlet var lblDestinationAr: UILabel!
+    @IBOutlet var lblLocatoinAr: UILabel!
+    
+ 
     
     var pickUpCordinate : CLLocationCoordinate2D!
     var destinationCordinate : CLLocationCoordinate2D!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        imgDest.tintColor = UIColor.red
-        imgDest.image = imgDest.image?.withRenderingMode(.alwaysTemplate)
-        
-        imgLocation.tintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-        imgLocation.image = imgDest.image?.withRenderingMode(.alwaysTemplate)
-        
-        btnSchduleRide.layer.cornerRadius = 3;
-        
-        lblLocatoin.text = pickUpAddress
+    
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setShowAndHideViews(viewEnglish, vArb: viewArabic)
+        setUpViews()
+    }
+    
+    func setUpViews(){
+        if AppDelegateVariable.appDelegate.strLanguage == "en"{
+            imgDest.tintColor = UIColor.red
+            imgDest.image = imgDest.image?.withRenderingMode(.alwaysTemplate)
+            
+            imgLocation.tintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            imgLocation.image = imgDest.image?.withRenderingMode(.alwaysTemplate)
+            
+            btnSchduleRide.layer.cornerRadius = 3;
+            
+            lblLocatoin.text = pickUpAddress
+        }else{
+            imgDestAr.tintColor = UIColor.red
+            imgDestAr.image = imgDestAr.image?.withRenderingMode(.alwaysTemplate)
+            
+            imgLocationAr.tintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            imgLocationAr.image = imgDestAr.image?.withRenderingMode(.alwaysTemplate)
+            
+            btnSchduleRideAr.layer.cornerRadius = 3;
+            
+            lblLocatoinAr.text = pickUpAddress
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     @IBAction func tapPickDate(_ sender: UIButton)
     {
@@ -79,15 +105,28 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate , GMSAutocompleteViewCon
         
         if sender.tag == 1
         {
-            pickTime.inputView = datePickerView
-            pickTime.inputAccessoryView = toolBar
-            pickTime .becomeFirstResponder()
-            datePickerView.datePickerMode = UIDatePickerMode.time
-            temp = 0;
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "HH : mm"
-            pickTime.text = dateFormatter.string(from:NSDate() as Date)
+            if AppDelegateVariable.appDelegate.strLanguage == "en" {
+                pickTime.inputView = datePickerView
+                pickTime.inputAccessoryView = toolBar
+                pickTime .becomeFirstResponder()
+                datePickerView.datePickerMode = UIDatePickerMode.time
+                temp = 0;
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "HH : mm"
+                pickTime.text = dateFormatter.string(from:NSDate() as Date)
+            }else{
+                pickTimeAr.inputView = datePickerView
+                pickTimeAr.inputAccessoryView = toolBar
+                pickTimeAr.becomeFirstResponder()
+                datePickerView.datePickerMode = UIDatePickerMode.time
+                temp = 0;
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "HH : mm"
+                pickTimeAr.text = dateFormatter.string(from:NSDate() as Date)
+            }
+           
             
         }
         else
@@ -95,11 +134,20 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate , GMSAutocompleteViewCon
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/MM/yyyy"
             
-            pickDate.text = dateFormatter.string(from:NSDate() as Date)
-            
-            pickDate.inputView = datePickerView
-            pickDate.inputAccessoryView = toolBar
-            pickDate .becomeFirstResponder()
+            if AppDelegateVariable.appDelegate.strLanguage == "en" {
+                pickDate.text = dateFormatter.string(from:NSDate() as Date)
+                
+                pickDate.inputView = datePickerView
+                pickDate.inputAccessoryView = toolBar
+                pickDate .becomeFirstResponder()
+            }
+            else{
+                pickDateAr.text = dateFormatter.string(from:NSDate() as Date)
+                
+                pickDateAr.inputView = datePickerView
+                pickDateAr.inputAccessoryView = toolBar
+                pickDateAr.becomeFirstResponder()
+            }
             datePickerView.datePickerMode = UIDatePickerMode.date
             
             temp = 1;
@@ -114,14 +162,25 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate , GMSAutocompleteViewCon
         {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/mm/yyyy"
-            pickDate.text = dateFormatter.string(from:sender.date as Date)
+            if AppDelegateVariable.appDelegate.strLanguage == "en" {
+                 pickDate.text = dateFormatter.string(from:sender.date as Date)
+            }else{
+                 pickDateAr.text = dateFormatter.string(from:sender.date as Date)
+            }
+           
             
         }
         else
         {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH : MM"
-            pickTime.text = dateFormatter.string(from:sender.date as Date)
+            if AppDelegateVariable.appDelegate.strLanguage == "en" {
+                 pickTime.text = dateFormatter.string(from:sender.date as Date)
+            }
+            else{
+             pickTimeAr.text = dateFormatter.string(from:sender.date as Date)
+            }
+           
         }
         
         
@@ -132,8 +191,14 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate , GMSAutocompleteViewCon
     
     func donePicker()
     {
+        if AppDelegateVariable.appDelegate.strLanguage == "en"{
         pickDate.resignFirstResponder()
         pickTime.resignFirstResponder()
+        }
+        else{
+            pickDateAr.resignFirstResponder()
+            pickTimeAr.resignFirstResponder()
+        }
     }
     
     func tapDone(){
@@ -172,13 +237,23 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate , GMSAutocompleteViewCon
         
         dic.setValue("scientificwebs", forKey: "username")
         dic.setValue("PTPT", forKey: "purpose")
-        dic.setValue(lblLocatoin.text, forKey: "pickup_area")
-        dic.setValue(pickDate.text, forKey: "pickup_date")
-        dic.setValue(pickTime.text, forKey: "pickup_time")
-        dic.setValue(lblDestination.text, forKey: "drop_area")
+        if AppDelegateVariable.appDelegate.strLanguage == "en" {
+            dic.setValue(lblLocatoin.text, forKey: "pickup_area")
+            dic.setValue(pickDate.text, forKey: "pickup_date")
+            dic.setValue(pickTime.text, forKey: "pickup_time")
+            dic.setValue(lblDestination.text, forKey: "drop_area")
+             dic.setValue(lblLocatoin.text, forKey: "pickup_address")
+        }else{
+            dic.setValue(lblLocatoinAr.text, forKey: "pickup_area")
+            dic.setValue(pickDateAr.text, forKey: "pickup_date")
+            dic.setValue(pickTimeAr.text, forKey: "pickup_time")
+            dic.setValue(lblDestinationAr.text, forKey: "drop_area")
+            dic.setValue(lblLocatoinAr.text, forKey: "pickup_address")
+        }
+        
         dic.setValue("", forKey: "area")
         dic.setValue("", forKey: "landmark")
-        dic.setValue(lblLocatoin.text, forKey: "pickup_address")
+       
         dic.setValue("sedan", forKey: "taxi_type")
         dic.setValue("", forKey: "departure_time")
         dic.setValue("", forKey: "departure_date")

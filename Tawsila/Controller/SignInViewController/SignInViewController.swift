@@ -11,12 +11,17 @@ import RappleProgressHUD
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet var viewAr: UIView!
+    @IBOutlet var viewEng: UIView!
+    @IBOutlet var txtEmailAr: ACFloatingTextfield!
+    @IBOutlet var txtPassAr: ACFloatingTextfield!
     @IBOutlet var btnDriver: UIButton!
     @IBOutlet var imgDriver: UIImageView!
     @IBOutlet var imgRider: UIImageView!
     @IBOutlet var btnRider: UIButton!
+    @IBOutlet var imgDAr: UIImageView!
+    @IBOutlet var imgRAr: UIImageView!
     @IBOutlet var txtEmail: UITextField!
-    @IBOutlet var btnSignIn: UIButton!
     @IBOutlet var txtPass: UITextField!
     var userType : String = "user"
     override func viewDidLoad() {
@@ -25,10 +30,7 @@ class SignInViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-        
-         btnSignIn.layer.cornerRadius = 4.0
-        btnSignIn.layer.masksToBounds = true
-        
+        setShowAndHideViews(viewEng, vArb: viewAr)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,23 +40,34 @@ class SignInViewController: UIViewController {
     
     @IBAction func actionDriver(_ sender: Any) {
         userType = "driver"
-        imgDriver.image = UIImage.init(named: "selectRadio")
-        imgRider.image = UIImage.init(named: "unselectRadio")
+        if AppDelegateVariable.appDelegate.strLanguage == "en" {
+            imgDriver.image = UIImage.init(named: "selectRadio")
+            imgRider.image = UIImage.init(named: "unselectRadio")
+        }else{
+            imgDAr .image = UIImage.init(named: "selectRadio")
+            imgRAr.image = UIImage.init(named: "unselectRadio")
+        }
+       
     }
     @IBAction func actionRider(_ sender: Any) {
         userType = "user"
-        imgDriver.image = UIImage.init(named: "unselectRadio")
-        imgRider.image = UIImage.init(named: "selectRadio")
+        if AppDelegateVariable.appDelegate.strLanguage == "en" {
+            imgDriver.image = UIImage.init(named: "unselectRadio")
+            imgRider.image = UIImage.init(named: "selectRadio")
+        }else{
+            imgDAr.image = UIImage.init(named: "unselectRadio")
+            imgRAr.image = UIImage.init(named: "selectRadio")
+        }
+       
     }
     
     @IBAction func actionForgotPassword(_ sender: Any) {
         let obj : forgotPassword = forgotPassword(nibName: "forgotPassword", bundle: nil)
-        navigationController?.pushViewController(obj, animated: true)
-        
+        setPushViewTransition(obj)
     }
+    
     @IBAction func actionBack(_ sender: Any) {
-        
-        navigationController?.popViewController(animated: true)
+        actionBackButton(sender)
     }
     
     @IBAction func actionSignIn(_ sender: Any) {
@@ -64,28 +77,58 @@ class SignInViewController: UIViewController {
             Utility.sharedInstance.showAlert("Alert", msg: "Internet Connection not Availabel!", controller: self)
             return
         }
-        
-        if (Utility.sharedInstance.trim(txtEmail.text!)).characters.count == 0 {
-            Utility.sharedInstance.showAlert("Alert", msg: "Please enter your email.", controller: self)
-            return
+        if  AppDelegateVariable.appDelegate.strLanguage == "en" {
+            if (Utility.sharedInstance.trim(txtEmail.text!)).characters.count == 0 {
+                Utility.sharedInstance.showAlert("Alert", msg: "Please enter your email.", controller: self)
+                return
+            }
+            
+            if (AppDelegateVariable.appDelegate.isValidEmail(txtEmail.text!) == false)
+            {
+                Utility.sharedInstance.showAlert("Alert", msg: "Please enter valid email.", controller: self)
+                return
+            }
+            
+            if (Utility.sharedInstance.trim(txtPass.text!)).characters.count == 0 {
+                Utility.sharedInstance.showAlert("Alert", msg: "Please enter password.", controller: self)
+                return
+            }
+            if (AppDelegateVariable.appDelegate.isValidPassword(txtPass.text!)==false) {
+                Utility.sharedInstance.showAlert("Alert", msg: "Please enter password atleast 6 alphanumeric character." , controller: self)
+            }
         }
-        
-        if (AppDelegateVariable.appDelegate.isValidEmail(txtEmail.text!) == false)
-        {
-            Utility.sharedInstance.showAlert("Alert", msg: "Please enter valid email.", controller: self)
-            return
+        else{
+            
+            if (Utility.sharedInstance.trim(txtEmailAr.text!)).characters.count == 0 {
+                Utility.sharedInstance.showAlert("إنذار", msg: "رجاءا أدخل بريدك الإلكتروني.", controller: self)
+                return
+            }
+            
+            if (AppDelegateVariable.appDelegate.isValidEmail(txtEmailAr.text!) == false)
+            {
+                Utility.sharedInstance.showAlert("إنذار", msg: "الرجاء إدخال عنوان بريد إلكتروني صالح.", controller: self)
+                return
+            }
+            
+            if (Utility.sharedInstance.trim(txtPassAr.text!)).characters.count == 0 {
+                Utility.sharedInstance.showAlert("إنذار", msg: "الرجاء إدخال كلمة المرور.", controller: self)
+                return
+            }
+            if (AppDelegateVariable.appDelegate.isValidPassword(txtPassAr.text!)==false) {
+                Utility.sharedInstance.showAlert("إنذار", msg: "الرجاء إدخال كلمة المرور على الأقل 6 حرف أبجدي رقمي." , controller: self)
+            }
         }
-        
-        if (Utility.sharedInstance.trim(txtPass.text!)).characters.count == 0 {
-            Utility.sharedInstance.showAlert("Alert", msg: "Please enter password.", controller: self)
-            return
-        }
-        
         
         RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
         
         
-        let parameterString = String(format : "login&email=%@&password=%@&usertype=%@&device_id=123456789",self.txtEmail.text! as String,self.txtPass.text! as String,userType)
+        var parameterString :String
+        if AppDelegateVariable.appDelegate.strLanguage == "en"{
+            parameterString = String(format : "login&email=%@&password=%@&usertype=%@&device_id=123456789",self.txtEmail.text! as String,self.txtPass.text! as String,userType)
+        }
+        else{
+            parameterString = String(format : "login&email=%@&password=%@&usertype=%@&device_id=123456789",self.txtEmailAr.text! as String,self.txtPassAr.text! as String,userType)
+        }
         
         Utility.sharedInstance.postDataInDataForm(header: parameterString, inVC: self) { (dataDictionary, msg, status) in
             

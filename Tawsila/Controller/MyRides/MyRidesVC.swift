@@ -11,23 +11,25 @@ import RappleProgressHUD
 
 class MyRidesVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet var viewArabic: UIView!
     @IBOutlet var tblMyRides: UITableView!
+    @IBOutlet var tblMyRidesAr: UITableView!
+    @IBOutlet var viewEnglish: UIView!
+    
     var arrayRideData : NSMutableArray = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.tblMyRides.tableFooterView = UIView()
-        self.getAllMyRide()
-        
-        // Do any additional setup after loading the view.
+    
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     override func viewWillAppear(_ animated: Bool) {
-            
+        self.tblMyRides.tableFooterView = UIView()
+        self.tblMyRidesAr.tableFooterView = UIView()
+        self.getAllMyRide()
+        setShowAndHideViews(viewEnglish, vArb: viewArabic)
     }
     
     func getAllMyRide()
@@ -57,21 +59,17 @@ class MyRidesVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
                 else
                 {
                     self.arrayRideData = userDict.mutableCopy()  as! NSMutableArray
-                    self.tblMyRides.reloadData()
+                    if AppDelegateVariable.appDelegate.strLanguage == "en"{
+                        self.tblMyRides.reloadData()
+                    }else {
+                        self.tblMyRidesAr.reloadData()
+                    }
                 }
-               
-                
-                
             }
-            else
-                
-            {
+            else {
                 Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
             }
-            
         }
-        
-
     }
     
     //MARK :- UITableViewDelegate and DataSource
@@ -91,11 +89,29 @@ class MyRidesVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 181.0
     }
-    
+    //MARK: - UIButtons actions perform  here
     @IBAction func actionLeftMenu(_ sender: Any) {
         SlideNavigationController.sharedInstance().toggleLeftMenu()
     }
+    
+    @IBAction func actionRightMenu(_ sender: Any) {
+        SlideNavigationController.sharedInstance().toggleRightMenu()
+    }
+    
+    @IBAction func actionCurrent(_ sender: Any) {
+        
+    }
+    
+    @IBAction func actionCompelted(_ sender: Any) {
+        
+    }
+    
+    @IBAction func actionScheduled(_ sender: Any) {
+        
+    }
+    
 }
