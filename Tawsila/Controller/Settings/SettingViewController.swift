@@ -57,13 +57,13 @@ class SettingViewController: UIViewController {
     @IBAction func actionArabicSelect(_ sender: Any) {
         imgArbic.image = UIImage.init(named: "pinkSelectedRadio")
         imgEng.image = UIImage.init(named: "circle")
-        UserDefaults.standard.setValue("Ar", forKey: "LanguageSelected")
+        UserDefaults.standard.setValue("ar", forKey: "LanguageSelected")
         showAlert()
     }
     @IBAction func actionEnglishSelect(_ sender: Any) {
         imgEng.image = UIImage.init(named: "pinkSelectedRadio")
         imgArbic.image = UIImage.init(named: "circle")
-         UserDefaults.standard.setValue("En", forKey: "LanguageSelected")
+         UserDefaults.standard.setValue("en", forKey: "LanguageSelected")
         showAlert()
     }
     @IBAction func actionLeftMenu(_ sender: Any) {
@@ -76,6 +76,7 @@ class SettingViewController: UIViewController {
     
     @IBAction func actionPriceCard(_ sender: Any) {
     }
+   
     @IBAction func actionLanguageChange(_ sender: Any) {
         viewbackground.isHidden = false
         UIView.animate(withDuration: 0.6, animations: {

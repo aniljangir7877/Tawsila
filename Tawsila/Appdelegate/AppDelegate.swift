@@ -550,7 +550,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
         return lang
     }
-
-  
 }
 

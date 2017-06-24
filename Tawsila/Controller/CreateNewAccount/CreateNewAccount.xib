@@ -466,7 +466,7 @@
                                                 <constraint firstAttribute="width" constant="25" id="6Xv-Bc-tUu"/>
                                             </constraints>
                                         </imageView>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="رقم الهاتف المحمول*" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KAN-V0-LsT" customClass="ACFloatingTextfield" customModule="Tawsila" customModuleProvider="target">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="رقم الهاتف المحمول*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KAN-V0-LsT" customClass="ACFloatingTextfield" customModule="Tawsila" customModuleProvider="target">
                                             <rect key="frame" x="15" y="10" width="219" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="UcL-aU-eQh"/>
