@@ -208,7 +208,7 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate , GMSAutocompleteViewCon
         dic.setValue("15", forKey: "km")
         dic.setValue("", forKey: "timetype")
         dic.setValue(String (format: "%f", pickUpCordinate.latitude), forKey: "lat")
-        dic.setValue(String (format: "%f", destinationCordinate.longitude), forKey: "long")
+        dic.setValue(String (format: "%f", pickUpCordinate.longitude), forKey: "long")
         dic.setValue(random, forKey: "random")
         dic.setValue("2341234234345234", forKey: "device_id")
         

@@ -245,6 +245,7 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         
         let obj : RideLaterVC = RideLaterVC(nibName: "RideLaterVC", bundle: nil)
         obj.pickUpAddress = lblPickAddress.text!
+        obj.pickUpCordinate = pickUpCordinate
         navigationController?.pushViewController(obj, animated: true)
         
     }
@@ -255,7 +256,7 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
     
     func updateLocation()
     {
-        let lat =    locationManager.location?.coordinate.latitude
+        let lat = locationManager.location?.coordinate.latitude
         let lon = locationManager.location?.coordinate.longitude
         
         let camera = GMSCameraPosition.camera(withLatitude: lat!, longitude: lon!, zoom: 10.0)
@@ -266,7 +267,6 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         mapView.frame = CGRect(x: 0, y: 0, width: Constant.ScreenSize.SCREEN_WIDTH, height: Constant.ScreenSize.SCREEN_HEIGHT)
         viewForMap.addSubview(mapView)
     }
-    
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
         
@@ -526,12 +526,18 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
     // MARK: - Tap Search
     
     @IBAction func tapSearch(_ sender: Any) {
+    
+        if tagBookNow != 2 {
+         
+            acController = GMSAutocompleteViewController()
+            acController.delegate = self
+            present(acController, animated: true, completion: nil)
+        }
         
-                acController = GMSAutocompleteViewController()
-                acController.delegate = self
-                present(acController, animated: true, completion: nil)
         
     }
+    
+    // MARK: - Tap Search
     
         func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace)
         {
@@ -541,7 +547,15 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             dismiss(animated: true, completion: nil)
             let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 10.0)
             mapView.camera = camera
-
+            
+            if tagBookNow == 0
+            {
+                pickUpCordinate = place.coordinate
+            }
+            else
+            {
+                destinationCordinate = place.coordinate
+            }
         }
     
         func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
