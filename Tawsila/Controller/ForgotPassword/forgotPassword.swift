@@ -11,13 +11,20 @@ import RappleProgressHUD
 
 class forgotPassword: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet var viewEng: UIView!
+    @IBOutlet var viewAr: UIView!
     @IBOutlet var txtEmail: UITextField!
+    @IBOutlet var txtEmailAr: ACFloatingTextfield!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            setShowAndHideViews(viewEng, vArb: viewAr)
+    }
     @IBAction func actionBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        actionBackButton(sender)
     }
     @IBAction func actionSendNewPassword(_ sender: Any) {
         if  Reachability.isConnectedToNetwork() == false
@@ -25,29 +32,48 @@ class forgotPassword: UIViewController, UITextFieldDelegate {
             Utility.sharedInstance.showAlert("Alert", msg: "Internet Connection not Availabel!", controller: self)
             return
         }
-        if (Utility.sharedInstance.trim(self.txtEmail.text!)).characters.count == 0 {
-            Utility.sharedInstance.showAlert("Alert", msg: "Please enter your email.", controller: self)
-            return
+        if AppDelegateVariable.appDelegate.strLanguage == "en" {
+            if (Utility.sharedInstance.trim(self.txtEmail.text!)).characters.count == 0 {
+                Utility.sharedInstance.showAlert("Alert", msg: "Please enter your email.", controller: self)
+                return
+            }
+            
+            if (AppDelegateVariable.appDelegate.isValidEmail(self.txtEmail.text!) == false)
+            {
+                Utility.sharedInstance.showAlert("Alert", msg: "Please enter valid email.", controller: self)
+                return
+            }
         }
-        
-        if (AppDelegateVariable.appDelegate.isValidEmail(self.txtEmail.text!) == false)
-        {
-            Utility.sharedInstance.showAlert("Alert", msg: "Please enter valid email.", controller: self)
-            return
+        else{
+            if (Utility.sharedInstance.trim(txtEmailAr.text!)).characters.count == 0 {
+                Utility.sharedInstance.showAlert("إنذار", msg: "رجاءا أدخل بريدك الإلكتروني.", controller: self)
+                return
+            }
+            
+            if (AppDelegateVariable.appDelegate.isValidEmail(txtEmailAr.text!) == false)
+            {
+                Utility.sharedInstance.showAlert("إنذار", msg: "الرجاء إدخال عنوان بريد إلكتروني صالح.", controller: self)
+                return
+            }
         }
         
         
         RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
         
-        
-        let parameterString = String(format : "forgot_password&email=%@",self.txtEmail.text! as String)
+        var parameterString: String!
+        if  AppDelegateVariable.appDelegate.strLanguage == "en" {
+                parameterString = String(format : "forgot_password&email=%@",self.txtEmail.text! as String)
+        }else {
+                parameterString = String(format : "forgot_password&email=%@",self.txtEmailAr.text! as String)
+        }
+  
         
         Utility.sharedInstance.postDataInDataForm(header: parameterString, inVC: self) { (dataDictionary, msg, status) in
             
             if status == true
             {
                  Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
-              _ =  self.navigationController?.popViewController(animated: true)
+              self.actionBack((Any).self)
 //                var userDict = (dataDictionary.object(forKey: "result") as! NSDictionary).mutableCopy() as! NSMutableDictionary
 //                userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict) as! NSMutableDictionary
 //                

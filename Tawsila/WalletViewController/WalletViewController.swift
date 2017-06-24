@@ -11,6 +11,8 @@ import UIKit
 class WalletViewController: UIViewController,UITableViewDelegate, UITableViewDataSource
 {
 
+    @IBOutlet var viewEng: UIView!
+    @IBOutlet var viewArabic: UIView!
     var headerTitlesPayments : NSMutableArray = []
 
     @IBOutlet var tblWallet: UITableView!
@@ -18,14 +20,10 @@ class WalletViewController: UIViewController,UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
 
         headerTitlesPayments = [["image" :  "dollor", "key":"Cash"],["image" : "wallet", "key": "Add credit card"]]
-
-        let nib = UINib(nibName: "WalletViewControllerCustomCellTableView", bundle: nil)
-
-        // Do any additional setup after loading the view.
+        
     }
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationItem.backBarButtonItem = backNavigationButton()
-        navigationController?.title = "Wallet"
+          setShowAndHideViews(viewEng, vArb: viewArabic)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -47,22 +45,41 @@ class WalletViewController: UIViewController,UITableViewDelegate, UITableViewDat
             cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? WalletViewControllerCustomCellTableView
         }
          let dic = headerTitlesPayments[indexPath.row] as! NSDictionary
-        cell.lblTitleCash.text = dic.value(forKey: "key") as! String?
-        cell.selectionStyle = .none
-        if indexPath.row == 0 {
-            cell.imageIconPaymentRight.isHidden  = true
+        if  AppDelegateVariable.appDelegate.strLanguage == "en" {
+            cell.lblTitleCash.text = dic.value(forKey: "key") as! String?
+            cell.selectionStyle = .none
+            if indexPath.row == 0 {
+                cell.imageIconPaymentRight.isHidden  = true
+            }
+            else{
+                cell.imageIconPaymentRight.isHidden = false
+            }
+            
+            cell.imageIconPaymentLeft.image = UIImage.init(named: dic.value(forKey: "image") as! String)?.withRenderingMode(.alwaysTemplate)
+            
+            cell.imageIconPaymentLeft.tintColor  = UIColor.lightGray
+        }else{
+            cell.lblTitleCashAr.text = dic.value(forKey: "key") as! String?
+            cell.selectionStyle = .none
+            if indexPath.row == 0 {
+                cell.imageIconPaymentRightAr.isHidden  = true
+            }
+            else{
+                cell.imageIconPaymentRightAr.isHidden = false
+            }
+            
+            cell.imageIconPaymentLeftAr.image = UIImage.init(named: dic.value(forKey: "image") as! String)?.withRenderingMode(.alwaysTemplate)
+            
+            cell.imageIconPaymentLeftAr.tintColor  = UIColor.lightGray
         }
-        else{
-            cell.imageIconPaymentRight.isHidden = false
-        }
-      
-        cell.imageIconPaymentLeft.image = UIImage.init(named: dic.value(forKey: "image") as! String)?.withRenderingMode(.alwaysTemplate)
-        
-        cell.imageIconPaymentLeft.tintColor  = UIColor.lightGray
+     
         
         return cell
     }
 
+    @IBAction func actionRightMenu(_ sender: Any) {
+        SlideNavigationController.sharedInstance().toggleRightMenu()
+    }
     @IBAction func actionLeftMenu(_ sender: Any) {
         SlideNavigationController.sharedInstance().toggleLeftMenu()
     }

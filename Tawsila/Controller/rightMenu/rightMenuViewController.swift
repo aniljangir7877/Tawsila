@@ -10,11 +10,16 @@ import UIKit
 
 class rightMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tblView: UITableView!
     @IBOutlet var lblUserDetail: UILabel!
     var arrLeftMenu =  [["image" : "home", "key" : "Home"], ["image" : "myride", "key" : "My rides"], ["image" : "wallet", "key" : "Wallet"], ["image" : "freeRide", "key" : "Get Free Rides"], ["image" : "settings", "key" : "Settings"], ["image" : "contactUs", "key" : "Contact us"],  ["image" : "help", "key" : "Help"]]
     
     override func viewDidLoad() {
+        print(USER_DEFAULT.object(forKey: "userData") as! NSDictionary)
+        self.lblUserDetail.text = (USER_DEFAULT.object(forKey: "userData") as! NSDictionary).object(forKey: "username") as? String
         super.viewDidLoad()
+        self.tblView.tableFooterView = UIView()
+        
         //lblUserDetail.text = ""
     }
     
@@ -33,33 +38,40 @@ class rightMenuViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        tableView.register(UINib(nibName: "leftMenuCell", bundle: nil), forCellReuseIdentifier: "cellLeftMenu")
-        var cell : leftMenuCell = tableView.dequeueReusableCell(withIdentifier: "cellLeftMenu", for: indexPath) as! leftMenuCell
+        tableView.register(UINib(nibName: "rightMenuCell", bundle: nil), forCellReuseIdentifier: "rightMenuCell")
+        var cell : rightMenuCell = tableView.dequeueReusableCell(withIdentifier: "rightMenuCell", for: indexPath) as! rightMenuCell
         
         if cell == nil{
-            cell = tableView.dequeueReusableCell(withIdentifier: "cellLeftMenu", for: indexPath) as! leftMenuCell
+            cell = tableView.dequeueReusableCell(withIdentifier: "rightMenuCell", for: indexPath) as! rightMenuCell
         }
         let dic = arrLeftMenu[indexPath.row] as NSDictionary
-        cell.imgIcon.image = dic.value(forKey: "image") as! UIImage?
+        cell.imgIcon.image = UIImage.init(named:  dic.value(forKey: "image")! as! String)
         cell.lblTitle.text = dic.value(forKey: "key") as! String?
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var moveViewController = UIViewController()
+        SlideNavigationController.sharedInstance().toggleLeftMenu()
+        
         switch indexPath.row {
         case 0:
-            moveViewController = UIViewController.init(nibName: "HomeViewControlle", bundle: nil) as! HomeViewControlle
+            let obj : HomeViewControlle = HomeViewControlle(nibName: "HomeViewControlle", bundle: nil)
+            SlideNavigationController.sharedInstance().popToRootAndSwitch(to: obj, withCompletion: nil)
         case 1:
-            moveViewController = UIViewController.init(nibName: "MyRidesVC", bundle: nil) as! MyRidesVC
+            
+            let obj : MyRidesVC = MyRidesVC(nibName: "MyRidesVC", bundle: nil)
+            
+            SlideNavigationController.sharedInstance().popToRootAndSwitch(to: obj, withCompletion: nil)
         case 2:
-            moveViewController = UIViewController.init(nibName: "WalletViewController", bundle: nil) as! WalletViewController
+            let obj : WalletViewController = WalletViewController(nibName: "WalletViewController", bundle: nil)
+            SlideNavigationController.sharedInstance().popToRootAndSwitch(to: obj, withCompletion: nil)
         case 3:
             // moveViewController = UIViewController.init(nibName: "MyRidesVC", bundle: nil)  as!
             print("Get free rides")
         case 4:
-            moveViewController = UIViewController.init(nibName: "SettingViewController", bundle: nil) as! SettingViewController
+            let obj : SettingViewController = SettingViewController(nibName: "SettingViewController", bundle: nil)
+            SlideNavigationController.sharedInstance().popToRootAndSwitch(to: obj, withCompletion: nil)
         case 5:
             //            moveViewController = UIViewController.init(nibName: "MyRidesVC", bundle: nil) as! MyRidesVc
             print("Contact Sceen design.")
@@ -68,10 +80,6 @@ class rightMenuViewController: UIViewController, UITableViewDelegate, UITableVie
         default:
             print("ViewController not Found.")
         }
-        
-        SlideNavigationController.sharedInstance().toggleRightMenu()
-        
-        SlideNavigationController.sharedInstance().popAllAndSwitch(to: moveViewController, withCompletion: nil)
     }
 }
 

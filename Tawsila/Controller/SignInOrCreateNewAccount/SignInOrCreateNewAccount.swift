@@ -7,28 +7,39 @@
 //
 
 import UIKit
+@IBDesignable
+class btnCustomeClass: UIButton {
+    @IBInspectable var cornerRadius: CGFloat = 4.0 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+            layer.masksToBounds = true
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = cornerRadius
+        layer.masksToBounds = true
+    }
+}
 
 class SignInOrCreateNewAccount: UIViewController {
-    @IBOutlet var btnSignIn: UIButton!
+    @IBOutlet var viewArabic: UIView!
+    
     @IBOutlet var btnCreateNewAccount: UIButton!
-    var lang: String!
+    @IBOutlet var viewEnglish: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         AppDelegateVariable.appDelegate.checkNewVerisonAvailabel(viewController: self)
-        // Do any additional setup after loading the view.
-        lang = AppDelegateVariable.appDelegate.checkAppLanguage()
-        
+      
     }
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
-        navigationController?.navigationBar.backgroundColor = NavigationBackgraoungColor
-        
-        btnSignIn.layer.cornerRadius = 4.0
-        btnSignIn.layer.masksToBounds = true
+        setShowAndHideViews(viewEnglish, vArb: viewArabic)
     }
     override func viewDidDisappear(_ animated: Bool) {
-//        navigationController?.navigationBar.isHidden = false
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -37,15 +48,11 @@ class SignInOrCreateNewAccount: UIViewController {
 
     @IBAction func actionSignIn(_ sender: Any) {
         let obj : SignInViewController = SignInViewController(nibName: "SignInViewController", bundle: nil)
-        navigationController?.pushViewController(obj, animated: true)
+        setPushViewTransition(obj)
     }
     
     @IBAction func actionCreateNewAccout(_ sender: Any) {
         let obj : CreateNewAccount = CreateNewAccount(nibName: "CreateNewAccount", bundle: nil)
-        if lang == "ar" {
-            setLeftToRightViewTransition(obj)
-        }else{
-        navigationController?.pushViewController(obj, animated: true)
-        }
+         setPushViewTransition(obj)
     }
 }

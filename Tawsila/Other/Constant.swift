@@ -25,9 +25,6 @@ let NavigationBackgraoungColor = UIColor(red: 163.0/255.0, green: 135.0/255.0, b
 
 struct Constant {
     
- 
-
-    
     struct Notifications {
         static let kNotificationDidSelectCategory = "SelectCategory"
         static let kNotificationPushViewController = "PushViewController"
@@ -188,6 +185,8 @@ extension UITextField {
         self.layer.shadowRadius = 0.0
     }
 }
+
+//MARK:-------------------------- UIViewController extension ---------------------------
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
@@ -210,22 +209,33 @@ extension UIViewController {
         return item1
     }
     
+    /// bellow method is added to go previous viewController
     func actionBackButton(_ sender: Any)  {
-        navigationController?.popViewController(animated: true)
+        if AppDelegateVariable.appDelegate.strLanguage == "en"{
+            navigationController?.popViewController(animated: true)
+        }else{
+            setRightToLeftViewTransition(true)
+        }
     }
     
-    func setLeftToRightViewTransition(_ viewC: UIViewController){
-   //    let obj : SignInOrCreateNewAccount = SignInOrCreateNewAccount(nibName: "SignInOrCreateNewAccount", bundle: nil)
-        let transition = CATransition.init()
-        transition.duration = 0.45
-        transition.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionDefault)
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromLeft
-        navigationController?.view.layer.add(transition, forKey: nil)
-        navigationController?.pushViewController(viewC, animated: true)
-     //   navigationController?.popViewController(animated: true)
+    // bellow func is used to naviagate viewcontoller for left to right like  Arabic and Hebew language view transition
+    func setPushViewTransition(_ viewC: UIViewController){
+   
+        if AppDelegateVariable.appDelegate.strLanguage == "ar" {
+            let transition = CATransition.init()
+            transition.duration = 0.45
+            transition.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionDefault)
+            transition.type = kCATransitionPush
+            transition.subtype = kCATransitionFromLeft
+            navigationController?.view.layer.add(transition, forKey: nil)
+            navigationController?.pushViewController(viewC, animated: true)
+        }else {
+            navigationController?.pushViewController(viewC, animated: true)
+        }
+    
     }
     
+    // bellow func is used to naviagate previous viewcontoller for left to right like  Arabic and Hebew language view transition
     func setRightToLeftViewTransition(_ isBack:Bool){
         let transition = CATransition.init()
         transition.duration = 0.45
@@ -235,6 +245,18 @@ extension UIViewController {
         navigationController?.view.layer.add(transition, forKey: nil)
         navigationController?.popViewController(animated: isBack)
     }
-    
+}
+
+//MARK: ---------------Hide and Show Arabic and English View on same ViewController ---------
+extension UIViewController{
+    func setShowAndHideViews(_ vEng: UIView, vArb: UIView) ->Void {
+        if AppDelegateVariable.appDelegate.strLanguage == "en" {
+            vArb.isHidden = true
+            vEng.isHidden = false
+        }else{
+            vEng.isHidden = true
+            vArb.isHidden = false
+        }
+    }
 }
 

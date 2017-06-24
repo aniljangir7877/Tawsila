@@ -10,14 +10,14 @@ import UIKit
 
 class WalletViewControllerCustomCellTableView: UITableViewCell
 {
-    
+    @IBOutlet weak var viewEng: UIView!
+    @IBOutlet weak var viewArabic : UIView!
     @IBOutlet weak var imageIconPaymentLeft: UIImageView!
-    
     @IBOutlet weak var imageIconPaymentRight: UIImageView!
-    
-    
     @IBOutlet weak var lblTitleCash: UILabel!
-    
+    @IBOutlet weak var imageIconPaymentLeftAr: UIImageView!
+    @IBOutlet weak var imageIconPaymentRightAr: UIImageView!
+    @IBOutlet weak var lblTitleCashAr: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
