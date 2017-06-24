@@ -179,7 +179,6 @@ fileprivate extension ACFloatingTextfield {
         if self.placeholder != nil && self.placeholder != "" {
             placeholderText = self.placeholder!
         }
-        
         labelPlaceholder = UILabel(frame: CGRect(x:5, y:0, width:self.frame.size.width-5, height:self.frame.height))
         labelPlaceholder?.text = placeholderText
         labelPlaceholder?.textAlignment = self.textAlignment
