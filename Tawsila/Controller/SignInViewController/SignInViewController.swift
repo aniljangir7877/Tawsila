@@ -94,8 +94,13 @@ class SignInViewController: UIViewController {
                 return
             }
             if (AppDelegateVariable.appDelegate.isValidPassword(txtPass.text!)==false) {
+<<<<<<< HEAD
                 Utility.sharedInstance.showAlert("Alert", msg: "Please enter password atleast 6 alphanumeric character." , controller: self)
                  return
+=======
+               // Utility.sharedInstance.showAlert("Alert", msg: "Please enter password atleast 6 alphanumeric character." , controller: self)
+               // return
+>>>>>>> ab8e4df314fd3995cfadacde23447e893bcda3cf
             }
         }
         else{
@@ -116,7 +121,8 @@ class SignInViewController: UIViewController {
                 return
             }
             if (AppDelegateVariable.appDelegate.isValidPassword(txtPassAr.text!)==false) {
-                Utility.sharedInstance.showAlert("إنذار", msg: "الرجاء إدخال كلمة المرور على الأقل 6 حرف أبجدي رقمي." , controller: self)
+    //            Utility.sharedInstance.showAlert("إنذار", msg: "الرجاء إدخال كلمة المرور على الأقل 6 حرف أبجدي رقمي." , controller: self)
+  //              return
             }
         }
         
@@ -139,8 +145,18 @@ class SignInViewController: UIViewController {
                 userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict)
               
                 
+                let user_id : String = userDict .object(forKey: "id") as! String
+                let user_name : String = userDict .object(forKey: "id") as! String
+                
+                USER_DEFAULT.set(user_id, forKey: "user_id")
+                USER_DEFAULT.set(user_name, forKey: "user_name")
                 USER_DEFAULT.set("1", forKey: "isLogin")
                 USER_DEFAULT.set(userDict, forKey: "userData")
+                
+
+                
+                
+                
                 AppDelegateVariable.appDelegate.sliderMenuControllser()
               
                 

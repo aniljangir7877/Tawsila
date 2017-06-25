@@ -33,7 +33,6 @@
 		5BB10CE41EEBFA1700F93FBE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB10CE21EEBFA1700F93FBE /* SignInViewController.swift */; };
 		5BB10CE51EEBFA1700F93FBE /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB10CE31EEBFA1700F93FBE /* SignInViewController.xib */; };
 		811951611EFCC27200C0720B /* ACFloatingTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811951601EFCC27200C0720B /* ACFloatingTextfield.swift */; };
-		8145BFAA1EF235C100B544A1 /* HomeViewControlle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8145BFA81EF235C100B544A1 /* HomeViewControlle.swift */; };
 		814C6FBA1EF048A600985702 /* MyRidesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C6FB81EF048A600985702 /* MyRidesVC.swift */; };
 		814C6FBB1EF048A600985702 /* MyRidesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814C6FB91EF048A600985702 /* MyRidesVC.xib */; };
 		814C6FBE1EF0572A00985702 /* VSCSliderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C6FBD1EF0572A00985702 /* VSCSliderViewCell.swift */; };
@@ -94,6 +93,7 @@
 		92DEEE7A1EEE8C8B001B5DCA /* HomeViewControlle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92DEEE751EEE8C8B001B5DCA /* HomeViewControlle.xib */; };
 		92DEEE7B1EEE8C8B001B5DCA /* RideLaterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DEEE771EEE8C8B001B5DCA /* RideLaterVC.swift */; };
 		92DEEE7E1EEE9181001B5DCA /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92DEEE7D1EEE9181001B5DCA /* AddressBook.framework */; };
+		92EFD5AB1EFE6ECD00F06494 /* HomeViewControlle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFD5AA1EFE6ECD00F06494 /* HomeViewControlle.swift */; };
 		970B2DAD1EF281AC0027F0C3 /* RideLaterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 970B2DAC1EF281AC0027F0C3 /* RideLaterVC.xib */; };
 		985F9BACAFDA64484ADF106D /* Pods_Tawsila.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4CA21A746696DD59B2B54F /* Pods_Tawsila.framework */; };
 /* End PBXBuildFile section */
@@ -151,7 +151,6 @@
 		5BB10CE31EEBFA1700F93FBE /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		5DE208DDC741A694D73C97FB /* Pods-TawsilaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TawsilaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TawsilaUITests/Pods-TawsilaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		811951601EFCC27200C0720B /* ACFloatingTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACFloatingTextfield.swift; sourceTree = "<group>"; };
-		8145BFA81EF235C100B544A1 /* HomeViewControlle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControlle.swift; sourceTree = "<group>"; };
 		814C6FB81EF048A600985702 /* MyRidesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyRidesVC.swift; path = MyRides/MyRidesVC.swift; sourceTree = "<group>"; };
 		814C6FB91EF048A600985702 /* MyRidesVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyRidesVC.xib; path = MyRides/MyRidesVC.xib; sourceTree = "<group>"; };
 		814C6FBD1EF0572A00985702 /* VSCSliderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSCSliderViewCell.swift; sourceTree = "<group>"; };
@@ -220,6 +219,7 @@
 		92DEEE751EEE8C8B001B5DCA /* HomeViewControlle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewControlle.xib; sourceTree = "<group>"; };
 		92DEEE771EEE8C8B001B5DCA /* RideLaterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideLaterVC.swift; sourceTree = "<group>"; };
 		92DEEE7D1EEE9181001B5DCA /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		92EFD5AA1EFE6ECD00F06494 /* HomeViewControlle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControlle.swift; sourceTree = "<group>"; };
 		970B2DAC1EF281AC0027F0C3 /* RideLaterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RideLaterVC.xib; sourceTree = "<group>"; };
 		9C408D14D3B050F1B0661DF2 /* Pods-Tawsila.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tawsila.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tawsila/Pods-Tawsila.debug.xcconfig"; sourceTree = "<group>"; };
 		C58DF0FD146BA2327FE74A07 /* Pods_TawsilaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TawsilaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -634,8 +634,8 @@
 		92DEEE731EEE8C8B001B5DCA /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
+				92EFD5AA1EFE6ECD00F06494 /* HomeViewControlle.swift */,
 				92DEEE751EEE8C8B001B5DCA /* HomeViewControlle.xib */,
-				8145BFA81EF235C100B544A1 /* HomeViewControlle.swift */,
 			);
 			name = HomeViewController;
 			path = Tawsila/Controller/HomeViewController;
@@ -741,6 +741,7 @@
 				TargetAttributes = {
 					5BB10C981EEBEA8400F93FBE = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 5PAZYS3D4S;
 						ProvisioningStyle = Automatic;
 					};
 					5BB10CAF1EEBEA8600F93FBE = {
@@ -997,7 +998,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8145BFAA1EF235C100B544A1 /* HomeViewControlle.swift in Sources */,
+				92EFD5AB1EFE6ECD00F06494 /* HomeViewControlle.swift in Sources */,
 				0439CA7C1EEC50B1008E4F78 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				92DEEE7B1EEE8C8B001B5DCA /* RideLaterVC.swift in Sources */,
 				81E76BE31EEF73E500256FD4 /* WalletViewControllerCustomCellTableView.swift in Sources */,
@@ -1169,11 +1170,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5PAZYS3D4S;
 				INFOPLIST_FILE = Tawsila/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.scientificweb.Tawsila;
+				PRODUCT_BUNDLE_IDENTIFIER = com.westview.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tawsila/Tawsila-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -1187,11 +1188,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5PAZYS3D4S;
 				INFOPLIST_FILE = Tawsila/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.scientificweb.Tawsila;
+				PRODUCT_BUNDLE_IDENTIFIER = com.westview.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tawsila/Tawsila-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

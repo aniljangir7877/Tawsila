@@ -80,7 +80,7 @@ import UIKit
     //MARK:- UITtextfield Draw Method Override
     override open func draw(_ rect: CGRect) {
         super.draw(rect)
-        self.upadteTextField(frame: CGRect(x:self.frame.minX, y:self.frame.minY, width:rect.width, height:rect.height));
+        self.upadteTextField(frame: CGRect(x:self.frame.minX, y:self.frame.minY-6, width:rect.width, height:rect.height+12));
     }
 
     // MARK:- Loading From NIB
@@ -91,8 +91,11 @@ import UIKit
     
     // MARK:- Intialization
     override public init(frame: CGRect) {
+        
         super.init(frame: frame)
         self.initialize()
+        self.font = UIFont .systemFont(ofSize: 15)
+
     }
     
     required public init(coder aDecoder: NSCoder) {
@@ -162,7 +165,7 @@ fileprivate extension ACFloatingTextfield {
         
         bottomLineView?.removeFromSuperview()
         //Bottom Line UIView Configuration.
-        bottomLineView = UIView(frame: CGRect(x:0, y:self.frame.height-1, width:self.frame.width, height:2))
+        bottomLineView = UIView(frame: CGRect(x:0, y:self.frame.height-1, width:self.frame.width, height:1))
         bottomLineView?.backgroundColor = lineColor;
         
         if bottomLineView != nil {
@@ -189,9 +192,7 @@ fileprivate extension ACFloatingTextfield {
         if labelPlaceholder != nil {
             self.addSubview(labelPlaceholder!)
         }
-        
     }
-    
     
     func addErrorPlaceholderLabel() -> Void {
 
@@ -200,7 +201,7 @@ fileprivate extension ACFloatingTextfield {
         labelErrorPlaceholder?.text = self.errorText
         labelErrorPlaceholder?.textAlignment = self.textAlignment
         labelErrorPlaceholder?.textColor = errorTextColor
-        labelErrorPlaceholder?.font = UIFont(name: (self.font?.fontName ?? "helvetica")!, size: 12)
+        labelErrorPlaceholder?.font = UIFont(name: (self.font?.fontName ?? "helvetica")!, size: 10)
         labelErrorPlaceholder?.sizeToFit()
         labelErrorPlaceholder?.isHidden = true;
         if labelErrorPlaceholder != nil {
@@ -242,7 +243,6 @@ fileprivate extension ACFloatingTextfield {
         if shakeLineWithError {
             bottomLineView?.shake()
         }
-        
     }
     
     func hideErrorPlaceHolder(){
@@ -260,7 +260,6 @@ fileprivate extension ACFloatingTextfield {
             }) { (finished) in
                 self.labelErrorPlaceholder?.removeFromSuperview()
         }
-        
     }
 
     //MARK:- Float & Resign
@@ -299,7 +298,7 @@ fileprivate extension ACFloatingTextfield {
         if selected {
             bottomLineView?.backgroundColor = selectedLineColor
             self.labelPlaceholder?.textColor = self.selectedPlaceHolderColor
-            bottomLineFrame?.origin.y = self.frame.height-2
+            bottomLineFrame?.origin.y = self.frame.height-1
             self.setValue(self.selectedPlaceHolderColor, forKeyPath: "_placeholderLabel.textColor")
 
         } else {
@@ -320,11 +319,11 @@ fileprivate extension ACFloatingTextfield {
         }
         
         var labelFrame = labelPlaceholder?.frame
-        labelFrame?.size.height = 12
+        labelFrame?.size.height = 10
         
         UIView.animate(withDuration: 0.2, animations: {
             self.labelPlaceholder?.frame = labelFrame!;
-            self.labelPlaceholder?.font = UIFont(name: (self.font?.fontName)!, size: 12)
+            self.labelPlaceholder?.font = UIFont(name: (self.font?.fontName)!, size: 10)
             self.bottomLineView?.frame  =  bottomLineFrame!;
         })
         
