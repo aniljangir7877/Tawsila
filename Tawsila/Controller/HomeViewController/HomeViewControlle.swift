@@ -316,7 +316,7 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
     @IBAction func tapRideLater(_ sender: Any) {
         
         let obj : RideLaterVC = RideLaterVC(nibName: "RideLaterVC", bundle: nil)
-        obj.pickUpAddress = lblPickAddress.text!
+      //  obj.pickUpAddress = lblPickAddress.text!
         obj.pickUpCordinate = pickUpCordinate
         navigationController?.pushViewController(obj, animated: true)
         
@@ -461,36 +461,53 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         }
         else
         {
-            // "username => Mandatory, purpose => Mandatory [PTPT,AT,HR,OT], pickup_area => Mandatory, pickup_date => Mandatory, drop_area => Mandatory, pickup_time => Mandatory, area, landmark,
-            // pickup_address => Mandatory, taxi_type => Mandatory, departure_time, departure_date, return_date, flight_number, package, promo_code, distance => Mandatory, amount => Mandatory, address, transfer, payment_media => Mandatory, km, timetype, lat => Mandatory, long => Mandatory, random => 78945662, device_id=> Mandatory
+            //            username:Testapplication
+            //            purpose:PTPT
+            //            pickup_area:fnfkjsdnfkjndskj
+            //            pickup_date:11/10/2017
+            //            drop_area:rkgtjerkjgekjgterjgkjen
+            //            pickup_time:2:5:15
+            //            pickup_address:flsdjifhiuhgkjg
+            //            taxi_type:SUV
+            //            departure_time:2:5:15
+            //            departure_date:11/10/2017
+            //            distance:0
+            //            amount:100
+            //            address:fjhdsngfdhsfhg
+            //            payment_media:cash
+            //            km:1
+            //            lat:26.877776860167394
+            //            long:75.75385887175798
+            //            random:95965626599989895
+            //            
+
             
-//<<<<<<< HEAD
-//            
-//=======
-            let random : String = "24324323"
-//>>>>>>> a13e96c6d8c53c14144ab82d6a026b09a1d35d23
-            
+
+            let random : String = "3233535"
             let dic = NSMutableDictionary()
             
-            dic.setValue("scientificwebs", forKey: "username")
+            dic.setValue("Testapplication", forKey: "username")
             dic.setValue("PTPT", forKey: "purpose")
-////<<<<<<< HEAD
-//            dic.setValue("Jaipur", forKey: "pickup_area")
-//            dic.setValue("21/06/2017", forKey: "pickup_date")
-//            dic.setValue("05:05 am", forKey: "pickup_time")
-//            dic.setValue("Jaipur", forKey: "drop_area")
-//            dic.setValue("jaipur", forKey: "area")
-//            dic.setValue("", forKey: "landmark")
-//            dic.setValue("jaipur", forKey: "pickup_address")
-//=======
-          
-            dic.setValue("21/06/2017", forKey: "pickup_date")
-            dic.setValue("05:05 am", forKey: "pickup_time")
+            dic.setValue("24/06/2017", forKey: "pickup_date")
+            dic.setValue("05:05:77 am", forKey: "pickup_time")            
+            dic.setValue("SUV", forKey: "taxi_type")
+            dic.setValue("05:05:77 am", forKey: "departure_time")
+            dic.setValue("24/06/2017", forKey: "departure_date")
+            dic.setValue("15", forKey: "distance")
+            dic.setValue("100", forKey: "amount")
+            dic.setValue("jaipur", forKey: "address")
+            dic.setValue("Cash", forKey: "payment_media")
+            dic.setValue("15", forKey: "km")
+
+            dic.setValue(String (format: "%@", "26.877714955302803"), forKey: "lat")
+            dic.setValue(String (format: "%@", "75.75397621840239"), forKey: "long")
+            dic.setValue(random, forKey: "random")
+
+            dic.setValue("a13e96c6d8c53c14144ab82d6a026b09a1d35d23", forKey: "device_id")
             
-            dic.setValue("", forKey: "area")
-            dic.setValue("", forKey: "landmark")
             if AppDelegateVariable.appDelegate.strLanguage == "en"{
-                   dic.setValue(lblPickAddress.text, forKey: "pickup_address")
+                
+                dic.setValue(lblPickAddress.text, forKey: "pickup_address")
                 dic.setValue(lblPickAddress.text, forKey: "pickup_area")
                 dic.setValue(lblDestinationAddress.text, forKey: "drop_area")
             }
@@ -499,40 +516,41 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
                 dic.setValue(lblPickAddressAr.text, forKey: "pickup_area")
                 dic.setValue(lblDestinationAddressAr.text, forKey: "drop_area")
             }
-//>>>>>>> a13e96c6d8c53c14144ab82d6a026b09a1d35d23
-            dic.setValue("sedan", forKey: "taxi_type")
-            dic.setValue("", forKey: "departure_time")
-            dic.setValue("", forKey: "departure_date")
-            dic.setValue("", forKey: "flight_number")
-            dic.setValue("", forKey: "package")
-            dic.setValue("", forKey: "promo_code")
-            dic.setValue("15", forKey: "distance")
-            dic.setValue("150", forKey: "amount")
-            dic.setValue("jaipur", forKey: "address")
-            dic.setValue("", forKey: "transfer")
-            dic.setValue("cash", forKey: "payment_media")
-            dic.setValue("15", forKey: "km")
-            dic.setValue("", forKey: "timetype")
-//<<<<<<< HEAD
-//            dic.setValue("26.000", forKey: "lat")
-//            dic.setValue("75.66", forKey: "long")
-//            dic.setValue("234234234", forKey: "random")
-//=======
-            dic.setValue(String (format: "%f", pickUpCordinate.latitude), forKey: "lat")
-            dic.setValue(String (format: "%f", destinationCordinate.longitude), forKey: "long")
-            dic.setValue(random, forKey: "random")
-//>>>>>>> a13e96c6d8c53c14144ab82d6a026b09a1d35d23
-            dic.setValue("2341234234345234", forKey: "device_id")
             
-           // let str = "http://taxiappsourcecode.com/api/index.php?option=booking_request"
             
+            ////<<<<<<< HEAD
+            //            dic.setValue("Jaipur", forKey: "pickup_area")
+            //            dic.setValue("21/06/2017", forKey: "pickup_date")
+            //            dic.setValue("05:05 am", forKey: "pickup_time")
+            //            dic.setValue("Jaipur", forKey: "drop_area")
+            //            dic.setValue("jaipur", forKey: "area")
+            //            dic.setValue("", forKey: "landmark")
+            //            dic.setValue("jaipur", forKey: "pickup_address")
+//            dic.setValue("", forKey: "timetype")
+//            dic.setValue("", forKey: "transfer")
+//            dic.setValue("", forKey: "promo_code")
+//            dic.setValue("", forKey: "area")
+//            dic.setValue("", forKey: "landmark")
+//            dic.setValue("", forKey: "flight_number")
+//            dic.setValue("", forKey: "package")
+//
+            //=======
+                       // let str = "http://taxiappsourcecode.com/api/index.php?option=booking_request"
             
             RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
             
             
-            let parameterString = String(format : "index.php?option=booking_request")
+            var parameterString = String(format : "booking_request")
+
             
-            Utility.sharedInstance.postDataInJson(header: parameterString,  withParameter:dic ,inVC: self) { (dataDictionary, msg, status) in
+            for (key, value) in dic
+            {
+                parameterString = String (format: "%@&%@=%@", parameterString,key as! CVarArg,value as! CVarArg)
+                
+                // println("\(key) -> \(value)")
+            }
+            
+            Utility.sharedInstance.postDataInDataForm(header: parameterString, inVC: self) { (dataDictionary, msg, status) in
                 
                 if status == true
                 {
@@ -541,21 +559,45 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
                     
                     USER_DEFAULT.set("1", forKey: "isLogin")
                     USER_DEFAULT.set(userDict, forKey: "userData")
+                    AppDelegateVariable.appDelegate.sliderMenuControllser()
                     
-                    
-                    //print("Location:  \(userInfo)")
-                    /// NotificationCenter.default.post(name: Notification.Name(rawValue: "UserDidLoginNotification"), object: nil, userInfo: (userInfo as AnyObject) as? [AnyHashable : Any])
+                    //  print("Location:  \(userInfo)")
+                    //  NotificationCenter.default.post(name: Notification.Name(rawValue: "UserDidLoginNotification"), object: nil, userInfo: (userInfo as AnyObject) as? [AnyHashable : Any])
                     // AppDelegateVariable.appDelegate.loginInMainView()
-                    
-                    
                 }
                 else
                     
                 {
                     Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
                 }
-                
             }
+            
+            
+//            Utility.sharedInstance.postDataInDataForm(heheader: <#String#>, ader: parameterString, inVC: self) { (dataDictionary, msg, status) in
+//                
+//     
+//                if status == true
+//                {
+//                    var userDict = (dataDictionary.object(forKey: "result") as! NSDictionary).mutableCopy() as! NSMutableDictionary
+//                    userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict)
+//                    
+//                    USER_DEFAULT.set("1", forKey: "isLogin")
+//                    USER_DEFAULT.set(userDict, forKey: "userData")
+//                    
+//                    
+//                    //print("Location:  \(userInfo)")
+//                    /// NotificationCenter.default.post(name: Notification.Name(rawValue: "UserDidLoginNotification"), object: nil, userInfo: (userInfo as AnyObject) as? [AnyHashable : Any])
+//                    // AppDelegateVariable.appDelegate.loginInMainView()
+//                    
+//                    
+//                }
+//                else
+//                    
+//                {
+//                    Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
+//                }
+//                
+//            }
             
         }
     }
@@ -576,38 +618,10 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
                 if (response.result.value != nil)
                 {
                     
-                    let routes = (response.result.value as AnyObject).object(forKey: "routes")  as? [Any]
-                    
-                    
-                    let overview_polyline : NSDictionary = (routes?[0] as? NSDictionary)!
-                    
-                    let dic : NSDictionary = overview_polyline as Any as! NSDictionary
-                    
-                    let value : NSDictionary = dic.object(forKey: "overview_polyline") as! NSDictionary
-                    
-                    let polyString : String = value.object(forKey: "points") as! String
-                    
-                    self.showPath(polyStr: polyString)
-                    
-                    let estTime =  (((((dic.object(forKey: "legs") as! NSArray) .object(at: 0) ) as AnyObject)
-                        .object(forKey: "duration") ) as! NSDictionary) .object(forKey: "text") as? String
-                    
-                    let estDistance : String =  ((((((dic.object(forKey: "legs") as! NSArray) .object(at: 0) ) as AnyObject)
-                        .object(forKey: "distance") ) as! NSDictionary) .object(forKey: "text") as? String)!
-                    
-                    let doubleValue : Double = NSString(string: estDistance).doubleValue // 3.1
-               
-                    if AppDelegateVariable.appDelegate.strLanguage == "en" {
-                        self.lblEstimatedFare.text =  String (format: "%.1f SAR", doubleValue*10)
-                        self.lblEstimatedTime.text = estTime
-                    }else{
-                        self.lblEstimatedFareAr.text =  String (format: "%.1f SAR", doubleValue*10)
-                        self.lblEstimatedTimeAr.text = estTime
-                    }
-                    
                 }
                 
-            }catch{
+            } catch
+            {
                 print("error in JSONSerialization")
             }
             

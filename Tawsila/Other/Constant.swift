@@ -20,6 +20,12 @@ let MSGTRY : String = "Please try again later."
 let kAPPName : String = "TAWSILA"
 
 let USER_DEFAULT = UserDefaults.standard
+
+let USER_ID : String = UserDefaults.standard .object(forKey: "user_name") as! String
+
+let USER_NAME : String = UserDefaults.standard.object(forKey: "user_id") as! String
+
+
 let THEME_COLOR = UIColor(red: 33/255.0, green: 134/255.0, blue: 226/255.0, alpha: 1.0)
 let NavigationBackgraoungColor = UIColor(red: 163.0/255.0, green: 135.0/255.0, blue: 3.0/255.0, alpha: 1.0) //vikram singh
 
