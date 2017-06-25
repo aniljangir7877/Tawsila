@@ -12,6 +12,8 @@ target 'Tawsila' do
   pod 'GooglePlaces'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'PageMenu'
+
   
   # Pods for Tawsila
 

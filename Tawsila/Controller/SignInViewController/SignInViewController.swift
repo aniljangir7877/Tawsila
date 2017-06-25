@@ -95,6 +95,7 @@ class SignInViewController: UIViewController {
             }
             if (AppDelegateVariable.appDelegate.isValidPassword(txtPass.text!)==false) {
                 Utility.sharedInstance.showAlert("Alert", msg: "Please enter password atleast 6 alphanumeric character." , controller: self)
+                 return
             }
         }
         else{
@@ -135,7 +136,8 @@ class SignInViewController: UIViewController {
             if status == true
             {
                 var userDict = (dataDictionary.object(forKey: "result") as! NSDictionary).mutableCopy() as! NSMutableDictionary
-                userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict) 
+                userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict)
+              
                 
                 USER_DEFAULT.set("1", forKey: "isLogin")
                 USER_DEFAULT.set(userDict, forKey: "userData")
