@@ -15,6 +15,7 @@ import CoreLocation
 import UserNotifications
 import Fabric
 import Crashlytics
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate, UNUserNotificationCenterDelegate {
@@ -39,32 +40,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
        // Fabric.sharedSDK().debug = true
         //Fabric.with([Crashlytics.self()])
 
+        FirebaseApp.configure()
         
         GMSServices.provideAPIKey("AIzaSyAHgc0o2XkUDVwnw7F0ru8b7JpWlPL5aOc")
         GMSPlacesClient.provideAPIKey("AIzaSyAHgc0o2XkUDVwnw7F0ru8b7JpWlPL5aOc")
         
-       // let obj : SignInOrCreateNewAccount = SignInOrCreateNewAccount(nibName: "SignInOrCreateNewAccount", bundle: nil)
-        
-//<<<<<<< HEAD
-////        let obj : HomeViewControlle = HomeViewControlle(nibName: "HomeViewControlle", bundle: nil)
-////        
-////        navContorller = SlideNavigationController.init(rootViewController: obj)
-////        self.window = UIWindow(frame: UIScreen.main.bounds)
-////        self.window?.rootViewController = navContorller
-////        navContorller?.navigationBar.isHidden = true
-////        self.window?.makeKeyAndVisible()
-//=======
         self.sliderMenuControllser()
-       // let obj : HomeViewControlle = HomeViewControlle(nibName: "HomeViewControlle", bundle: nil)
-        
-//        navContorller = SlideNavigationController.init(rootViewController: obj)
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        self.window?.rootViewController = navContorller
-//        navContorller?.navigationBar.isHidden = true
-//        self.window?.makeKeyAndVisible()
-//>>>>>>> a13e96c6d8c53c14144ab82d6a026b09a1d35d23
-        
-        
         
         if #available(iOS 10, *) {
             UNUserNotificationCenter.current().delegate = self
@@ -79,17 +60,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             })
             
         }
-            // iOS 9 support
+        // iOS 9 support
         else if #available(iOS 9, *) {
             UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
             UIApplication.shared.registerForRemoteNotifications()
         }
-            // iOS 8 support
+        // iOS 8 support
         else if #available(iOS 8, *) {
             UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
             UIApplication.shared.registerForRemoteNotifications()
         }
-            // iOS 7 support
+        // iOS 7 support
         else {
             application.registerForRemoteNotifications(matching: [.badge, .sound, .alert])
         }
@@ -267,7 +248,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             self.navController = SlideNavigationController(rootViewController: homeVC)
             
         }
-          self.navController?.isNavigationBarHidden  = true
+        
+        self.navController?.isNavigationBarHidden  = true
         UINavigationBar.appearance().isTranslucent = false
      
         let leftVC : LeftMenuViewController = LeftMenuViewController(nibName : "LeftMenuViewController" , bundle : nil)

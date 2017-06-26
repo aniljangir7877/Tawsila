@@ -210,7 +210,7 @@ extension RappleActivityIndicatorView {
         
         var center = keyWindow.center; center.y -= cd
         
-        let circle1 = UIBezierPath(arcCenter: center, radius: r, startAngle: CGFloat(-Double.pi/2), endAngle:CGFloat(3 * Double.pi/2), clockwise: true)
+        let circle1 = UIBezierPath(arcCenter: center, radius: r, startAngle: -CGFloat(Double.pi/2), endAngle:CGFloat(3 * Double.pi/2), clockwise: true)
         circularActivity1 = rotatingCircle(circle: circle1)
         
         if twoSided == true {
@@ -272,7 +272,7 @@ extension RappleActivityIndicatorView {
             let cd = (h - size.height - 10) / 2
             
             var center = keyWindow.center; center.y -= cd
-            let circle = UIBezierPath(arcCenter: center, radius: (r - 5), startAngle: CGFloat(-Double.pi/2), endAngle:CGFloat(2 * Double.pi - Double.pi/2), clockwise: true)
+            let circle = UIBezierPath(arcCenter: center, radius: (r - 5), startAngle: -CGFloat(Double.pi/2), endAngle:CGFloat(Double.pi * 1.5), clockwise: true)
             
             progressLayerBG = CAShapeLayer()
             progressLayerBG?.path = circle.cgPath
@@ -319,7 +319,7 @@ extension RappleActivityIndicatorView {
             backgroundView?.addSubview(completionLabel!)
             
             
-            let circle = UIBezierPath(arcCenter: completionPoint, radius: completionRadius, startAngle: CGFloat(-Double.pi/2), endAngle:CGFloat(2 * Double.pi - Double.pi/2), clockwise: true)
+            let circle = UIBezierPath(arcCenter: completionPoint, radius: completionRadius, startAngle: -CGFloat(Double.pi/2), endAngle:CGFloat(Double.pi * 1.5), clockwise: true)
             let pgrsBg = CAShapeLayer()
             pgrsBg.path = circle.cgPath
             pgrsBg.fillColor = nil

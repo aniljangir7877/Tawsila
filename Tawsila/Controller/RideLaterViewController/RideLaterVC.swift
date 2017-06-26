@@ -50,6 +50,8 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate , GMSAutocompleteViewCon
         btnSchduleRide.layer.cornerRadius = 3;
         
         lblLocatoin.text = pickUpAddress
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -131,8 +133,6 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate , GMSAutocompleteViewCon
             pickTime.text = dateFormatter.string(from:sender.date as Date)
         }
         
-        
-        
         // dateTextField.text = dateFormatter.string(from: sender.date)
         
     }
@@ -177,12 +177,8 @@ class RideLaterVC: UIViewController ,GMSMapViewDelegate , GMSAutocompleteViewCon
     
     @IBAction func tapScheduleRide(_ sender: Any)
     {
-        //  "username => Mandatory, purpose => Mandatory [PTPT,AT,HR,OT], pickup_area => Mandatory, pickup_date => Mandatory, drop_area => Mandatory, pickup_time => Mandatory, area, landmark,
-        //  pickup_address => Mandatory, taxi_type => Mandatory, departure_time, departure_date, return_date, flight_number, package, promo_code, distance => Mandatory, amount => Mandatory, address, transfer, payment_media => Mandatory, km, timetype, lat => Mandatory, long => Mandatory, random => 78945662, device_id=> Mandatory
-        
         
         let random : String = "24324323"
-        
         let dic = NSMutableDictionary()
         
         dic.setValue("scientificwebs", forKey: "username")
