@@ -209,7 +209,8 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
                         
                         if(marker.position.latitude == cordinate.latitude && marker.position.longitude == cordinate.longitude)
                         {
-                            
+                            marker.position = cordinate
+                            marker.map = self.mapView
                         }
                         else
                         {
@@ -237,7 +238,7 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             else
                 
             {
-                self.mapView.clear()
+               // self.mapView.clear()
                 // Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
             }
         }
@@ -476,7 +477,7 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         let lat = locationManager.location?.coordinate.latitude
         let lon = locationManager.location?.coordinate.longitude
         
-        let camera = GMSCameraPosition.camera(withLatitude: lat!, longitude: lon!, zoom: 10.0)
+        let camera = GMSCameraPosition.camera(withLatitude: lat!, longitude: lon!, zoom: 14.0)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.delegate = self as GMSMapViewDelegate
         mapView.isMyLocationEnabled = true
@@ -507,7 +508,7 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         
         Alamofire.request(string, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
             
-            print(response);
+            //print(response);
             
             do
             {
@@ -560,7 +561,8 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
     @IBAction func tapConfirmBooking(_ sender: Any)
     {
         
-        if self.tagBookNow == 1 {
+        if self.tagBookNow == 1
+        {
             if  AppDelegateVariable.appDelegate.strLanguage == "en" {
                 
                 viewEstimate.isHidden = false
@@ -606,6 +608,8 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         }
         else
         {
+            
+            
             
             let random : String = "328733535"
             let dic = NSMutableDictionary()
@@ -699,7 +703,7 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         
         Alamofire.request(url.absoluteString, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
             
-            print(response);
+           // print(response);
             
             do {
                 

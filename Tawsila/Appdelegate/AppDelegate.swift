@@ -42,8 +42,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
         FirebaseApp.configure()
         
-        GMSServices.provideAPIKey("AIzaSyAHgc0o2XkUDVwnw7F0ru8b7JpWlPL5aOc")
-        GMSPlacesClient.provideAPIKey("AIzaSyAHgc0o2XkUDVwnw7F0ru8b7JpWlPL5aOc")
+        
+      //  GMSServices.provideAPIKey("AIzaSyAHgc0o2XkUDVwnw7F0ru8b7JpWlPL5aOc")
+      //  GMSPlacesClient.provideAPIKey("AIzaSyAHgc0o2XkUDVwnw7F0ru8b7JpWlPL5aOc")
+        
+        GMSServices.provideAPIKey("AIzaSyCtgADiUVF-v3zeAmrAxsr7ZGg7z5vd0bY")
+        GMSPlacesClient.provideAPIKey("AIzaSyCtgADiUVF-v3zeAmrAxsr7ZGg7z5vd0bY")
+        
+        
+//        GMSServices.provideAPIKey("AIzaSyD4pVfNf8gReDOD9sITAzbhW94JHXpsVs4")
+//        GMSPlacesClient.provideAPIKey("AIzaSyD4pVfNf8gReDOD9sITAzbhW94JHXpsVs4")
+        
         
         self.sliderMenuControllser()
         
@@ -58,8 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     //Do stuff if unsuccessful...
                 }
             })
-            
         }
+
         // iOS 9 support
         else if #available(iOS 9, *) {
             UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
