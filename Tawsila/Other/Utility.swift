@@ -333,9 +333,8 @@ class Utility
         return templateImage
     }
     
-
-
-	
+    
+    
 }
 
 extension UILabel

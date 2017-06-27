@@ -12,8 +12,9 @@ import GooglePlaces
 import RappleProgressHUD
 import Alamofire
 import SDWebImage
+import UserNotifications
 
-class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationControllerDelegate ,GMSAutocompleteViewControllerDelegate   {
+class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationControllerDelegate ,GMSAutocompleteViewControllerDelegate ,notificationDelegate , UNUserNotificationCenterDelegate {
     
     var mapView: GMSMapView!
     
@@ -35,7 +36,9 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
     @IBOutlet var imgMidPin: UIImageView!
     @IBOutlet var lblEstimatedTime: UILabel!
     @IBOutlet var lblEstimatedFare: UILabel!
+    
     // IBOutlet for Arabic View
+    
     @IBOutlet var viewArabic: UIView!
     @IBOutlet var viewForMapAr: UIView!
     @IBOutlet var lblPickAddressAr: UILabel!
@@ -63,18 +66,32 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
     var arrCars : NSArray!
     
     var tagCarType: Int!
+    var is_LoadCars = Bool()
     var onetime: Int = 0
     
     var tempView = UIView()
-    var viewWaiting : UIView!
+    var viewWaiting = UIView()
     var dictMarker:NSMutableDictionary!
+    
+    var id_booking = String()
+    
+    var timerForGetCars = Timer();
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         tagBookNow = 0
         tagCarType = 0
+        is_LoadCars = true
         dictMarker = NSMutableDictionary()
+        
+        setBorderWidth()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        //let aVariable = appDelegate.delegate
+        appDelegate.delegate = self
+        
         // -- Locaton Manager
         
         locationManager.requestWhenInUseAuthorization()
@@ -93,7 +110,16 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         }
         
         RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
-        self .getCarsAPI()
+        self.getCarsAPI()
+        
+//        self.showWaitingView()
+//        self.gotoNextView()
+        
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
         
     }
     
@@ -134,15 +160,15 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         }
     }
     override func viewWillAppear(_ animated: Bool) {
+        
         setShowAndHideViews(viewEnglish, vArb: viewArabic)
-        setBorderWidth()
     }
     
     // MARK: - Load Cars and Car Locaions
+    // MARK:
     
     func getCarsAPI()
     {
-        
         
         let string:String = String (format: "http://taxiappsourcecode.com/api/index.php?option=get_cars")
         
@@ -157,13 +183,13 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             if(self.onetime == 0)
             {
                 self.onetime = 1
-                self.perform( #selector(self.getCarsLocations), with: 1, afterDelay: 0)
+                // self.perform( #selector(self.getCarsLocations), with: 1, afterDelay: 0)
                 self.loadCars(arrayCars: array)
-                
+
             }
         }
     }
-    //[3]	(null)	"car_type" : "Luxury"
+    
     func getCarsLocations()
     {
         var parameterString = String(format : "get_cars_wise_driver")
@@ -184,7 +210,10 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         
         Utility.sharedInstance.postDataInDataForm(header: parameterString, inVC: self) { (dataDictionary, msg, status) in
             
-            self .perform( #selector(self.getCarsLocations), with: 1, afterDelay: 0)
+            if (self.is_LoadCars == true)
+            {
+                self .perform( #selector(self.getCarsLocations), with: 1, afterDelay: 1)
+            }
             
             if status == true
             {
@@ -218,8 +247,8 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
                             marker.position = cordinate
                             marker.map = self.mapView
                             self.dictMarker .setObject(marker, forKey: id_driver as NSCopying)
-
-                        }                        
+                            
+                        }
                     }
                     else
                     {
@@ -238,13 +267,12 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             else
                 
             {
-               // self.mapView.clear()
+                // self.mapView.clear()
                 // Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
             }
         }
         
     }
-    
     
     // MARK:
     // MARK: - Bottom View
@@ -345,22 +373,21 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
     func tapCarBottom(sender:UIButton)
     {
         
-        //        let popUp : ViewDetailCar = Bundle.main.loadNibNamed("ViewDetailCar", owner: 0, options: nil)![0] as? UIView as! ViewDetailCar
+        //  let popUp : ViewDetailCar = Bundle.main.loadNibNamed("ViewDetailCar", owner: 0, options: nil)![0] as? UIView as! ViewDetailCar
         //        popUp.cat_type.text = (self.arrCars.object(at: sender.tag) as! NSDictionary) .object(forKey: "car_type") as? String
         //        popUp.frame = self.view.frame
         //
-        //        self.view.addSubview(popUp)
+        //  self.view.addSubview(popUp)
+        
         tagCarType = sender.tag
         
         tempView.layer.borderColor = UIColor.darkGray.cgColor
         tempView.layer.borderWidth = 0.8
         tempView.backgroundColor = UIColor.white
         
-        
         tempView = scrollViewCars.viewWithTag(sender.tag+1000)!
         tempView.backgroundColor = NavigationBackgraoungColor
         tempView.layer.borderColor = NavigationBackgraoungColor.cgColor
-        
         
     }
     
@@ -372,13 +399,16 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         SlideNavigationController.sharedInstance().toggleRightMenu()
     }
     
-    // MARK: - Bottom Buttons Methods
-    
+    // MARK: - Bookings Buttons Methods
+    // MARK:
     
     @IBAction func tapBookNow(_ sender: Any) {
         
-        tagBookNow = 1;
+        self.tagBookNow = 1;
+        is_LoadCars = false
+        
         if  AppDelegateVariable.appDelegate.strLanguage == "en" {
+            
             imagePicDot.image = #imageLiteral(resourceName: "dotGreen")
             imageDestDot.tintColor = UIColor.red
             imageDestDot.image = imageDestDot.image?.withRenderingMode(.alwaysTemplate)
@@ -392,7 +422,9 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             {
                 self.viewBottom.frame =  CGRect(x: 0, y: Constant.ScreenSize.SCREEN_HEIGHT  , width: Constant.ScreenSize.SCREEN_WIDTH, height: 134)
             }
-        }else {
+        }
+        else
+        {
             imagePicDotAr.image = #imageLiteral(resourceName: "dotGreen")
             imageDestDotAr.tintColor = UIColor.red
             imageDestDotAr.image = imageDestDotAr.image?.withRenderingMode(.alwaysTemplate)
@@ -412,9 +444,12 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
     
     @IBAction func tapCacelBooking(_ sender: Any)
     {
+        self.is_LoadCars = true
+        
+        self.tagBookNow = 0;
+        
         if AppDelegateVariable.appDelegate.strLanguage == "en" {
             viewDestinationAddress.isHidden = true
-            tagBookNow = 0;
             imagePicDot.image = #imageLiteral(resourceName: "Search")
             mapView.clear()
             imgMidPin.isHidden = false
@@ -423,9 +458,9 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             {
                 self.viewBottom.frame =  CGRect(x: 0, y: Constant.ScreenSize.SCREEN_HEIGHT-134  , width: Constant.ScreenSize.SCREEN_WIDTH, height: 134)
             }
-        }else{
+        }else
+        {
             viewDestinationAddressAr.isHidden = true
-            tagBookNow = 0;
             imagePicDotAr.image = #imageLiteral(resourceName: "Search")
             mapView.clear()
             imgMidPinAr.isHidden = false
@@ -494,144 +529,145 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         
         if self.tagBookNow == 1
         {
-            destinationCordinate = position.target
+            // destinationCordinate = position.target
         }
         if self.tagBookNow == 0
         {
             pickUpCordinate = position.target
-        }
-        
-        
-        let string:String = String (format: "http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=true&language=ENGLISH", position.target.latitude,position.target.longitude)
-        
-        print(string)
-        
-        Alamofire.request(string, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
             
-            //print(response);
             
-            do
-            {
-                if (response.result.value != nil)
+            
+            let string:String = String (format: "http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=true&language=ENGLISH", position.target.latitude,position.target.longitude)
+            
+            print(string)
+            
+            Alamofire.request(string, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
+                
+                //print(response);
+                
+                do
                 {
-                    let array : NSArray = ((response.result.value as AnyObject).object(forKey:"results") as! NSArray)
-                    
-                    if (array.count > 0)
+                    if (response.result.value != nil)
                     {
-                        let dic = array.object(at: 0) as! NSDictionary
-                        let addressString = dic .object(forKey: "formatted_address") as! String
-                        if AppDelegateVariable.appDelegate.strLanguage == "en"{
-                            if self.tagBookNow == 0
-                            {
-                                self.lblPickAddress.text = addressString
-                            }
-                            if self.tagBookNow == 1
-                            {
-                                self.lblDestinationAddress.text = addressString
-                            }
-                        }else {
-                            if self.tagBookNow == 0
-                            {
-                                self.lblPickAddressAr.text = addressString
-                            }
-                            if self.tagBookNow == 1
-                            {
-                                self.lblDestinationAddressAr.text = addressString
+                        let array : NSArray = ((response.result.value as AnyObject).object(forKey:"results") as! NSArray)
+                        
+                        if (array.count > 0)
+                        {
+                            let dic = array.object(at: 0) as! NSDictionary
+                            let addressString = dic .object(forKey: "formatted_address") as! String
+                            if AppDelegateVariable.appDelegate.strLanguage == "en"{
+                                if self.tagBookNow == 0
+                                {
+                                    self.lblPickAddress.text = addressString
+                                }
+                                if self.tagBookNow == 1
+                                {
+                                    self.lblDestinationAddress.text = addressString
+                                }
+                            }else {
+                                if self.tagBookNow == 0
+                                {
+                                    self.lblPickAddressAr.text = addressString
+                                }
+                                if self.tagBookNow == 1
+                                {
+                                    self.lblDestinationAddressAr.text = addressString
+                                }
                             }
                         }
                     }
-                }
-                else
-                {
-                    if AppDelegateVariable.appDelegate.strLanguage == "en"{
-                        self.lblPickAddress.text = "location not found"
-                    }else {
-                        self.lblPickAddressAr.text = "location not found"
+                    else
+                    {
+                        if AppDelegateVariable.appDelegate.strLanguage == "en"{
+                            self.lblPickAddress.text = "location not found"
+                        }else {
+                            self.lblPickAddressAr.text = "location not found"
+                        }
                     }
+                }catch{
+                    print("error")
                 }
-            }catch{
-                print("error")
             }
-            
         }
-        
-        
     }
+    
+    // MARK: - Confirm Booiking Method
+    // MARK:
     
     @IBAction func tapConfirmBooking(_ sender: Any)
     {
         
+        is_LoadCars = false
         if self.tagBookNow == 1
         {
-            if  AppDelegateVariable.appDelegate.strLanguage == "en" {
-                
-                viewEstimate.isHidden = false
-                imgMidPin.isHidden = true
-                
-                let marker_pick = GMSMarker()
-                marker_pick.position = pickUpCordinate
-                marker_pick.title = lblPickAddress.text
-                marker_pick.map = mapView
-                marker_pick.icon = #imageLiteral(resourceName: "markerLocation")
-                
-                let marker_dest = GMSMarker()
-                marker_dest.position = destinationCordinate
-                marker_dest.title = lblPickAddress.text
-                marker_dest.map = mapView
-                marker_dest.icon = #imageLiteral(resourceName: "markerDesitnation")
-                
-                getPolylineRoute(from: pickUpCordinate, to: destinationCordinate)
-                
-                self.tagBookNow = 2
-            }
-            else{
-                
-                viewEstimateAr.isHidden = false
-                imgMidPinAr.isHidden = true
-                
-                let marker_pick = GMSMarker()
-                marker_pick.position = pickUpCordinate
-                marker_pick.title = lblPickAddressAr.text
-                marker_pick.map = mapView
-                marker_pick.icon = #imageLiteral(resourceName: "markerLocation")
-                
-                let marker_dest = GMSMarker()
-                marker_dest.position = destinationCordinate
-                marker_dest.title = lblPickAddressAr.text
-                marker_dest.map = mapView
-                marker_dest.icon = #imageLiteral(resourceName: "markerDesitnation")
-                
-                getPolylineRoute(from: pickUpCordinate, to: destinationCordinate)
-                
-                self.tagBookNow = 2
-            }
+            /* if  AppDelegateVariable.appDelegate.strLanguage == "en" {
+             
+             viewEstimate.isHidden = false
+             imgMidPin.isHidden = true
+             
+             let marker_pick = GMSMarker()
+             marker_pick.position = pickUpCordinate
+             marker_pick.title = lblPickAddress.text
+             marker_pick.map = mapView
+             marker_pick.icon = #imageLiteral(resourceName: "markerLocation")
+             
+             let marker_dest = GMSMarker()
+             marker_dest.position = destinationCordinate
+             marker_dest.title = lblPickAddress.text
+             marker_dest.map = mapView
+             marker_dest.icon = #imageLiteral(resourceName: "markerDesitnation")
+             
+             getPolylineRoute(from: pickUpCordinate, to: destinationCordinate)
+             
+             self.tagBookNow = 2
+             }
+             else{
+             
+             viewEstimateAr.isHidden = false
+             imgMidPinAr.isHidden = true
+             
+             let marker_pick = GMSMarker()
+             marker_pick.position = pickUpCordinate
+             marker_pick.title = lblPickAddressAr.text
+             marker_pick.map = mapView
+             marker_pick.icon = #imageLiteral(resourceName: "markerLocation")
+             
+             let marker_dest = GMSMarker()
+             marker_dest.position = destinationCordinate
+             marker_dest.title = lblPickAddressAr.text
+             marker_dest.map = mapView
+             marker_dest.icon = #imageLiteral(resourceName: "markerDesitnation")
+             
+             getPolylineRoute(from: pickUpCordinate, to: destinationCordinate)
+             
+             self.tagBookNow = 2
+             }*/
         }
-        else
+        
+        if self.tagBookNow == 2
         {
             
-            
-            
-            let random : String = "328733535"
+            let random : String = "32873423323"
             let dic = NSMutableDictionary()
             
             dic.setValue(USER_NAME, forKey: "username")
             dic.setValue("PTPT", forKey: "purpose")
-            dic.setValue("24/06/2017", forKey: "pickup_date")
+            dic.setValue("28/06/2017", forKey: "pickup_date")
             dic.setValue("05:05:77 am", forKey: "pickup_time")
-            dic.setValue("SUV", forKey: "taxi_type")
+            dic.setValue((self.arrCars.object(at: tagCarType) as! NSDictionary ) .object(forKey: "car_type") as! String, forKey: "taxi_type")
             dic.setValue("05:05:77 am", forKey: "departure_time")
-            dic.setValue("24/06/2017", forKey: "departure_date")
+            dic.setValue("28/06/2017", forKey: "departure_date")
             dic.setValue("15", forKey: "distance")
             dic.setValue("100", forKey: "amount")
             dic.setValue("jaipur", forKey: "address")
             dic.setValue("Cash", forKey: "payment_media")
             dic.setValue("15", forKey: "km")
             
-            dic.setValue(String (format: "%f", pickUpCordinate.latitude), forKey: "lat")
-            dic.setValue(String (format: "%f", pickUpCordinate.longitude), forKey: "long")
+            dic.setValue(String (format: "%f", (mapView.myLocation?.coordinate.latitude)!), forKey: "lat")
+            dic.setValue(String (format: "%f", (mapView.myLocation?.coordinate.longitude)!), forKey: "long")
             dic.setValue(random, forKey: "random")
             
-            dic.setValue("a13e96c6d8c53c14144ab82d6a026b09a1d35d23", forKey: "device_id")
+            dic.setValue(AppDelegateVariable.appDelegate.deviceTokenStr, forKey: "device_id")
             
             if AppDelegateVariable.appDelegate.strLanguage == "en"{
                 
@@ -680,21 +716,36 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             
             Utility.sharedInstance.postDataInDataForm(header: parameterString, inVC: self) { (dataDictionary, msg, status) in
                 
+                RappleActivityIndicatorView.stopAnimation()
+
+                
                 if status == true
                 {
-                    self.showWaitingView()
+                    // self.showWaitingView()
+                    
+                    AppDelegateVariable.appDelegate.id_booking = (String(format: "%@", dataDictionary.object(forKey: "booking_id") as! CVarArg)) as String
+                    // self .perform( #selector(self.showWaitingView), with: 1, afterDelay: 0)
                 }
                 else
                     
                 {
+                    self.tapCacelBooking("")
                     Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
                 }
             }
-            
         }
     }
     
+    func gotoNextView(){
+        
+        // viewWaiting.removeFromSuperview()
+        let obj : PickUPRideVC = PickUPRideVC(nibName: "PickUPRideVC", bundle: nil)
+        obj.id_booking = self.id_booking;
+        self.navigationController?.pushViewController(obj, animated: true)
+    }
     
+    // MARK: - Drow Route Method
+    // MARK:
     
     func getPolylineRoute(from source: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D){
         
@@ -703,12 +754,34 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         
         Alamofire.request(url.absoluteString, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
             
-           // print(response);
+            // print(response);
             
             do {
                 
                 if (response.result.value != nil)
                 {
+                    let routes = (response.result.value as AnyObject).object(forKey: "routes")  as? [Any]
+                    
+                    let overview_polyline : NSDictionary = (routes?[0] as? NSDictionary)!
+                    
+                    let dic : NSDictionary = overview_polyline as Any as! NSDictionary
+                    
+                    let value : NSDictionary = dic.object(forKey: "overview_polyline") as! NSDictionary
+                    
+                    let polyString : String = value.object(forKey: "points") as! String
+                    
+                    self.showPath(polyStr: polyString)
+                    
+                    let estTime =  (((((dic.object(forKey: "legs") as! NSArray) .object(at: 0) ) as AnyObject)
+                        .object(forKey: "duration") ) as! NSDictionary) .object(forKey: "text") as? String
+                    
+                    let estDistance : String =  ((((((dic.object(forKey: "legs") as! NSArray) .object(at: 0) ) as AnyObject)
+                        .object(forKey: "distance") ) as! NSDictionary) .object(forKey: "text") as? String)!
+                    
+                    let doubleValue : Double = NSString(string: estDistance).doubleValue // 3.1
+                    
+                    self.lblEstimatedFare.text =  String (format: "%.1f SAR", doubleValue*10)
+                    self.lblEstimatedTime.text = estTime
                     
                 }
                 
@@ -718,8 +791,6 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             }
             
         }
-        
-        
     }
     
     func showPath(polyStr :String)
@@ -766,8 +837,6 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             acController.delegate = self
             present(acController, animated: true, completion: nil)
         }
-        
-        
     }
     
     // MARK: - Tap Search
@@ -777,7 +846,6 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         // print("Place name: \(place.name)")
         // print("Place address: \(place.formattedAddress)")
         // print("Place attributions: \(place.attributions)")
-        dismiss(animated: true, completion: nil)
         let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 10.0)
         mapView.camera = camera
         
@@ -787,8 +855,32 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         }
         else
         {
+            lblDestinationAddress.text = place.formattedAddress
+            tagBookNow = 2;
             destinationCordinate = place.coordinate
+            
+            viewEstimate.isHidden = false
+            imgMidPin.isHidden = true
+            
+            let marker_pick = GMSMarker()
+            marker_pick.position = pickUpCordinate
+            marker_pick.title = lblPickAddressAr.text
+            marker_pick.map = mapView
+            marker_pick.icon = #imageLiteral(resourceName: "markerLocation")
+            
+            let marker_dest = GMSMarker()
+            marker_dest.position = destinationCordinate
+            marker_dest.title = lblPickAddressAr.text
+            marker_dest.map = mapView
+            marker_dest.icon = #imageLiteral(resourceName: "markerDesitnation")
+            
+            getPolylineRoute(from: pickUpCordinate, to: destinationCordinate)
+            
+            self.tagBookNow = 2
+            
         }
+        dismiss(animated: true, completion: nil)
+        
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
@@ -798,6 +890,7 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
     
     // User canceled the operation.
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        viewDestinationAddress.isHidden = false
         dismiss(animated: true, completion: nil)
     }
     
@@ -810,46 +903,37 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
-    
-    
     func showWaitingView()
     {
-        self.viewWaiting = UIView(frame: CGRect(x:0 , y: 0, width: Constant.ScreenSize.SCREEN_WIDTH, height: Constant.ScreenSize.SCREEN_HEIGHT))
+        viewWaiting = UIView(frame: CGRect(x:0 , y: 0, width: Constant.ScreenSize.SCREEN_WIDTH, height: Constant.ScreenSize.SCREEN_HEIGHT))
         
-        self.viewWaiting.backgroundColor = UIColor.init(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.5)
-        self.view .addSubview(self.viewWaiting)
+        viewWaiting.backgroundColor = UIColor.init(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.5)
+        view .addSubview(self.viewWaiting)
         
         let imgRotate: UIImageView = UIImageView(frame: CGRect(x: Constant.ScreenSize.SCREEN_WIDTH/2-60, y: Constant.ScreenSize.SCREEN_HEIGHT/2-60, width: 120, height: 120))
-        self.viewWaiting.addSubview(imgRotate);
+        viewWaiting.addSubview(imgRotate);
         
         imgRotate.image = #imageLiteral(resourceName: "progressLoader")
-        
         
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
         rotationAnimation.fromValue = 0.0
         rotationAnimation.toValue = 360 * CGFloat(M_PI/180)
         let innerAnimationDuration : CGFloat = 1.5
         rotationAnimation.duration = Double(innerAnimationDuration)
-        rotationAnimation.repeatCount = HUGE
+        rotationAnimation.repeatCount = 30
         imgRotate.layer.add(rotationAnimation, forKey: "rotateInner")
+        
+        
+        self .perform(#selector(hideView), with: "", afterDelay: 30)
     }
     
-    
+    func hideView() {
+        viewWaiting.removeFromSuperview()
+    }
     
     
     func getHeadingForDirection(fromCoordinate fromLoc: CLLocationCoordinate2D, toCoordinate toLoc: CLLocationCoordinate2D , marker : GMSMarker)
     {
-        
-        
-        //var newCoodinate: CLLocationCoordinate2D? = marker.position
-        // marker.rotation = getHeadingForDirection(fromCoordinate: marker.position, toCoordinate: mapView.myLocation?.coordinate, marker: <#GMSMarker#>)
-        //found bearing value by calculation when marker add
-        //marker.position = oldCoodinate
-        //this can be old position to make car movement to new position
-        //marker.map = mapView_
-        //marker movement animation
-        
-        
         let fLat: Float = Float((fromLoc.latitude).degreesToRadians)
         let fLng: Float = Float((fromLoc.longitude).degreesToRadians)
         let tLat: Float = Float((toLoc.latitude).degreesToRadians)
@@ -862,24 +946,83 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             marker.rotation = CLLocationDegrees(degree + 360)
         }
         
-        
-        
         CATransaction.begin()
         CATransaction.setValue(Int(2.0), forKey: kCATransactionAnimationDuration)
         
         marker.groundAnchor = CGPoint(x: CGFloat(0.5), y: CGFloat(0.5))
-        //marker.rotation = CDouble(data.value(forKey: "bearing"))
-        //New bearing value from backend after car movement is done
-        
-        //this can be new position after car moved from old position to new position with animation
         CATransaction.commit()
-        
-        
-        
     }
+    
+    
+    // MARK: - Notification Delegate
+    
+    func gotNotification(title:String) {
+        
+        print("hello")
+        
+//        if title == "accept_booking" {
+//           
+//           
+//            self.performSelector(onMainThread: #selector(self.gotoNextView), with: "", waitUntilDone:true)
+//            //self.gotoNextView()
+//        }
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        completionHandler([.alert, .badge, .sound])
+        
+        let application = UIApplication.shared
+        
+        // self.delegate?.gotNotification(title: notification.request.content.title);
+        
+        let title : String = notification.request.content.title;
+        
+        
+        
+        if title == "accept_booking" {
+            
+            let obj : PickUPRideVC = PickUPRideVC(nibName: "PickUPRideVC", bundle: nil)
+            obj.id_booking = self.id_booking;
+            //  self.getTopViewController()?.present(obj, animated: true, completion: nil)
+            self.getTopViewController()?.navigationController?.pushViewController(obj, animated: true)
+
+            //  self.performSelector(onMainThread: #selector(self.gotoNextView), with: "", waitUntilDone:true)
+            //  self.gotoNextView()
+        }
+        
+        if(application.applicationState == .active) {
+            
+            //app is currently active, can update badges count here
+            
+        }else if(application.applicationState == .background){
+            
+            //app is in background, if content-available key of your notification is set to 1, poll to your backend to retrieve data and update your interface here
+            
+        }else if(application.applicationState == .inactive){
+            
+            //app is transitioning from background to foreground (user taps notification), do what you need when user taps here
+            
+        }
+    }
+
+    
+    public func getTopViewController() -> UIViewController?{
+        if var topController = UIApplication.shared.keyWindow?.rootViewController
+        {
+            while (topController.presentedViewController != nil)
+            {
+                topController = topController.presentedViewController!
+            }
+            return topController
+        }
+        return nil}
+    
+    
 }
 
-extension Int {
+extension Int
+{
     var degreesToRadians: Double { return Double(self) * .pi / 180 }
 }
 extension FloatingPoint {

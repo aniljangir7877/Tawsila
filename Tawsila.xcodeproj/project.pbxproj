@@ -71,7 +71,7 @@
 		81F2EC181EF19B070065D2BD /* rightMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81F2EC161EF19B070065D2BD /* rightMenuCell.xib */; };
 		92034A951EFAF8790064DAFE /* PickUPRideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92034A931EFAF8790064DAFE /* PickUPRideVC.swift */; };
 		92034A961EFAF8790064DAFE /* PickUPRideVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92034A941EFAF8790064DAFE /* PickUPRideVC.xib */; };
-		9225CFAA1F002C3200C534D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9225CFA91F002C3200C534D9 /* GoogleService-Info.plist */; };
+		92487E691F018A6A00B22743 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92487E681F018A6A00B22743 /* GoogleService-Info.plist */; };
 		92564FC01EEF09F300C59A4E /* ViewDetailCar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92564FBF1EEF09F300C59A4E /* ViewDetailCar.xib */; };
 		92564FC21EEF0AE300C59A4E /* ViewDetailCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92564FC11EEF0AE300C59A4E /* ViewDetailCar.swift */; };
 		929D98F11EEEB26100A8E598 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 929D98E31EEEB26100A8E598 /* LICENSE.txt */; };
@@ -194,7 +194,8 @@
 		902A6B97238E8A10D5B05059 /* Pods_TawsilaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TawsilaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92034A931EFAF8790064DAFE /* PickUPRideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickUPRideVC.swift; sourceTree = "<group>"; };
 		92034A941EFAF8790064DAFE /* PickUPRideVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickUPRideVC.xib; sourceTree = "<group>"; };
-		9225CFA91F002C3200C534D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		92487E681F018A6A00B22743 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		92487E6A1F023B6000B22743 /* Tawsila.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tawsila.entitlements; sourceTree = "<group>"; };
 		92564FBF1EEF09F300C59A4E /* ViewDetailCar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewDetailCar.xib; path = "Tawsila/Custom View/ViewDetailCar.xib"; sourceTree = SOURCE_ROOT; };
 		92564FC11EEF0AE300C59A4E /* ViewDetailCar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDetailCar.swift; path = "Tawsila/Custom View/ViewDetailCar.swift"; sourceTree = SOURCE_ROOT; };
 		929D98E31EEEB26100A8E598 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -320,6 +321,7 @@
 		5BB10C9B1EEBEA8500F93FBE /* Tawsila */ = {
 			isa = PBXGroup;
 			children = (
+				92487E6A1F023B6000B22743 /* Tawsila.entitlements */,
 				0439CA701EEC4FE4008E4F78 /* Tawsila-Bridging-Header.h */,
 				0439CA731EEC50B1008E4F78 /* Other */,
 				5BB10CCD1EEBEAE900F93FBE /* Appdelegate */,
@@ -354,7 +356,7 @@
 				5BB10C9E1EEBEA8500F93FBE /* ViewController.swift */,
 				045CF6FD1EEC7A9F0052DBC6 /* LaunchScreen.storyboard */,
 				81E76BEE1EEF841800256FD4 /* Main.storyboard */,
-				9225CFA91F002C3200C534D9 /* GoogleService-Info.plist */,
+				92487E681F018A6A00B22743 /* GoogleService-Info.plist */,
 				045CF7011EEC7AB80052DBC6 /* Info.plist */,
 				045CF6FB1EEC7A800052DBC6 /* Assets.xcassets */,
 				5BB10CA31EEBEA8600F93FBE /* Tawsila.xcdatamodeld */,
@@ -732,8 +734,16 @@
 				TargetAttributes = {
 					5BB10C981EEBEA8400F93FBE = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 5PAZYS3D4S;
+						DevelopmentTeam = GH42HPV99Q;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					5BB10CAF1EEBEA8600F93FBE = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -811,7 +821,7 @@
 				814C6FBB1EF048A600985702 /* MyRidesVC.xib in Resources */,
 				929D98FA1EEEB26100A8E598 /* Roboto-MediumItalic.ttf in Resources */,
 				92DEEE7A1EEE8C8B001B5DCA /* HomeViewControlle.xib in Resources */,
-				9225CFAA1F002C3200C534D9 /* GoogleService-Info.plist in Resources */,
+				92487E691F018A6A00B22743 /* GoogleService-Info.plist in Resources */,
 				81F2EBFE1EF18AA60065D2BD /* menu-button@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1101,7 +1111,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1144,7 +1154,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1158,11 +1168,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 5PAZYS3D4S;
+				CODE_SIGN_ENTITLEMENTS = Tawsila/Tawsila.entitlements;
+				DEVELOPMENT_TEAM = GH42HPV99Q;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Tawsila/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.westview.testApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nutrition.testOne;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tawsila/Tawsila-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -1176,11 +1188,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 5PAZYS3D4S;
+				CODE_SIGN_ENTITLEMENTS = Tawsila/Tawsila.entitlements;
+				DEVELOPMENT_TEAM = GH42HPV99Q;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Tawsila/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.westview.testApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nutrition.testOne;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tawsila/Tawsila-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

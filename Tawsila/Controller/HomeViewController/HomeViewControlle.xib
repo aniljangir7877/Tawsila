@@ -45,7 +45,7 @@
                 <outlet property="viewBottomAr" destination="cHb-Vh-pEP" id="1vT-bt-ZUb"/>
                 <outlet property="viewConfirmBtns" destination="fax-eN-FO4" id="F5B-Yt-rBc"/>
                 <outlet property="viewConfirmBtnsAr" destination="DLX-m5-MWL" id="vbS-4u-m9C"/>
-                <outlet property="viewDestinationAddress" destination="ecD-c4-awm" id="MAq-Jl-dVv"/>
+                <outlet property="viewDestinationAddress" destination="ecD-c4-awm" id="1L8-iF-fe9"/>
                 <outlet property="viewDestinationAddressAr" destination="01X-U0-b11" id="dAK-zp-i5i"/>
                 <outlet property="viewEnglish" destination="mdz-XN-nNM" id="zZf-rk-jzh"/>
                 <outlet property="viewEstimate" destination="nZl-4q-AkF" id="sYD-ke-0Ki"/>

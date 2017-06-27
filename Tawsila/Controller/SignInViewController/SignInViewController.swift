@@ -31,6 +31,9 @@ class SignInViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         setShowAndHideViews(viewEng, vArb: viewAr)
+        
+        AppDelegateVariable.appDelegate.strLanguage = "en"
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,6 +80,7 @@ class SignInViewController: UIViewController {
             Utility.sharedInstance.showAlert("Alert", msg: "Internet Connection not Availabel!", controller: self)
             return
         }
+        
         if  AppDelegateVariable.appDelegate.strLanguage == "en" {
             if (Utility.sharedInstance.trim(txtEmail.text!)).characters.count == 0 {
                 Utility.sharedInstance.showAlert("Alert", msg: "Please enter your email.", controller: self)
@@ -126,10 +130,10 @@ class SignInViewController: UIViewController {
         
         var parameterString :String
         if AppDelegateVariable.appDelegate.strLanguage == "en"{
-            parameterString = String(format : "login&email=%@&password=%@&usertype=%@&device_id=123456789",self.txtEmail.text! as String,self.txtPass.text! as String,userType)
+            parameterString = String(format : "login&email=%@&password=%@&usertype=%@&device_id=%@",self.txtEmail.text! as String,self.txtPass.text! as String,userType,AppDelegateVariable.appDelegate.deviceTokenStr)
         }
         else{
-            parameterString = String(format : "login&email=%@&password=%@&usertype=%@&device_id=123456789",self.txtEmailAr.text! as String,self.txtPassAr.text! as String,userType)
+            parameterString = String(format : "login&email=%@&password=%@&usertype=%@&device_id=%@",self.txtEmailAr.text! as String,self.txtPassAr.text! as String,userType,AppDelegateVariable.appDelegate.deviceTokenStr)
         }
         
         Utility.sharedInstance.postDataInDataForm(header: parameterString, inVC: self) { (dataDictionary, msg, status) in
@@ -140,20 +144,16 @@ class SignInViewController: UIViewController {
                 userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict) 
                 
                 let user_id : String = userDict .object(forKey: "id") as! String
-                let user_name : String = userDict .object(forKey: "id") as! String
+                let user_name : String = userDict .object(forKey: "username") as! String
                 
                 USER_DEFAULT.set(user_id, forKey: "user_id")
                 USER_DEFAULT.set(user_name, forKey: "user_name")
                 USER_DEFAULT.set("1", forKey: "isLogin")
                 USER_DEFAULT.set(userDict, forKey: "userData")
                 
-
-                
-                
                 
                 AppDelegateVariable.appDelegate.sliderMenuControllser()
               
-                
                 //print("Location:  \(userInfo)")
                /// NotificationCenter.default.post(name: Notification.Name(rawValue: "UserDidLoginNotification"), object: nil, userInfo: (userInfo as AnyObject) as? [AnyHashable : Any])
                // AppDelegateVariable.appDelegate.loginInMainView()

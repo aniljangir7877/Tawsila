@@ -25,6 +25,8 @@ let USER_ID : String = UserDefaults.standard .object(forKey: "user_id") as! Stri
 
 let USER_NAME : String = UserDefaults.standard.object(forKey: "user_name") as! String
 
+let FCM_TOKEN : String = UserDefaults.standard.object(forKey: "FCM_TOKEN") as! String
+
 
 let THEME_COLOR = UIColor(red: 33/255.0, green: 134/255.0, blue: 226/255.0, alpha: 1.0)
 let NavigationBackgraoungColor = UIColor(red: 163.0/255.0, green: 135.0/255.0, blue: 3.0/255.0, alpha: 1.0) //vikram singh
@@ -242,6 +244,7 @@ extension UIViewController {
     }
     
     // bellow func is used to naviagate previous viewcontoller for left to right like  Arabic and Hebew language view transition
+    
     func setRightToLeftViewTransition(_ isBack:Bool){
         let transition = CATransition.init()
         transition.duration = 0.45
@@ -256,6 +259,7 @@ extension UIViewController {
 //MARK: ---------------Hide and Show Arabic and English View on same ViewController ---------
 extension UIViewController{
     func setShowAndHideViews(_ vEng: UIView, vArb: UIView) ->Void {
+       
         if AppDelegateVariable.appDelegate.strLanguage == "en" {
             vArb.isHidden = true
             vEng.isHidden = false

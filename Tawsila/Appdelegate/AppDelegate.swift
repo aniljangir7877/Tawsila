@@ -17,12 +17,20 @@ import Fabric
 import Crashlytics
 import Firebase
 
+@objc protocol notificationDelegate {
+
+    func gotNotification(title : String)
+}
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate, UNUserNotificationCenterDelegate {
+
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate, UNUserNotificationCenterDelegate ,MessagingDelegate {
+    
+    var delegate : notificationDelegate?
 
     var lat: Double!
     var long: Double!
-    var  latitude : String!
+    var latitude : String!
     var longitude : String!
     let locationManager = CLLocationManager()
     var deviceTokenStr = ""
@@ -30,31 +38,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var navController : UINavigationController?
     var strLanguage: String!
     
+    var id_booking = ""
+
+    // var delegate:notificationDelegate?
+
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
       
         // checekApplication selected language (Vikram Singh)//20-jun-2017
-            strLanguage = checkAppLanguage()
+        strLanguage = checkAppLanguage()
         
        // Fabric.sharedSDK().debug = true
         //Fabric.with([Crashlytics.self()])
 
         FirebaseApp.configure()
-        
-        
-      //  GMSServices.provideAPIKey("AIzaSyAHgc0o2XkUDVwnw7F0ru8b7JpWlPL5aOc")
-      //  GMSPlacesClient.provideAPIKey("AIzaSyAHgc0o2XkUDVwnw7F0ru8b7JpWlPL5aOc")
-        
-        GMSServices.provideAPIKey("AIzaSyCtgADiUVF-v3zeAmrAxsr7ZGg7z5vd0bY")
-        GMSPlacesClient.provideAPIKey("AIzaSyCtgADiUVF-v3zeAmrAxsr7ZGg7z5vd0bY")
-        
-        
-//        GMSServices.provideAPIKey("AIzaSyD4pVfNf8gReDOD9sITAzbhW94JHXpsVs4")
-//        GMSPlacesClient.provideAPIKey("AIzaSyD4pVfNf8gReDOD9sITAzbhW94JHXpsVs4")
-        
-        
+        Messaging.messaging().delegate = self
+        let token = Messaging.messaging().fcmToken
+        print("FCM token: \(token ?? "")")
+        deviceTokenStr = token!
+        USER_DEFAULT.set(token, forKey: "FCM_TOKEN")
+       
+        GMSServices.provideAPIKey("AIzaSyAHgc0o2XkUDVwnw7F0ru8b7JpWlPL5aOc")
+        GMSPlacesClient.provideAPIKey("AIzaSyAHgc0o2XkUDVwnw7F0ru8b7JpWlPL5aOc")
+
         self.sliderMenuControllser()
+        
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+        application.registerForRemoteNotifications()
         
         if #available(iOS 10, *) {
             UNUserNotificationCenter.current().delegate = self
@@ -89,7 +104,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        if launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] != nil {
+            
+            
+            // Do what you want to happen when a remote notification is tapped.
+            
+            
+        }
+        else
+        
+        {
         self.sliderMenuControllser()
+        }
         
      //   self.checkNewVerisonAvailabel(viewController:)
         
@@ -162,14 +188,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         return container
     }()
     
-    //MARK: - NOTIFICATIONCENTER
+    // MARK: - NOTIFICATIONCENTER
+    
+    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
+        print("Firebase registration token: \(fcmToken)")
+        let token = Messaging.messaging().fcmToken
+        print("FCM token: \(token ?? "")")
+        deviceTokenStr = token!
+        
+        USER_DEFAULT.set(token, forKey: "FCM_TOKEN")
+        
+    }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
-        deviceTokenStr = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
-        
-        
-        print(deviceTokenStr)
+       // deviceTokenStr = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+       // print(deviceTokenStr)
     }
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         
@@ -177,6 +211,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
     }
     
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let application = UIApplication.shared
+
+      if(application.applicationState == .active)
+      {
+            
+            //app is currently active, can update badges count here
+            
+        }else if(application.applicationState == .background){
+            
+            //app is in background, if content-available key of your notification is set to 1, poll to your backend to retrieve data and update your interface here
+            
+        }else if(application.applicationState == .inactive){
+            
+            //app is transitioning from background to foreground (user taps notification), do what you need when user taps here
+        }
+
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        completionHandler([.alert, .badge, .sound])
+        
+        let application = UIApplication.shared
+        
+        self.delegate?.gotNotification(title: notification.request.content.title);
+        
+        
+        
+        if(application.applicationState == .active) {
+            
+            //app is currently active, can update badges count here
+            
+        }else if(application.applicationState == .background){
+            
+            //app is in background, if content-available key of your notification is set to 1, poll to your backend to retrieve data and update your interface here
+            
+        }else if(application.applicationState == .inactive){
+            
+            //app is transitioning from background to foreground (user taps notification), do what you need when user taps here
+            
+        }
+    }
+    
+    private func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        
+        print(userInfo)
+        print("PREVED")
+    }
 
     // MARK: - Core Data Saving support
 
