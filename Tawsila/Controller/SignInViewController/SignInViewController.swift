@@ -9,7 +9,7 @@
 import UIKit
 import RappleProgressHUD
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var viewAr: UIView!
     @IBOutlet var viewEng: UIView!
@@ -70,115 +70,141 @@ class SignInViewController: UIViewController {
         actionBackButton(sender)
     }
     
-    @IBAction func actionSignIn(_ sender: Any) {
-        
-        if  Reachability.isConnectedToNetwork() == false
-        {
-            Utility.sharedInstance.showAlert("Alert", msg: "Internet Connection not Availabel!", controller: self)
-            return
-        }
-        if  AppDelegateVariable.appDelegate.strLanguage == "en" {
-            if (Utility.sharedInstance.trim(txtEmail.text!)).characters.count == 0 {
-                Utility.sharedInstance.showAlert("Alert", msg: "Please enter your email.", controller: self)
-                return
-            }
-            
-            if (AppDelegateVariable.appDelegate.isValidEmail(txtEmail.text!) == false)
+    @IBAction func actionSignIn(_ sender: Any)  {
+        if checkValidateEmailIDAndPassword() == true {
+            if  Reachability.isConnectedToNetwork() == false
             {
-                Utility.sharedInstance.showAlert("Alert", msg: "Please enter valid email.", controller: self)
+                Utility.sharedInstance.showAlert("Alert", msg: "Internet Connection not Availabel!", controller: self)
                 return
             }
             
-            if (Utility.sharedInstance.trim(txtPass.text!)).characters.count == 0 {
-                Utility.sharedInstance.showAlert("Alert", msg: "Please enter password.", controller: self)
-                return
-            }
-            if (AppDelegateVariable.appDelegate.isValidPassword(txtPass.text!)==false) {
-//<<<<<<< HEAD
-//                Utility.sharedInstance.showAlert("Alert", msg: "Please enter password atleast 6 alphanumeric character." , controller: self)
-//                 return
-//=======
-//               // Utility.sharedInstance.showAlert("Alert", msg: "Please enter password atleast 6 alphanumeric character." , controller: self)
-//               // return
-//>>>>>>> ab8e4df314fd3995cfadacde23447e893bcda3cf
-//            }
-            }
-        else{
+            RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
             
-            if (Utility.sharedInstance.trim(txtEmailAr.text!)).characters.count == 0 {
-                Utility.sharedInstance.showAlert("إنذار", msg: "رجاءا أدخل بريدك الإلكتروني.", controller: self)
-                return
+            
+            var parameterString :String
+            if AppDelegateVariable.appDelegate.strLanguage == "en"{
+                parameterString = String(format : "login&email=%@&password=%@&usertype=%@&device_id=123456789",self.txtEmail.text! as String,self.txtPass.text! as String,userType)
+            }
+            else{
+                parameterString = String(format : "login&email=%@&password=%@&usertype=%@&device_id=123456789",self.txtEmailAr.text! as String,self.txtPassAr.text! as String,userType)
             }
             
-            if (AppDelegateVariable.appDelegate.isValidEmail(txtEmailAr.text!) == false)
-            {
-                Utility.sharedInstance.showAlert("إنذار", msg: "الرجاء إدخال عنوان بريد إلكتروني صالح.", controller: self)
-                return
-            }
-            
-            if (Utility.sharedInstance.trim(txtPassAr.text!)).characters.count == 0 {
-                Utility.sharedInstance.showAlert("إنذار", msg: "الرجاء إدخال كلمة المرور.", controller: self)
-                return
-            }
-            if (AppDelegateVariable.appDelegate.isValidPassword(txtPassAr.text!)==false) {
-    //            Utility.sharedInstance.showAlert("إنذار", msg: "الرجاء إدخال كلمة المرور على الأقل 6 حرف أبجدي رقمي." , controller: self)
-  //              return
+            Utility.sharedInstance.postDataInDataForm(header: parameterString, inVC: self) { (dataDictionary, msg, status) in
+                
+                if status == true
+                {
+                    var userDict = (dataDictionary.object(forKey: "result") as! NSDictionary).mutableCopy() as! NSMutableDictionary
+                    userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict)
+                   
+                    let user_id : String = userDict .object(forKey: "id") as! String
+                    let user_name : String = userDict .object(forKey: "id") as! String
+                    
+                    USER_DEFAULT.set(user_id, forKey: "user_id")
+                    USER_DEFAULT.set(user_name, forKey: "user_name")
+                    USER_DEFAULT.set("1", forKey: "isLogin")
+                    USER_DEFAULT.set(userDict, forKey: "userData")
+                    
+                    AppDelegateVariable.appDelegate.sliderMenuControllser()
+                    
+                    
+                    //print("Location:  \(userInfo)")
+                    /// NotificationCenter.default.post(name: Notification.Name(rawValue: "UserDidLoginNotification"), object: nil, userInfo: (userInfo as AnyObject) as? [AnyHashable : Any])
+                    // AppDelegateVariable.appDelegate.loginInMainView()
+                    
+                    
+                }
+                else
+                    
+                {
+                    Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
+                }
+                
             }
         }
-        
-        RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
-        
-        
-        var parameterString :String
-        if AppDelegateVariable.appDelegate.strLanguage == "en"{
-            parameterString = String(format : "login&email=%@&password=%@&usertype=%@&device_id=123456789",self.txtEmail.text! as String,self.txtPass.text! as String,userType)
-        }
-        else{
-            parameterString = String(format : "login&email=%@&password=%@&usertype=%@&device_id=123456789",self.txtEmailAr.text! as String,self.txtPassAr.text! as String,userType)
-        }
-        
-        Utility.sharedInstance.postDataInDataForm(header: parameterString, inVC: self) { (dataDictionary, msg, status) in
-            
-            if status == true
-            {
-                var userDict = (dataDictionary.object(forKey: "result") as! NSDictionary).mutableCopy() as! NSMutableDictionary
-                userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict)
-              
-                
-                let user_id : String = userDict .object(forKey: "id") as! String
-                let user_name : String = userDict .object(forKey: "id") as! String
-                
-                USER_DEFAULT.set(user_id, forKey: "user_id")
-                USER_DEFAULT.set(user_name, forKey: "user_name")
-                USER_DEFAULT.set("1", forKey: "isLogin")
-                USER_DEFAULT.set(userDict, forKey: "userData")
-                
-
-                
-                
-                
-                AppDelegateVariable.appDelegate.sliderMenuControllser()
-              
-                
-                //print("Location:  \(userInfo)")
-               /// NotificationCenter.default.post(name: Notification.Name(rawValue: "UserDidLoginNotification"), object: nil, userInfo: (userInfo as AnyObject) as? [AnyHashable : Any])
-               // AppDelegateVariable.appDelegate.loginInMainView()
-                
-                
-            }
-            else
-                
-            {
-                Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
-            }
-            
-        }
-        
-        
     }
 //        let obj : HomeViewControlle = HomeViewControlle(nibName: "HomeViewControlle", bundle: nil)
 //        navigationController?.pushViewController(obj, animated: true)
    // }
+    
+    
+    //MARK:- UITextField Delegate Method Implement
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if  ((txtPass == textField) || (txtPassAr == textField)) {
+            if AppDelegateVariable.appDelegate.strLanguage == "en" {
+                if (Utility.sharedInstance.trim(txtPass.text!)).characters.count == 0 {
+                    Utility.sharedInstance.showAlert("Alert", msg: "Please enter password.", controller: self)
+                }
+                if (AppDelegateVariable.appDelegate.isValidPassword(txtPass.text!)==false) {
+                    Utility.sharedInstance.showAlert("Alert", msg: "Please enter password atleast 6 alphanumeric characters.", controller: self)
+                }
+            }
+            else{
+                if (Utility.sharedInstance.trim(txtPassAr.text!)).characters.count == 0 {
+                    Utility.sharedInstance.showAlert("إنذار", msg: "الرجاء إدخال كلمة المرور.", controller: self)
+                    
+                }
+                if (AppDelegateVariable.appDelegate.isValidPassword(txtPassAr.text!)==false) {
+                    Utility.sharedInstance.showAlert("إنذار", msg: "الرجاء إدخال كلمة المرور على الأقل 6 حرف أبجدي رقمي." , controller: self)
+                    
+                }
+            }
+        }
+        if ((textField == txtEmail) || (textField == txtEmailAr)) {
+                   }
+        return true
+    }
+    
+    func  textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
+    
+    func checkValidateEmailIDAndPassword() -> Bool {
+        var isValidated : Bool = true
+        
+        if  AppDelegateVariable.appDelegate.strLanguage == "en" {
+            if (Utility.sharedInstance.trim(txtEmail.text!)).characters.count == 0 {
+                   isValidated = false
+                Utility.sharedInstance.showAlert("Alert", msg: "Please enter your email.", controller: self)
+            }
+            
+            if (AppDelegateVariable.appDelegate.isValidEmail(txtEmail.text!) == false)
+            {
+                isValidated = false
+                Utility.sharedInstance.showAlert("Alert", msg: "Please enter valid email.", controller: self)
+            }
+            if (Utility.sharedInstance.trim(txtPass.text!)).characters.count == 0 {
+                isValidated = false
+                Utility.sharedInstance.showAlert("Alert", msg: "Please enter password.", controller: self)
+            }
+            if (AppDelegateVariable.appDelegate.isValidPassword(txtPass.text!)==false) {
+                isValidated = false
+                Utility.sharedInstance.showAlert("Alert", msg: "Please enter password atleast 6 alphanumeric characters.", controller: self)
+            }
 
-}
+        }else{
+            
+            if (Utility.sharedInstance.trim(txtEmailAr.text!)).characters.count == 0 {
+                isValidated = false
+                Utility.sharedInstance.showAlert("إنذار", msg: "رجاءا أدخل بريدك الإلكتروني.", controller: self)
+            }
+            
+            if (AppDelegateVariable.appDelegate.isValidEmail(txtEmailAr.text!) == false)
+            {
+                isValidated = false
+                Utility.sharedInstance.showAlert("إنذار", msg: "الرجاء إدخال عنوان بريد إلكتروني صالح.", controller: self)
+            }
+            if (Utility.sharedInstance.trim(txtPassAr.text!)).characters.count == 0 {
+                isValidated = false
+                Utility.sharedInstance.showAlert("إنذار", msg: "الرجاء إدخال كلمة المرور.", controller: self)
+                
+            }
+            if (AppDelegateVariable.appDelegate.isValidPassword(txtPassAr.text!)==false) {
+                isValidated = false
+                Utility.sharedInstance.showAlert("إنذار", msg: "الرجاء إدخال كلمة المرور على الأقل 6 حرف أبجدي رقمي." , controller: self)
+                
+            }
+
+        }
+        return isValidated
+    }
 }
