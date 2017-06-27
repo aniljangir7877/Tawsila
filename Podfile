@@ -12,8 +12,8 @@ target 'Tawsila' do
   pod 'GooglePlaces'
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'PageMenu'
-
+  pod 'Firebase/Core'	
+  pod 'Firebase/Messaging'
   
   # Pods for Tawsila
 

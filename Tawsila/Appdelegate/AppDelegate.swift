@@ -15,13 +15,22 @@ import CoreLocation
 import UserNotifications
 import Fabric
 import Crashlytics
+import Firebase
+
+@objc protocol notificationDelegate {
+
+    func gotNotification(title : String)
+}
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate, UNUserNotificationCenterDelegate {
+
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate, UNUserNotificationCenterDelegate ,MessagingDelegate {
+    
+    var delegate : notificationDelegate?
 
     var lat: Double!
     var long: Double!
-    var  latitude : String!
+    var latitude : String!
     var longitude : String!
     let locationManager = CLLocationManager()
     var deviceTokenStr = ""
@@ -29,42 +38,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var navController : UINavigationController?
     var strLanguage: String!
     
+    var id_booking = ""
+
+    // var delegate:notificationDelegate?
+
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
       
         // checekApplication selected language (Vikram Singh)//20-jun-2017
-            strLanguage = checkAppLanguage()
+        strLanguage = checkAppLanguage()
         
        // Fabric.sharedSDK().debug = true
         //Fabric.with([Crashlytics.self()])
 
-        
+        FirebaseApp.configure()
+        Messaging.messaging().delegate = self
+        let token = Messaging.messaging().fcmToken
+        print("FCM token: \(token ?? "")")
+        deviceTokenStr = token!
+        USER_DEFAULT.set(token, forKey: "FCM_TOKEN")
+       
         GMSServices.provideAPIKey("AIzaSyAHgc0o2XkUDVwnw7F0ru8b7JpWlPL5aOc")
         GMSPlacesClient.provideAPIKey("AIzaSyAHgc0o2XkUDVwnw7F0ru8b7JpWlPL5aOc")
-        
-       // let obj : SignInOrCreateNewAccount = SignInOrCreateNewAccount(nibName: "SignInOrCreateNewAccount", bundle: nil)
-        
-//<<<<<<< HEAD
-////        let obj : HomeViewControlle = HomeViewControlle(nibName: "HomeViewControlle", bundle: nil)
-////        
-////        navContorller = SlideNavigationController.init(rootViewController: obj)
-////        self.window = UIWindow(frame: UIScreen.main.bounds)
-////        self.window?.rootViewController = navContorller
-////        navContorller?.navigationBar.isHidden = true
-////        self.window?.makeKeyAndVisible()
-//=======
+
         self.sliderMenuControllser()
-       // let obj : HomeViewControlle = HomeViewControlle(nibName: "HomeViewControlle", bundle: nil)
         
-//        navContorller = SlideNavigationController.init(rootViewController: obj)
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        self.window?.rootViewController = navContorller
-//        navContorller?.navigationBar.isHidden = true
-//        self.window?.makeKeyAndVisible()
-//>>>>>>> a13e96c6d8c53c14144ab82d6a026b09a1d35d23
+        let center = UNUserNotificationCenter.current()
         
-        
+        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+        application.registerForRemoteNotifications()
         
         if #available(iOS 10, *) {
             UNUserNotificationCenter.current().delegate = self
@@ -77,19 +82,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     //Do stuff if unsuccessful...
                 }
             })
-            
         }
-            // iOS 9 support
+
+        // iOS 9 support
         else if #available(iOS 9, *) {
             UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
             UIApplication.shared.registerForRemoteNotifications()
         }
-            // iOS 8 support
+        // iOS 8 support
         else if #available(iOS 8, *) {
             UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
             UIApplication.shared.registerForRemoteNotifications()
         }
-            // iOS 7 support
+        // iOS 7 support
         else {
             application.registerForRemoteNotifications(matching: [.badge, .sound, .alert])
         }
@@ -183,14 +188,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         return container
     }()
     
-    //MARK: - NOTIFICATIONCENTER
+    // MARK: - NOTIFICATIONCENTER
+    
+    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
+        print("Firebase registration token: \(fcmToken)")
+        let token = Messaging.messaging().fcmToken
+        print("FCM token: \(token ?? "")")
+        deviceTokenStr = token!
+        
+        USER_DEFAULT.set(token, forKey: "FCM_TOKEN")
+        
+    }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
-        deviceTokenStr = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
-        
-        
-        print(deviceTokenStr)
+       // deviceTokenStr = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+       // print(deviceTokenStr)
     }
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         
@@ -216,6 +229,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     }
     
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let application = UIApplication.shared
+
+      if(application.applicationState == .active)
+      {
+            
+            //app is currently active, can update badges count here
+            
+        }else if(application.applicationState == .background){
+            
+            //app is in background, if content-available key of your notification is set to 1, poll to your backend to retrieve data and update your interface here
+            
+        }else if(application.applicationState == .inactive){
+            
+            //app is transitioning from background to foreground (user taps notification), do what you need when user taps here
+        }
+
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        completionHandler([.alert, .badge, .sound])
+        
+        let application = UIApplication.shared
+        
+        self.delegate?.gotNotification(title: notification.request.content.title);
+        
+        
+        
+        if(application.applicationState == .active) {
+            
+            //app is currently active, can update badges count here
+            
+        }else if(application.applicationState == .background){
+            
+            //app is in background, if content-available key of your notification is set to 1, poll to your backend to retrieve data and update your interface here
+            
+        }else if(application.applicationState == .inactive){
+            
+            //app is transitioning from background to foreground (user taps notification), do what you need when user taps here
+            
+        }
+    }
+    
+    private func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        
+        print(userInfo)
+        print("PREVED")
+    }
 
     // MARK: - Core Data Saving support
 
@@ -296,7 +358,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             self.navController = SlideNavigationController(rootViewController: homeVC)
             
         }
-          self.navController?.isNavigationBarHidden  = true
+        
+        self.navController?.isNavigationBarHidden  = true
         UINavigationBar.appearance().isTranslucent = false
      
         let leftVC : LeftMenuViewController = LeftMenuViewController(nibName : "LeftMenuViewController" , bundle : nil)

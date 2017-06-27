@@ -31,6 +31,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         setShowAndHideViews(viewEng, vArb: viewAr)
+        
+        AppDelegateVariable.appDelegate.strLanguage = "en"
+        
     }
 
     override func didReceiveMemoryWarning() {
