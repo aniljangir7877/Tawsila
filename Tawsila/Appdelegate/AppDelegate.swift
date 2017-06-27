@@ -99,7 +99,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        if launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] != nil {
+            
+            
+            // Do what you want to happen when a remote notification is tapped.
+            
+            
+        }
+        else
+        
+        {
         self.sliderMenuControllser()
+        }
         
      //   self.checkNewVerisonAvailabel(viewController:)
         
@@ -185,6 +196,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         print("i am not available in simulator \(error)")
         
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let application = UIApplication.shared
+
+        if(application.applicationState == .active) {
+            
+            //app is currently active, can update badges count here
+            
+        }else if(application.applicationState == .background){
+            
+            //app is in background, if content-available key of your notification is set to 1, poll to your backend to retrieve data and update your interface here
+            
+        }else if(application.applicationState == .inactive){
+            
+            //app is transitioning from background to foreground (user taps notification), do what you need when user taps here
+            
+        }
+
     }
     
 

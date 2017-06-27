@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PageMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Tawsila.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,7 +42,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2ACCD4336F40EA522042A35E00D8FF53</key>
+		<key>09F0E5C70D64B0131E514D774D19A7FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>151A15CB30DA58107B2A5B7CB0CF04EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>361478BA2BC1D21A66F6282C4992765C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,17 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B64695ADCBBC8A429AF9BC37ADBAFF2F</key>
+		<key>978A447F57E812AEE5D676FF361F1416</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>D0EC0D6B23E83738DDEA99CDAA6F1CF2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DDB8B779B85DD19BAFC559D2D643515A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
