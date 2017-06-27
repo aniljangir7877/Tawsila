@@ -76,6 +76,7 @@ class SettingViewController: UIViewController {
     
     @IBAction func actionPriceCard(_ sender: Any) {
     }
+   
     @IBAction func actionLanguageChange(_ sender: Any) {
         viewbackground.isHidden = false
         UIView.animate(withDuration: 0.6, animations: {

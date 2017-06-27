@@ -98,10 +98,15 @@ class SignInViewController: UIViewController {
                 return
             }
             if (AppDelegateVariable.appDelegate.isValidPassword(txtPass.text!)==false) {
-               // Utility.sharedInstance.showAlert("Alert", msg: "Please enter password atleast 6 alphanumeric character." , controller: self)
-               // return
+//<<<<<<< HEAD
+//                Utility.sharedInstance.showAlert("Alert", msg: "Please enter password atleast 6 alphanumeric character." , controller: self)
+//                 return
+//=======
+//               // Utility.sharedInstance.showAlert("Alert", msg: "Please enter password atleast 6 alphanumeric character." , controller: self)
+//               // return
+//>>>>>>> ab8e4df314fd3995cfadacde23447e893bcda3cf
+//            }
             }
-        }
         else{
             
             if (Utility.sharedInstance.trim(txtEmailAr.text!)).characters.count == 0 {
@@ -141,7 +146,8 @@ class SignInViewController: UIViewController {
             if status == true
             {
                 var userDict = (dataDictionary.object(forKey: "result") as! NSDictionary).mutableCopy() as! NSMutableDictionary
-                userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict) 
+                userDict = AppDelegateVariable.appDelegate.convertAllDictionaryValueToNil(userDict)
+              
                 
                 let user_id : String = userDict .object(forKey: "id") as! String
                 let user_name : String = userDict .object(forKey: "username") as! String
@@ -174,4 +180,5 @@ class SignInViewController: UIViewController {
 //        navigationController?.pushViewController(obj, animated: true)
    // }
 
+}
 }

@@ -49,6 +49,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - GoogleMaps
   - GooglePlaces
+  - PageMenu
   - RappleProgressHUD
   - SDWebImage (~> 3.8)
 

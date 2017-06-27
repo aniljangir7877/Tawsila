@@ -276,7 +276,8 @@
 		6AF2D21F8789E30800DA35689678A93D /* Pods-Tawsila-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tawsila-dummy.m"; sourceTree = "<group>"; };
 		6AF61CBC51B4BB8029CF4FCEE858ED9F /* RappleProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RappleProgressHUD.modulemap; sourceTree = "<group>"; };
 		6C814D97FAD026DF52592C4DCDE1966A /* Pods-TawsilaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TawsilaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6CE29CF4FF5C02028C0A06EC0D2A6120 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6CA79E3F9714C1C334685057DB493E6E /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
+		6CFA7D77FA54A43AE717698CE644A8D8 /* RappleProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RappleProgressHUD-dummy.m"; sourceTree = "<group>"; };
 		6D9D4F679B5DD03EF621171521D33D2D /* Pods-Tawsila-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tawsila-acknowledgements.markdown"; sourceTree = "<group>"; };
 		6E9E6868EDF6A6617FF5C2F3BB80A53B /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		705904E35F80A1C66AA51A0A57EF9519 /* GPBRootObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBRootObject.h; path = objectivec/GPBRootObject.h; sourceTree = "<group>"; };
@@ -290,6 +291,7 @@
 		781EB5B4E48C257C32ECBC76A445D87E /* GPBMessage_PackagePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBMessage_PackagePrivate.h; path = objectivec/GPBMessage_PackagePrivate.h; sourceTree = "<group>"; };
 		7938DC788DDCD6D04E40C44FE8B169EF /* Pods-TawsilaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TawsilaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		798B9E4FA6BFD6C688CB331B7B60BD8F /* Pods-TawsilaTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TawsilaTests-umbrella.h"; sourceTree = "<group>"; };
+		7A234AEED11ABACCC4191CF441C0CFB4 /* SDWebImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-prefix.pch"; sourceTree = "<group>"; };
 		7A784F73CD5E0F9D0799E708F7C1932E /* Pods-Tawsila.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tawsila.release.xcconfig"; sourceTree = "<group>"; };
 		7A82AC1ADD7B71354A693022CAC25ABC /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
 		7A9DA1827A4F338C6EECB8771B31B836 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "SDWebImage/UIImage+MultiFormat.h"; sourceTree = "<group>"; };
@@ -355,6 +357,8 @@
 		C67C45CCA359FF23BC030106CE3AE38D /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
 		CA0357208B72B2ECF3D588A9F0142174 /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MultiFormat.m"; path = "SDWebImage/UIImage+MultiFormat.m"; sourceTree = "<group>"; };
 		CB99C672F2C4D0EA7D14311D3DCAAFF7 /* Pods-Tawsila-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tawsila-acknowledgements.plist"; sourceTree = "<group>"; };
+		CC592E61AA9A1323C77DCABF1588ECEF /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
+		CCC71C392B10F6CBC91DBBDB902C7464 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "SDWebImage/UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		CEA5E981CC9F86CC8BE0BD6C8ABCD4AF /* Pods-TawsilaUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TawsilaUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		D0B45A922ADA88EAEA2CBC326B41C650 /* GPBCodedOutputStream_PackagePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBCodedOutputStream_PackagePrivate.h; path = objectivec/GPBCodedOutputStream_PackagePrivate.h; sourceTree = "<group>"; };
 		D0F4FED61D5CCA195CD7905DC829AF07 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -526,11 +530,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1FADA36CBBEBF5DF6696194D87183478 /* iOS */ = {
+		0D31440C4D46E03985861D5FFED6C5D6 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				6CE29CF4FF5C02028C0A06EC0D2A6120 /* Foundation.framework */,
-				635A4BD1CEF7E623C71F97A54BFC3616 /* ImageIO.framework */,
+				1262FDFD8ACCE5E2DB31369BBF7BBAE0 /* Foundation.framework */,
+				D9DF430B57479FCDCF51B8DE3A4519BF /* ImageIO.framework */,
+				AD6B74BED6680D316FE8AC068BD3B068 /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -678,14 +683,14 @@
 			name = Maps;
 			sourceTree = "<group>";
 		};
-		3D2820D13E0F9BEAAEB2FB41CBEDD963 /* Targets Support Files */ = {
+		5CE9B4040A59D533EF2842293F5422FA /* GoogleMaps */ = {
 			isa = PBXGroup;
 			children = (
-				69E11B62F013B1FA15F1BC2636AC2B9E /* Pods-Tawsila */,
-				270801A3B789E075F702B01A02C2F7E5 /* Pods-TawsilaTests */,
-				BEA5AE9CCFFD5D355E6D5BFF261367BA /* Pods-TawsilaUITests */,
+				00201F907E992B14E120259CD725D753 /* Base */,
+				EDEF68EF32859EBFDDE900A8AE03570C /* Maps */,
 			);
-			name = "Targets Support Files";
+			name = GoogleMaps;
+			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
@@ -909,22 +914,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		BEA5AE9CCFFD5D355E6D5BFF261367BA /* Pods-TawsilaUITests */ = {
+		EDEF68EF32859EBFDDE900A8AE03570C /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				E6469AE9FDF85F75EBE911C5B43C17D1 /* Info.plist */,
-				3CD92FB8B1F33F06CA9405ABF9BFB98C /* Pods-TawsilaUITests.modulemap */,
-				F3780DC995825EC5FD2A82D966BDE46D /* Pods-TawsilaUITests-acknowledgements.markdown */,
-				CEA5E981CC9F86CC8BE0BD6C8ABCD4AF /* Pods-TawsilaUITests-acknowledgements.plist */,
-				7B49406865825182827047FA27E74369 /* Pods-TawsilaUITests-dummy.m */,
-				1352C7FE8124B81FC03F24E4A261B5E9 /* Pods-TawsilaUITests-frameworks.sh */,
-				45AF0AA802D46F923A2329F01C121CE4 /* Pods-TawsilaUITests-resources.sh */,
-				D509F24BFD4705CB067E554D3AEC1B28 /* Pods-TawsilaUITests-umbrella.h */,
-				96F90E4A82956EFC1D819EAF5DC7B32B /* Pods-TawsilaUITests.debug.xcconfig */,
-				7938DC788DDCD6D04E40C44FE8B169EF /* Pods-TawsilaUITests.release.xcconfig */,
+				9DCB26F4B354A45FCD054341F89C3AA0 /* Frameworks */,
+				05E304CC047AE9096C165CCF34780202 /* Resources */,
 			);
-			name = "Pods-TawsilaUITests";
-			path = "Target Support Files/Pods-TawsilaUITests";
+			name = Maps;
 			sourceTree = "<group>";
 		};
 		C462FA8E4E2AE68FAFB33693D018EA40 /* Frameworks */ = {
@@ -1374,6 +1370,14 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0B705AF9B413F7370413B496C1DC0FDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D07E55ADDB311405778D9E0D6E46A473 /* Pods-Tawsila-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1007765F12E50E059C1DAF0E507200C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1451,11 +1455,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77321EB38E778994971675E6962C469F /* Sources */ = {
+		5D6FD98A0247F6FC79820D06F0FAE050 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2FC42D833DFCBAF9204CCF4DAF8FFC7 /* Pods-TawsilaUITests-dummy.m in Sources */,
+				E31B63764A340B2350726EA27BA550ED /* NSData+ImageContentType.m in Sources */,
+				27EF28925AF9B644EC21E297A07154C3 /* SDImageCache.m in Sources */,
+				5F2DD4D25E3A9B3FDCC88D46E94A63B5 /* SDWebImage-dummy.m in Sources */,
+				689CF455EAF8D305482E337E59BCAC85 /* SDWebImageCompat.m in Sources */,
+				E0DE9160A0D088C63CCE50EBB082105C /* SDWebImageDecoder.m in Sources */,
+				46D9BBBA635A48AF38BB4911DDA444EC /* SDWebImageDownloader.m in Sources */,
+				34E1996D0732276DE5E11D7B7055C8A8 /* SDWebImageDownloaderOperation.m in Sources */,
+				AEE594B085F608F0E9908E60D82DC308 /* SDWebImageManager.m in Sources */,
+				4C8EA26C0CE96BD0327369EA1506B360 /* SDWebImagePrefetcher.m in Sources */,
+				21836AC0B5D167877DDAFAAFDE54A4F7 /* UIButton+WebCache.m in Sources */,
+				04574BE6C07C8E41F92A59B18793434C /* UIImage+GIF.m in Sources */,
+				56C362183ACE064DFF4ED26130F3978E /* UIImage+MultiFormat.m in Sources */,
+				B52AA3E9B12E119042B00CDE80B32AFE /* UIImageView+HighlightedWebCache.m in Sources */,
+				CBC5CF276423A1966A6F4666579FB777 /* UIImageView+WebCache.m in Sources */,
+				AB37D576F5D27D96436A7DD5D89FFC43 /* UIView+WebCacheOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

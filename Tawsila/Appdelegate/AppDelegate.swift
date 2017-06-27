@@ -210,6 +210,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         print("i am not available in simulator \(error)")
         
     }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let application = UIApplication.shared
+
+        if(application.applicationState == .active) {
+            
+            //app is currently active, can update badges count here
+            
+        }else if(application.applicationState == .background){
+            
+            //app is in background, if content-available key of your notification is set to 1, poll to your backend to retrieve data and update your interface here
+            
+        }else if(application.applicationState == .inactive){
+            
+            //app is transitioning from background to foreground (user taps notification), do what you need when user taps here
+            
+        }
+
+    }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         let application = UIApplication.shared
