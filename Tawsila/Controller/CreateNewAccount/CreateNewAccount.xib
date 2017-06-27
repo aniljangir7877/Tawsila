@@ -221,6 +221,10 @@
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="actionCountryCode:" destination="-1" eventType="touchUpInside" id="Mz1-yh-8ID"/>
+                                                <outlet property="delegate" destination="-1" id="Xyd-Vk-kHx"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -671,7 +675,7 @@
         <image name="mobileIcon" width="32" height="32"/>
         <image name="passwordIamge" width="32" height="32"/>
         <image name="rightImage" width="22" height="22"/>
-        <image name="unselectedCheckbox" width="25" height="25"/>
+        <image name="unselectedCheckbox" width="32" height="32"/>
         <image name="userProfile" width="32" height="32"/>
     </resources>
 </document>

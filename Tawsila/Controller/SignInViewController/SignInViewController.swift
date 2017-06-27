@@ -94,15 +94,15 @@ class SignInViewController: UIViewController {
                 return
             }
             if (AppDelegateVariable.appDelegate.isValidPassword(txtPass.text!)==false) {
-<<<<<<< HEAD
-                Utility.sharedInstance.showAlert("Alert", msg: "Please enter password atleast 6 alphanumeric character." , controller: self)
-                 return
-=======
-               // Utility.sharedInstance.showAlert("Alert", msg: "Please enter password atleast 6 alphanumeric character." , controller: self)
-               // return
->>>>>>> ab8e4df314fd3995cfadacde23447e893bcda3cf
+//<<<<<<< HEAD
+//                Utility.sharedInstance.showAlert("Alert", msg: "Please enter password atleast 6 alphanumeric character." , controller: self)
+//                 return
+//=======
+//               // Utility.sharedInstance.showAlert("Alert", msg: "Please enter password atleast 6 alphanumeric character." , controller: self)
+//               // return
+//>>>>>>> ab8e4df314fd3995cfadacde23447e893bcda3cf
+//            }
             }
-        }
         else{
             
             if (Utility.sharedInstance.trim(txtEmailAr.text!)).characters.count == 0 {
@@ -180,4 +180,5 @@ class SignInViewController: UIViewController {
 //        navigationController?.pushViewController(obj, animated: true)
    // }
 
+}
 }
