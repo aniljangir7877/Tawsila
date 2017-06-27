@@ -183,7 +183,7 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             if(self.onetime == 0)
             {
                 self.onetime = 1
-                // self.perform( #selector(self.getCarsLocations), with: 1, afterDelay: 0)
+                self.perform( #selector(self.getCarsLocations), with: 1, afterDelay: 0)
                 self.loadCars(arrayCars: array)
 
             }
@@ -724,7 +724,7 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
                     // self.showWaitingView()
                     
                     AppDelegateVariable.appDelegate.id_booking = (String(format: "%@", dataDictionary.object(forKey: "booking_id") as! CVarArg)) as String
-                    // self .perform( #selector(self.showWaitingView), with: 1, afterDelay: 0)
+                     self .perform( #selector(self.showWaitingView), with: 1, afterDelay: 0)
                 }
                 else
                     
@@ -984,8 +984,8 @@ class HomeViewControlle: UIViewController ,GMSMapViewDelegate ,SlideNavigationCo
             
             let obj : PickUPRideVC = PickUPRideVC(nibName: "PickUPRideVC", bundle: nil)
             obj.id_booking = self.id_booking;
-            //  self.getTopViewController()?.present(obj, animated: true, completion: nil)
-            self.getTopViewController()?.navigationController?.pushViewController(obj, animated: true)
+            self.getTopViewController()?.present(obj, animated: true, completion: nil)
+            //self.getTopViewController()?.navigationController?.pushViewController(obj, animated: true)
 
             //  self.performSelector(onMainThread: #selector(self.gotoNextView), with: "", waitUntilDone:true)
             //  self.gotoNextView()
