@@ -15,12 +15,10 @@ import SDWebImage
 
 class PickUPRideVC: UIViewController , GMSMapViewDelegate , notificationDelegate  {
     
-    func gotNotification(title: String) {
-        
-    }
-
+    
+    
     var mapView: GMSMapView!
-
+    
     @IBOutlet var lblTime: UILabel!
     
     @IBOutlet var viewForMap: UIView!
@@ -28,13 +26,13 @@ class PickUPRideVC: UIViewController , GMSMapViewDelegate , notificationDelegate
     var cordinatePick = CLLocationCoordinate2D()
     var cordinateDrop = CLLocationCoordinate2D()
     var cordinateDestination = CLLocationCoordinate2D()
-
+    
     var cordinateDriver = CLLocationCoordinate2D()
-
+    
     
     var id_booking : String!
     var id_driver : String!
-
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -66,9 +64,9 @@ class PickUPRideVC: UIViewController , GMSMapViewDelegate , notificationDelegate
             img.tintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
             img.image = img.image?.withRenderingMode(.alwaysTemplate)
         }
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -80,16 +78,16 @@ class PickUPRideVC: UIViewController , GMSMapViewDelegate , notificationDelegate
         
         let number = URL(string: "tel://1234" )
         UIApplication.shared.open(number!)
-
+        
     }
     
     @IBAction func tapCancelRide(_ sender: Any){
-     
+        
         let actionSheetController: UIAlertController = UIAlertController(title: "Cancel Ride", message: "Sure Want to Cacel Ride", preferredStyle: .alert)
         let yesAction: UIAlertAction = UIAlertAction(title: "Yes", style: .default) { action -> Void in
-
             
-        
+            
+            
         }
         
         let noAction: UIAlertAction = UIAlertAction(title: "No", style: .default) { action -> Void in
@@ -100,13 +98,13 @@ class PickUPRideVC: UIViewController , GMSMapViewDelegate , notificationDelegate
         
         actionSheetController.addAction(noAction)
         actionSheetController.addAction(yesAction)
-
+        
         self.present(actionSheetController, animated: true, completion: nil)
-
+        
     }
     
     @IBAction func tapShare(_ sender: Any) {
-     
+        
         let text = "This is some text that I want to share."
         
         // set up activity view controller
@@ -155,7 +153,7 @@ class PickUPRideVC: UIViewController , GMSMapViewDelegate , notificationDelegate
             parameterString = String (format: "%@&%@=%@", parameterString,key as! CVarArg,value as! CVarArg)
             // println("\(key) -> \(value)")
         }
-      
+        
         // booking_id, rider_id=username, reason_to_cancel
         // http://taxiappsourcecode.com/api/index.php?option=
         
@@ -163,9 +161,9 @@ class PickUPRideVC: UIViewController , GMSMapViewDelegate , notificationDelegate
             
             if status == true
             {
-
+                
                 let actionSheetController: UIAlertController = UIAlertController(title: "Success", message: "Ride Successfully Cancel", preferredStyle: .alert)
-             
+                
                 let yesAction: UIAlertAction = UIAlertAction(title: "OK", style: .default) { action -> Void in
                     
                     self.navigationController?.popViewController(animated: true)
@@ -180,7 +178,7 @@ class PickUPRideVC: UIViewController , GMSMapViewDelegate , notificationDelegate
                 Utility.sharedInstance.showAlert(kAPPName, msg: msg as String, controller: self)
             }
         }
-
+        
     }
     
     
@@ -231,7 +229,7 @@ class PickUPRideVC: UIViewController , GMSMapViewDelegate , notificationDelegate
         dic.setValue("driver", forKey: "device_id")
         dic.setValue(id_driver, forKey: "message")
         dic.setValue(id_driver, forKey: "Title")
-
+        
         RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
         var parameterString = String(format : "push_notification")
         
@@ -293,16 +291,16 @@ class PickUPRideVC: UIViewController , GMSMapViewDelegate , notificationDelegate
                     
                     self.showPath(polyStr: polyString)
                     
-//                    let estTime =  (((((dic.object(forKey: "legs") as! NSArray) .object(at: 0) ) as AnyObject)
-//                        .object(forKey: "duration") ) as! NSDictionary) .object(forKey: "text") as? String
-//                    
-//                    let estDistance : String =  ((((((dic.object(forKey: "legs") as! NSArray) .object(at: 0) ) as AnyObject)
-//                        .object(forKey: "distance") ) as! NSDictionary) .object(forKey: "text") as? String)!
-//                    
-//                    let doubleValue : Double = NSString(string: estDistance).doubleValue // 3.1
-//                    
-//                    self.lblEstimatedFare.text =  String (format: "%.1f SAR", doubleValue*10)
-//                    self.lblEstimatedTime.text = estTime
+                    //                    let estTime =  (((((dic.object(forKey: "legs") as! NSArray) .object(at: 0) ) as AnyObject)
+                    //                        .object(forKey: "duration") ) as! NSDictionary) .object(forKey: "text") as? String
+                    //
+                    //                    let estDistance : String =  ((((((dic.object(forKey: "legs") as! NSArray) .object(at: 0) ) as AnyObject)
+                    //                        .object(forKey: "distance") ) as! NSDictionary) .object(forKey: "text") as? String)!
+                    //
+                    //                    let doubleValue : Double = NSString(string: estDistance).doubleValue // 3.1
+                    //
+                    //                    self.lblEstimatedFare.text =  String (format: "%.1f SAR", doubleValue*10)
+                    //                    self.lblEstimatedTime.text = estTime
                     
                 }
                 
@@ -333,31 +331,31 @@ class PickUPRideVC: UIViewController , GMSMapViewDelegate , notificationDelegate
         bounds = bounds.includingCoordinate(cordinatePick)
         bounds = bounds.includingCoordinate(cordinateDrop)
         bounds = bounds.includingCoordinate(cordinateDriver)
-
+        
         
         mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 100))
         
     }
     
-//    func gotNotification(title:String) {
-//    {
-//        
-//         if (title == "cancel_by_driver")
-//         {
-//        
-//         }
-//    }
-//    
-//       
-//    public static func getTopViewController() -> UIViewController?{
-//        if var topController = UIApplication.shared.keyWindow?.rootViewController
-//        {
-//            while (topController.presentedViewController != nil)
-//            {
-//                topController = topController.presentedViewController!
-//            }
-//            return topController
-//        }
-//        return nil}
+    func gotNotification(title: String) {
+        if (title == "cancel_by_driver")
+        {
+            
+        }
+        
+    }
+    
+    public static func getTopViewController() -> UIViewController?{
+        
+        if var topController = UIApplication.shared.keyWindow?.rootViewController
+        {
+            while (topController.presentedViewController != nil)
+            {
+                topController = topController.presentedViewController!
+            }
+            return topController
+        }
+        return nil
+    }
     
 }
