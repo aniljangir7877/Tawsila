@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PageMenu
+//import PageMenu
 
 
 class MyRideMainViewController: UIViewController {

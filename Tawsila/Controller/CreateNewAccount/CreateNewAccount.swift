@@ -9,7 +9,7 @@
 import UIKit
 import RappleProgressHUD
 
-class CreateNewAccount: UIViewController {
+class CreateNewAccount: UIViewController, UITextFieldDelegate {
     @IBOutlet var txtUserFullName: UITextField!
     @IBOutlet var txtemail: UITextField!
     @IBOutlet var txtpassword: UITextField!
@@ -31,7 +31,8 @@ class CreateNewAccount: UIViewController {
     
     var textF: UITextField!
     var isSelect :Bool!
-    
+    let viewPicker : UIView!
+    let picker : UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -134,15 +135,14 @@ class CreateNewAccount: UIViewController {
     }
     //MARK:- UIButtons Actions
     @IBAction func actionSignUp(_ sender: Any) {
-        
+        chechValidation() /// vikram singh
+       
         if  Reachability.isConnectedToNetwork() == false
         {
             Utility.sharedInstance.showAlert("Alert", msg: "Internet Connection not Availabel!", controller: self)
             return
         }
     
-        chechValidation() /// vikram singh
-        
         RappleActivityIndicatorView.startAnimatingWithLabel("Processing...", attributes: RappleAppleAttributes)
         
 //<<<<<<< HEAD
@@ -237,7 +237,21 @@ class CreateNewAccount: UIViewController {
     @IBAction func actionback(_ sender: Any) {
             actionBackButton(sender)
     }
-    @IBAction func actionCountryCode(_ sender: UITextField) {
+     func actionCountryCode() {
+        viewPicker = UIView.init(frame: CGRect(x: 0, y: Constant.ScreenSize.SCREEN_HEIGHT, width: Constant.ScreenSize.SCREEN_WIDTH, height: 200))
+         picker = UIPickerView.init(frame: CGRect(x: 0, y: 44, width: Constant.ScreenSize.SCREEN_WIDTH, height: 156))
+        picker.delegate = self
+        let barButton = UIButton.init(frame: CGRect(x: Constant.ScreenSize.SCREEN_WIDTH-70 , y: 0, width: 50, height: 44))
     }
     
+    //MARK:- UITextField Delegate Implement 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == txtCountryCode || textField == txtCountryCodeAr {
+            self.actionCountryCode()
+        }
+    }
 }
