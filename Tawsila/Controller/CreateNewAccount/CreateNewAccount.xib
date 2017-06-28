@@ -222,7 +222,6 @@
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
-                                                <action selector="actionCountryCode:" destination="-1" eventType="touchUpInside" id="Mz1-yh-8ID"/>
                                                 <outlet property="delegate" destination="-1" id="Xyd-Vk-kHx"/>
                                             </connections>
                                         </textField>

@@ -11,10 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**
+/*
  * Attribute name for match fragments in |GMSAutocompletePrediction| attributedFullText.
- *
- * @related GMSAutocompletePrediction
  */
 extern NSString *const kGMSAutocompleteMatchAttribute;
 

@@ -10,6 +10,7 @@ import UIKit
 
 class SettingViewController: UIViewController {
 
+    // View english IBOutlet defines
     @IBOutlet weak var lblUserName: UILabel!
     @IBOutlet weak var lblMobileNumber: UILabel!
     @IBOutlet weak var lblEmailAddress: UILabel!
@@ -19,6 +20,8 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var viewButtons: UIView!
     @IBOutlet weak var imgEng: UIImageView!
     @IBOutlet weak var imgArbic: UIImageView!
+    
+    //View Arabic IBOutlet defines
     var singleTap: UITapGestureRecognizer!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +86,9 @@ class SettingViewController: UIViewController {
             self.viewbackground.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y, width: self.view.frame.size.width, height: self.view.frame.size.height)
         }, completion: nil)
 
+    }
+    @IBAction func actionRightToggleMenu(_ sender: Any) {
+          SlideNavigationController.sharedInstance().toggleRightMenu()
     }
     
     @IBAction func actionRateAndReview(_ sender: Any) {

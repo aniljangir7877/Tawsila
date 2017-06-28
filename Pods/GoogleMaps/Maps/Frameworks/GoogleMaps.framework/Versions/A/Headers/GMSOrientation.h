@@ -29,11 +29,7 @@ typedef struct {
 extern "C" {
 #endif
 
-/**
- * Returns a GMSOrientation with the given |heading| and |pitch|.
- *
- * @related GMSOrientation
- */
+/** Returns a GMSOrientation with the given |heading| and |pitch|. */
 inline static GMSOrientation GMSOrientationMake(CLLocationDirection heading, double pitch) {
   GMSOrientation orientation = {heading, pitch};
   return orientation;

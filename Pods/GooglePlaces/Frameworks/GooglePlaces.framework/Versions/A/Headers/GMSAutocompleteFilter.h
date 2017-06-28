@@ -15,8 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * The type filters that may be applied to an autocomplete request to restrict results to different
  * types.
- *
- * @related GMSAutocompleteFilter
  */
 typedef NS_ENUM(NSInteger, GMSPlacesAutocompleteTypeFilter) {
   /**

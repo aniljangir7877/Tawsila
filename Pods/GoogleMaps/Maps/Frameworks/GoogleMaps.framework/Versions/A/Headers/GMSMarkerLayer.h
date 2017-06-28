@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign) CLLocationDegrees rotation;
 
 /** Opacity, as per GMSMarker. */
-@property(atomic, assign) float opacity;
+@property float opacity;
 
 @end
 

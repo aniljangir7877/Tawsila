@@ -85,6 +85,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+
 /**
  * GMSAutocompleteResultsViewController provides an interface that displays place autocomplete
  * predictions in a table view. The table view will be automatically updated as input text
@@ -98,7 +99,8 @@ NS_ASSUME_NONNULL_BEGIN
  * Use the |GMSAutocompleteResultsViewControllerDelegate| delegate protocol to be notified when a
  * place is selected from the list.
  */
-@interface GMSAutocompleteResultsViewController : UIViewController <UISearchResultsUpdating>
+@interface GMSAutocompleteResultsViewController : UIViewController <
+    UISearchResultsUpdating>
 
 /** Delegate to be notified when a place is selected. */
 @property(nonatomic, weak, nullable) id<GMSAutocompleteResultsViewControllerDelegate> delegate;

@@ -420,7 +420,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mF3-bv-Q5l">
-                                            <rect key="frame" x="43" y="12" width="46" height="25"/>
+                                            <rect key="frame" x="43" y="12" width="47.5" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="a9F-K2-GhI"/>
                                             </constraints>
@@ -456,7 +456,7 @@
                                     <rect key="frame" x="214" y="0.0" width="106" height="50"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcc-xD-pkc">
-                                            <rect key="frame" x="43" y="12" width="52" height="25"/>
+                                            <rect key="frame" x="43" y="12" width="53" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="ErJ-mv-nj6"/>
                                             </constraints>

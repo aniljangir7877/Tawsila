@@ -15,32 +15,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- * kGMSLayerPanoramaHeadingKey ranges from [0, 360).
- *
- * @related GMSPanoramaLayer
- */
+/** kGMSLayerPanoramaHeadingKey ranges from [0, 360). */
 extern NSString *const kGMSLayerPanoramaHeadingKey;
 
-/**
- * kGMSLayerPanoramaPitchKey ranges from [-90, 90].
- *
- * @related GMSPanoramaLayer
- */
+/** kGMSLayerPanoramaPitchKey ranges from [-90, 90]. */
 extern NSString *const kGMSLayerPanoramaPitchKey;
 
-/**
- * kGMSLayerCameraZoomLevelKey ranges from [1, 5], default 1.
- *
- * @related GMSPanoramaLayer
- */
+/** kGMSLayerCameraZoomLevelKey ranges from [1, 5], default 1. */
 extern NSString *const kGMSLayerPanoramaZoomKey;
 
-/**
- * kGMSLayerPanoramaFOVKey ranges from [1, 160] (in degrees), default 90.
- *
- * @related GMSPanoramaLayer
- */
+/** kGMSLayerPanoramaFOVKey ranges from [1, 160] (in degrees), default 90. */
 extern NSString *const kGMSLayerPanoramaFOVKey;
 
 /**
