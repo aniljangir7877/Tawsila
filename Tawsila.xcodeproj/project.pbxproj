@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040723DD1F00287400055CBB /* MyRideMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040723DB1F00287400055CBB /* MyRideMainViewController.swift */; };
-		040723DE1F00287400055CBB /* MyRideMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040723DC1F00287400055CBB /* MyRideMainViewController.xib */; };
-		040723E11F002A6900055CBB /* SchedulRideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040723DF1F002A6900055CBB /* SchedulRideVC.swift */; };
-		040723E21F002A6900055CBB /* SchedulRideVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040723E01F002A6900055CBB /* SchedulRideVC.xib */; };
 		0439CA7B1EEC50B1008E4F78 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439CA741EEC50B1008E4F78 /* Constant.swift */; };
 		0439CA7C1EEC50B1008E4F78 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0439CA771EEC50B1008E4F78 /* TPKeyboardAvoidingScrollView.m */; };
 		0439CA7D1EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0439CA791EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
@@ -117,10 +113,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		040723DB1F00287400055CBB /* MyRideMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRideMainViewController.swift; sourceTree = "<group>"; };
-		040723DC1F00287400055CBB /* MyRideMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyRideMainViewController.xib; sourceTree = "<group>"; };
-		040723DF1F002A6900055CBB /* SchedulRideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SchedulRideVC.swift; path = MyRides/SchedulRideVC.swift; sourceTree = "<group>"; };
-		040723E01F002A6900055CBB /* SchedulRideVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SchedulRideVC.xib; path = MyRides/SchedulRideVC.xib; sourceTree = "<group>"; };
 		0439CA701EEC4FE4008E4F78 /* Tawsila-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tawsila-Bridging-Header.h"; sourceTree = "<group>"; };
 		0439CA741EEC50B1008E4F78 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		0439CA761EEC50B1008E4F78 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
@@ -432,10 +424,6 @@
 			children = (
 				814C6FB81EF048A600985702 /* MyRidesVC.swift */,
 				814C6FB91EF048A600985702 /* MyRidesVC.xib */,
-				040723DB1F00287400055CBB /* MyRideMainViewController.swift */,
-				040723DC1F00287400055CBB /* MyRideMainViewController.xib */,
-				040723DF1F002A6900055CBB /* SchedulRideVC.swift */,
-				040723E01F002A6900055CBB /* SchedulRideVC.xib */,
 			);
 			name = MyRides;
 			sourceTree = "<group>";
@@ -813,14 +801,12 @@
 				81D17A021EF84C3200976349 /* ConfirmationScreen.xib in Resources */,
 				81E76BED1EEF7F5F00256FD4 /* SettingViewController.xib in Resources */,
 				929D98F21EEEB26100A8E598 /* Roboto-Black.ttf in Resources */,
-				040723E21F002A6900055CBB /* SchedulRideVC.xib in Resources */,
 				929D98F91EEEB26100A8E598 /* Roboto-Medium.ttf in Resources */,
 				929D98F61EEEB26100A8E598 /* Roboto-Italic.ttf in Resources */,
 				81D179F81EF84A3F00976349 /* bookingViewController.xib in Resources */,
 				045CF6FF1EEC7A9F0052DBC6 /* LaunchScreen.storyboard in Resources */,
 				81E76BE21EEF73E500256FD4 /* ChangePasswordViewController.xib in Resources */,
 				929D98F31EEEB26100A8E598 /* Roboto-BlackItalic.ttf in Resources */,
-				040723DE1F00287400055CBB /* MyRideMainViewController.xib in Resources */,
 				929D98F81EEEB26100A8E598 /* Roboto-LightItalic.ttf in Resources */,
 				81F2EC131EF19AC70065D2BD /* rightMenuViewController.xib in Resources */,
 				929D98FD1EEEB26100A8E598 /* Roboto-ThinItalic.ttf in Resources */,
@@ -1028,7 +1014,6 @@
 				814C6FCF1EF0DC4600985702 /* settingTableCell.swift in Sources */,
 				81F2EC011EF18AA60065D2BD /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				814C6FBA1EF048A600985702 /* MyRidesVC.swift in Sources */,
-				040723DD1F00287400055CBB /* MyRideMainViewController.swift in Sources */,
 				045CF6FA1EEC7A010052DBC6 /* AppDelegate.swift in Sources */,
 				81E76BE51EEF73E500256FD4 /* WalletViewController.swift in Sources */,
 				81F2EC001EF18AA60065D2BD /* SlideNavigationContorllerAnimatorScale.m in Sources */,
@@ -1039,7 +1024,6 @@
 				92564FC21EEF0AE300C59A4E /* ViewDetailCar.swift in Sources */,
 				81F2EC0D1EF190BE0065D2BD /* leftMenuCell.swift in Sources */,
 				5BB10CE41EEBFA1700F93FBE /* SignInViewController.swift in Sources */,
-				040723E11F002A6900055CBB /* SchedulRideVC.swift in Sources */,
 				04FA4CDC1EF5260900CF7618 /* SSKeychain.m in Sources */,
 				0439CA7D1EEC50B1008E4F78 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				814C6FBE1EF0572A00985702 /* VSCSliderViewCell.swift in Sources */,
